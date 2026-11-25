@@ -1,0 +1,39 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Meme Chaos (from Alina's dumb-scale edit, 17 Nov 2026): a green-screen fire ring (Pixabay video 221022, Pixabay
+   Content License, no watermark; keyed: engine/hf/fx/memes/explosion; it replaced the watermarked CapCut "Explosion for
+   Meme" clip on 18 Nov) bursts around the face, with a warm white flash
+   (0.14 s), a camera shake that dies out over 0.7 s and a punch zoom (1.18) on the face. Pair it with the sound
+   "Explosion · meme blast" (Sound step), on the same word. */
+#v { position: absolute; inset: 0; overflow: hidden; }
+#cam { position: absolute; inset: 0; }
+#fire { position: absolute; pointer-events: none; }
+#flash { position: absolute; inset: 0; background: rgb(255, 250, 230); opacity: 0; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div id="v"><div id="cam"><video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video></div></div>
+  <div id="fire"></div><div id="flash"></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params, f = HK.face(V);
+const at = FX.num(P.at, 0), size = FX.num(P.size, 1.25), zoom = FX.num(P.zoom, 1.18);
+const cx = f[0] + f[2] / 2, cy = f[1] + f[3] / 2;
+// the fire clip is 9:16; 1.25 = 1350 px wide, centred on the face (as in the dumb-scale edit)
+const fw = 1080 * size, fh = fw * 16 / 9, fire = document.getElementById('fire');
+Object.assign(fire.style, { width: fw + 'px', height: fh + 'px', left: (cx - fw / 2) + 'px', top: (cy - fh / 2) + 'px' });
+const tl = gsap.timeline({ paused: true });
+FX.meme(tl, fire, V, 'explosion', at);
+document.getElementById('cam').style.transformOrigin = `${cx}px ${cy}px`;
+// punch zoom: in over 0.08 s, hold, back out over the last 0.15 s of 0.85 s
+tl.fromTo('#cam', { scale: 1 }, { scale: zoom, duration: .08, ease: EASE.out }, at + .02);
+tl.to('#cam', { scale: 1, duration: .15, ease: EASE.inOut }, at + .70);
+// shake: amplitude 26 px falling to 0 over 0.7 s; the picture is 6 % bigger meanwhile so the shake never shows a black edge (18 Nov)
+tl.set('#v', { scale: 1.06 }, at + .02);
+FX.frames(tl, at + .02, at + .72, t => { const k = 1 - (t - at - .02) / .7, a = 26 * Math.max(0, k);
+  return [['#v', { x: a * Math.sin(t * 97), y: a * Math.cos(t * 83) }]]; });
+tl.set('#v', { x: 0, y: 0, scale: 1 }, at + .74);
+// flash: 220/255 white, gone in 0.14 s
+tl.fromTo('#flash', { opacity: .86 }, { opacity: 0, duration: .14, ease: 'none' }, Math.max(0, at - .02));
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

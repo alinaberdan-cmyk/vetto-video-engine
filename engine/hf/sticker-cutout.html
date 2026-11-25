@@ -1,0 +1,39 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* PDF p.9 "You as a sticker": at 0.05 s the room goes away, replaced by an orange background (#E8572A) with small dots
+   and a vignette. I become a sticker: a white outline of about 14 px tight to the silhouette and a soft shadow. I peel
+   off: shrink to 0.86 and turn 4° with a bounce, then sway slightly. At 0.5 s a white label appears beside the head. */
+#bg { position: absolute; inset: 0; opacity: 0; background-image: radial-gradient(rgba(255,255,255,.22) 3px, transparent 3.5px), radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,.35) 100%); background-size: 34px 34px, 100% 100%; }
+#me { position: absolute; inset: 0; transform-origin: 50% 70%; }
+#me video { filter: url(#outline) drop-shadow(0 26px 30px rgba(0,0,0,.35)); }
+#label { position: absolute; padding: 18px 30px; background: #fff; border-radius: 22px; font: 700 46px/1.1 'TikTok Sans'; color: #111; box-shadow: 0 12px 30px rgba(0,0,0,.25); opacity: 0; white-space: nowrap; }
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><filter id="outline" x="-10%" y="-10%" width="120%" height="120%">
+  <feMorphology in="SourceAlpha" operator="dilate" radius="14" result="grow"/>
+  <feFlood flood-color="#ffffff"/><feComposite in2="grow" operator="in" result="white"/>
+  <feMerge><feMergeNode in="white"/><feMergeNode in="SourceGraphic"/></feMerge></filter></svg>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video id="room" class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="bg"></div>
+  <div id="me"><video class="clip full" data-start="0" data-duration="3" src="assets/cut.webm" muted></video></div>
+  <div id="label"></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params, f = V.face;
+document.getElementById('bg').style.backgroundColor = P.bg_color || '#E8572A';
+const lab = document.getElementById('label'); lab.textContent = P.label || V.word || 'made with FeedMe';
+// beside the head, on the side with more room
+const room = f[0] > 1080 - (f[0] + f[2]);
+lab.style.top = Math.max(120, f[1] - 20) + 'px';
+// keep the whole label inside the frame (measured after the fonts load)
+const lw = lab.getBoundingClientRect().width;
+const lx = room ? Math.max(30, f[0] - lw - 10) : Math.min(1080 - lw - 30, f[0] + f[2] + 10);
+lab.style.left = lx + 'px';
+const tl = gsap.timeline({ paused: true });
+tl.set('#bg', { opacity: 1 }, .05).set('#room', { opacity: 0 }, .05);
+tl.fromTo('#me', { scale: 1, rotation: 0 }, { scale: .86, rotation: 4, duration: .55, ease: 'back.out(2)' }, .05);
+tl.to('#me', { rotation: 2, duration: .6, ease: 'sine.inOut' }, .6).to('#me', { rotation: 4.5, duration: .8, ease: 'sine.inOut' }, 1.2).to('#me', { rotation: 3, duration: 1, ease: 'sine.inOut' }, 2);
+tl.fromTo('#label', { opacity: 0, scale: .86, rotation: room ? -8 : 8 }, { opacity: 1, scale: 1, rotation: room ? -4 : 4, duration: .35, ease: 'back.out(2.2)' }, .5);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

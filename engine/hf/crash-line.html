@@ -1,0 +1,72 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Meme Chaos (the "company is going down" moment of the dumb-scale edit, 17 Nov 2026): a logo badge pops up at the
+   raised hand, bobs, then a red stock-crash zigzag draws itself down and off the screen along the arm's sweep, the
+   badge riding its tip; the line holds, then fades. White outline under the red, a soft shadow and a thin marker
+   highlight. Badge = the first photo in the image bank (a logo PNG), else the text in red. Pair with "Fahh". */
+#ln { position: absolute; inset: 0; }
+#badge { position: absolute; width: 172px; height: 172px; margin: -86px 0 0 -86px; border-radius: 50%; background: #fff;
+         border: 8px solid #e61e1e; box-sizing: border-box; box-shadow: 4px 10px 16px rgba(0,0,0,.45);
+         display: flex; align-items: center; justify-content: center; overflow: hidden; opacity: 0; }
+#badge img { width: 74%; height: 74%; object-fit: contain; }
+#badge span { font-family: 'Anton', sans-serif; color: #e61e1e; font-size: 44px; line-height: 1; text-align: center; padding: 0 10px; text-transform: uppercase; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <svg id="ln" width="1080" height="1920"><defs><filter id="sh" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="7"/></filter></defs>
+    <polyline id="p0" fill="none" stroke="rgba(0,0,0,.47)" stroke-width="26" stroke-linejoin="round" stroke-linecap="round" filter="url(#sh)" transform="translate(5 8)"/>
+    <polyline id="p1" fill="none" stroke="#fff" stroke-width="28" stroke-linejoin="round" stroke-linecap="round"/>
+    <polyline id="p2" fill="none" stroke="#eb1919" stroke-width="17" stroke-linejoin="round" stroke-linecap="round"/>
+    <polyline id="p3" fill="none" stroke="rgba(255,90,90,.6)" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle id="dot" r="14" fill="#eb1919" stroke="#fff" stroke-width="5" opacity="0"/>
+  </svg>
+  <div id="badge"></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params, f = HK.face(V), at = FX.num(P.at, .05), draw = FX.num(P.draw_at, at + .9), fadeAt = Math.min(2.55, draw + 1.35);
+const dir = String(P.direction || 'left').toLowerCase().startsWith('r') ? -1 : 1;
+// start: the first raised hand the vision found, else beside the face
+const hand = (V.track || []).flatMap(t => t.hands || []).sort((a, b) => a[1] - b[1])[0];
+const S0 = (P.x !== undefined && P.x !== '' && P.y !== undefined && P.y !== '') ? [FX.num(P.x, 540), FX.num(P.y, 840)]
+  : hand ? [hand[0] + hand[2] / 2, hand[1] + hand[3] / 2] : [f[0] + f[2] / 2 + 160 * dir, f[1] + f[3] * .3];
+// the arm sweep from the dumb-scale edit (relative px, s): a short drop, then down and away off the frame
+const KEYS = [[0, 0, 0], [.1, 17, 170], [.2, 10, 245], [.3, -70, 365], [.4, -240, 440], [.5, -395, 515], [.65, -535, 615], [.88, -715, 755]]
+  .map(([t, x, y]) => [t, S0[0] + x * dir, S0[1] + y]);
+function catmull(pts, n) { const out = [], Q = [pts[0], ...pts, pts[pts.length - 1]];
+  for (let i = 1; i < Q.length - 2; i++) for (let k = 0; k < n; k++) { const s = k / n, p0 = Q[i - 1], p1 = Q[i], p2 = Q[i + 1], p3 = Q[i + 2];
+    out.push([0, 1].map(j => .5 * (2 * p1[j] + (-p0[j] + p2[j]) * s + (2 * p0[j] - 5 * p1[j] + 4 * p2[j] - p3[j]) * s * s + (-p0[j] + 3 * p1[j] - 3 * p2[j] + p3[j]) * s ** 3))); }
+  out.push(pts[pts.length - 1]); return out; }
+const base = catmull(KEYS.map(k => [k[1], k[2]]), 24), cum = [0];
+for (let i = 1; i < base.length; i++) cum.push(cum[i - 1] + Math.hypot(base[i][0] - base[i - 1][0], base[i][1] - base[i - 1][1]));
+const keyL = KEYS.map((_, i) => cum[i * 24]), keyT = KEYS.map(k => k[0]);
+function baseAt(L) { L = Math.max(0, Math.min(L, cum[cum.length - 1])); let i = 0; while (i < cum.length - 2 && cum[i + 1] <= L) i++;
+  const s = (cum[i + 1] - cum[i]) || 1e-6, u = (L - cum[i]) / s, tx = (base[i + 1][0] - base[i][0]) / s, ty = (base[i + 1][1] - base[i][1]) / s;
+  return [[base[i][0] + (base[i + 1][0] - base[i][0]) * u, base[i][1] + (base[i + 1][1] - base[i][1]) * u], [tx, ty]]; }
+const zig = []; for (let L = 0, k = 0; L <= cum[cum.length - 1] + 62; L += 62, k++) { const [p, t] = baseAt(L), off = k === 0 ? 0 : (k % 2 ? 30 : -18);
+  zig.push([L, [p[0] - t[1] * off, p[1] + t[0] * off]]); }
+function zigAt(L) { for (let i = 0; i < zig.length - 1; i++) if (L <= zig[i + 1][0]) { const u = (L - zig[i][0]) / ((zig[i + 1][0] - zig[i][0]) || 1e-6);
+  return [zig[i][1][0] + (zig[i + 1][1][0] - zig[i][1][0]) * u, zig[i][1][1] + (zig[i + 1][1][1] - zig[i][1][1]) * u]; } return zig[zig.length - 1][1]; }
+function interp(t) { if (t <= 0) return 0; for (let i = 0; i < keyT.length - 1; i++) if (t <= keyT[i + 1]) return keyL[i] + (keyL[i + 1] - keyL[i]) * (t - keyT[i]) / (keyT[i + 1] - keyT[i]); return keyL[keyL.length - 1]; }
+const badge = document.getElementById('badge');
+badge.innerHTML = V.images && V.images[0] ? `<img src="${V.images[0]}">` : `<span>${HK.esc(HK.text(P, V).split(/\s+/).slice(0, 2).join(' '))}</span>`;
+const tl = gsap.timeline({ paused: true });
+const lines = ['#p0', '#p1', '#p2', '#p3'];
+FX.frames(tl, at, Math.min(3, fadeAt + .45), t => {
+  const L = interp(t - draw), out = [];
+  const pts = L > 2 ? [...zig.filter(z => z[0] < L).map(z => z[1]), zigAt(L)] : [];
+  const str = pts.map(p => p.join(',')).join(' ');
+  const jit = pts.map((p, i) => [p[0] + 3 * Math.sin(i * 2.1), p[1] + 3 * Math.cos(i * 1.7)].join(',')).join(' ');
+  lines.forEach((id, i) => out.push([id, { attr: { points: i === 3 ? jit : str } }]));
+  out.push(['#dot', { attr: { cx: S0[0], cy: S0[1] }, opacity: L > 2 ? 1 : 0 }]);
+  const tip = L > 2 ? zigAt(L) : S0, u = Math.min(1, (t - at) / .35);
+  const pop = u >= 1 ? 1 : 1 + 3.2 * Math.pow(u - 1, 3) + 2.2 * Math.pow(u - 1, 2);    // ease-out-back
+  const bob = L > 2 ? 0 : 8 * Math.sin(2 * Math.PI * 1.4 * t), [, tan] = baseAt(L);
+  const ang = L > 2 ? Math.atan2(tan[1], tan[0]) * 57.3 * .25 * dir + 25 * Math.min(1, L / 300) * -dir : 6 * Math.sin(2 * Math.PI * .9 * t);
+  const fade = t < fadeAt ? 1 : Math.max(0, 1 - (t - fadeAt) / .45);
+  out.push([badge, { left: tip[0], top: tip[1] - 6 + bob, scale: Math.max(.01, pop) * .9, rotation: -ang, opacity: fade }]);
+  out.push(['#ln', { opacity: fade }]);
+  return out;
+});
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

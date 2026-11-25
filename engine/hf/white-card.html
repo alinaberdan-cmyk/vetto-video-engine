@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Clean White set-piece §6.1 "clean-white card": the clip shrinks into a rounded card (88 % of the width, 950x1068,
+   radius 39, centre at 51 %) on a brushed-silver ground, soft shadow, a magenta glow peeking out bottom-right; a small
+   white statement inside the card; the card drifts down ~4 %, then pushes back out to full frame. */
+#ground { position: absolute; inset: 0; background: radial-gradient(circle at 85% 10%, rgba(255,255,255,.9), transparent 40%), linear-gradient(160deg, #EAF4FB 0%, #E2E8EB 35%, #D6D8DA 60%, #B8BBBD 100%); }
+#glow { position: absolute; width: 520px; height: 520px; left: 640px; top: 1180px; border-radius: 50%; background: radial-gradient(circle, rgba(192,38,211,.75), transparent 65%); filter: blur(30px); opacity: 0; }
+#card { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; transform-origin: 50% 51%; }
+#card .clip { width: 1080px; height: 1920px; object-fit: cover; }
+#txt { position: absolute; left: 0; right: 0; top: 0; text-align: center; opacity: 0; }
+#txt .a { font: 800 58px/.9 'Inter Tight', sans-serif; letter-spacing: -.03em; }
+#txt .b { font: italic 500 66px/1 'EB Garamond', serif; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div id="ground"></div><div id="glow"></div>
+  <div id="card"><video class="clip" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video><div id="txt" class="glowtxt"><div class="a"></div><div class="b"></div></div></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params, f = HK.face(V);
+const ws = HK.words(HK.text(P, V)), last = (P.italic || ws.slice(-1)[0] || '').trim();
+document.querySelector('#txt .a').textContent = (P.italic ? ws : ws.slice(0, -1)).join(' ');
+document.querySelector('#txt .b').textContent = last;
+HK.fit(document.querySelector('#txt .a'), 900, 58);
+// the text sits above the head inside the card (card space = full frame before scaling)
+document.getElementById('txt').style.top = Math.max(120, f[1] - 260) + 'px';
+const S = 950 / 1080, cardH = 1068 / S;   // card is 950x1068 on screen: the clip is cropped to that aspect, then scaled
+const clipTop = (1920 - cardH) / 2;
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('#card', { scale: 1, clipPath: 'inset(0px 0px 0px 0px round 0px)' }, { scale: S, clipPath: `inset(${clipTop}px 0px ${clipTop}px 0px round ${39 / S}px)`, duration: .28, ease: EASE.out }, .05);
+tl.set('#card', { boxShadow: '0 20px 60px rgba(0,0,0,.18)' }, .05);
+tl.to('#glow', { opacity: 1, duration: .3 }, .2);
+tl.fromTo('#txt', { opacity: 0, filter: 'blur(14px)' }, { opacity: 1, filter: 'blur(0px)', duration: .2, ease: EASE.out }, .4);
+tl.to('#card', { y: 70, duration: 2.2, ease: 'none' }, .33);
+tl.to('#txt', { opacity: 0, filter: 'blur(12px)', duration: .16 }, 2.58);
+tl.to('#card', { scale: 1, y: 0, clipPath: 'inset(0px 0px 0px 0px round 0px)', duration: .24, ease: EASE.inOut }, 2.74).to('#glow', { opacity: 0, duration: .2 }, 2.74);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

@@ -1,0 +1,39 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Clean White (Editing Beast STYLE.md §4.2, §4.4, §6.3): the statement stack. 2–4 short lines, tight leading (.86),
+   staggered left/right; heavy sans for the punch words, an italic serif for the last line; white soft glow, no box or
+   stroke. Each word blurs in (14 px → 0, 0.2 s) when it is said, the stack holds, then blurs out. Optional
+   background-blur focus while it builds. Placed in the empty space beside the head, else on the chest. */
+#bg { position: absolute; inset: 0; }
+#t { position: absolute; white-space: nowrap; }
+#t .ln { display: block; line-height: .86; font: 800 112px/.86 'Inter Tight', 'Instrument Sans', sans-serif; letter-spacing: -.03em; }
+#t .ln.serif { font: italic 500 118px/.9 'EB Garamond', 'Instrument Serif', serif; letter-spacing: -.01em; }
+#t .w { display: inline-block; opacity: 0; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div id="bg"><video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video></div>
+  <div id="t" class="glowtxt"></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params, f = HK.face(V);
+const ws = HK.words(HK.text(P, V)).slice(0, 9);
+const ls = HK.lines(ws, ws.length <= 3 ? ws.length : ws.length <= 6 ? 3 : 4);
+const t = document.getElementById('t'); let wi = 0;
+t.innerHTML = ls.map((l, k) => `<span class="ln ${k === ls.length - 1 && ls.length > 1 ? 'serif' : ''}">${HK.words(l).map(w => `<span class="w" data-i="${wi++}">${HK.esc(w)}</span>`).join(' ')}</span>`).join('');
+// room beside the head: the stack goes on the side with more space, else under the chin
+const left = f[0], right = 1080 - f[0] - f[2], side = (P.side || 'auto').toLowerCase();
+const useSide = side === 'left' ? 'left' : side === 'right' ? 'right' : Math.max(left, right) > 380 ? (right > left ? 'right' : 'left') : 'below';
+const maxW = useSide === 'below' ? 900 : Math.max(left, right) - 60;
+[...t.children].forEach((d, k) => { const base = d.classList.contains('serif') ? 118 : 112; HK.fit(d, maxW * .92, base); d.style.marginLeft = (k % 2 ? 1 : 0) * .6 + 'em'; });
+const R = t.getBoundingClientRect();
+let x = useSide === 'left' ? Math.max(40, f[0] - R.width - 30) : useSide === 'right' ? Math.min(1040 - R.width, f[0] + f[2] + 30) : (1080 - R.width) / 2;
+let y = useSide === 'below' ? Math.min(1920 - R.height - 220, f[1] + f[3] * 1.25) : Math.max(160, f[1] + f[3] * .5 - R.height / 2);
+t.style.left = x + 'px'; t.style.top = y + 'px';
+const tl = gsap.timeline({ paused: true });
+if (String(P.focus || '').toLowerCase().startsWith('y')) tl.to('#bg', { filter: 'blur(26px)', duration: .2, ease: EASE.out }, .05);
+[...t.querySelectorAll('.w')].forEach((w, i) => tl.fromTo(w, { opacity: 0, filter: 'blur(14px)' }, { opacity: 1, filter: 'blur(0px)', duration: .2, ease: EASE.out }, HK.at(V, i, .2)));
+tl.to('#t', { opacity: 0, filter: 'blur(12px)', duration: .18, ease: EASE.inOut }, 2.78);
+if (String(P.focus || '').toLowerCase().startsWith('y')) tl.to('#bg', { filter: 'blur(0px)', duration: .18 }, 2.78);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

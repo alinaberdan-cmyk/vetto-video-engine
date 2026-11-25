@@ -1,0 +1,19 @@
+# never commit: keys, footage, work folders
+.secrets.json
+projects/
+.incoming/
+plan/
+library/memes/pinterest/
+# environments and downloads
+.venv/
+tools/node_modules/
+research/
+__pycache__/
+*.pyc
+.DS_Store
+# binaries you build or install yourself
+bin/ffmpeg
+bin/ffprobe
+bin/yt-dlp
+bin/vision
+bin/lift

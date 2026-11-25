@@ -1,0 +1,44 @@
+[
+ {
+  "id": "calm",
+  "name": "Calm",
+  "preset": "podcast",
+  "shorten_pauses_over": 0.8,
+  "beat_mid": 0.4,
+  "beat_sentence": 0.6,
+  "beat_topic": 1.0,
+  "min_cut": 0.6,
+  "punch_in": null,
+  "lufs": -16,
+  "lead": 0.1,
+  "tail": 0.2
+ },
+ {
+  "id": "medium",
+  "name": "Medium",
+  "preset": "youtube",
+  "shorten_pauses_over": 0.5,
+  "beat_mid": 0.3,
+  "beat_sentence": 0.45,
+  "beat_topic": 0.9,
+  "min_cut": 0.4,
+  "punch_in": 1.1,
+  "lufs": -14,
+  "lead": 0.06,
+  "tail": 0.1
+ },
+ {
+  "id": "lively",
+  "name": "Very lively",
+  "preset": "tight",
+  "shorten_pauses_over": 0.3,
+  "beat_mid": 0.22,
+  "beat_sentence": 0.25,
+  "beat_topic": 0.5,
+  "min_cut": 0.25,
+  "punch_in": 1.15,
+  "lufs": -14,
+  "lead": 0.04,
+  "tail": 0.06
+ }
+]

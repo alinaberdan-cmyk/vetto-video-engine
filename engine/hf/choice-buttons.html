@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Cinema Lexicon graphic beat §6 "UI choice buttons": two rounded pills with a 2 px white outline and white bold caps,
+   "or" between them; the chosen one fills with the brand colour. Over the clip, slightly dimmed. */
+#dim { position: absolute; inset: 0; background: rgba(0,0,0,.28); }
+#bt { position: absolute; left: 0; right: 0; top: 760px; display: flex; flex-direction: column; align-items: center; gap: 26px; }
+.pill { padding: 30px 56px; border: 4px solid #fff; border-radius: 60px; color: #fff; font: 800 64px/1 'Inter Tight', sans-serif; text-transform: uppercase; letter-spacing: -.01em; white-space: nowrap; }
+.or { color: #fff; font: italic 500 56px/1 'EB Garamond', serif; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="dim"></div><div id="bt"><div class="pill" id="a"></div><div class="or">or</div><div class="pill" id="b"></div></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params, brand = P.color || '#007A4E', txt = HK.text(P, V);
+let A = P.a, B = P.b;
+if (!A || !B) { const m = txt.split(/\s+or\s+/i); if (m.length > 1) { A = A || m[0]; B = B || m[1]; } else { const w = HK.words(txt), h = Math.ceil(w.length / 2); A = A || w.slice(0, h).join(' '); B = B || w.slice(h).join(' ') || 'or not'; } }
+document.getElementById('a').textContent = A; document.getElementById('b').textContent = B;
+['a', 'b'].forEach(id => HK.fit(document.getElementById(id), 900, 64));
+const pick = String(P.chosen || '2') === '1' ? '#a' : '#b';
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('#dim', { opacity: 0 }, { opacity: 1, duration: .2 }, 0);
+tl.fromTo('.pill, .or', { opacity: 0, scale: .9 }, { opacity: 1, scale: 1, duration: .25, ease: 'back.out(2)', stagger: .1 }, .05);
+tl.to(pick, { backgroundColor: brand, borderColor: brand, scale: 1.06, duration: .16, ease: EASE.out }, 1.3).to(pick, { scale: 1, duration: .2 }, 1.46);
+tl.to('#bt, #dim', { opacity: 0, duration: .2 }, 2.78);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

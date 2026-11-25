@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>/* Preview only (the export draws it with ffmpeg + libass): huge milky word, full width, at the top of the head, me in front; letters rise one by one in 0.45 s, then drift up 20 px. */
+#dim { position: absolute; inset: 0; background: rgba(0,0,0,.18); }
+#w { position: absolute; left: 0; right: 0; text-align: center; font: 400 300px/1 'Anton'; color: #F3EDE3; text-transform: uppercase; text-shadow: 0 0 40px rgba(255,200,140,.35); white-space: nowrap; }
+#w span { display: inline-block; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video><div id="dim"></div>
+  <div id="w"></div>
+  <video id="cut" class="clip full" data-start="0" data-duration="3" src="assets/cut.webm" muted></video>
+</div>
+<script>
+/*VARS*/
+const P = V.params, f = V.face || [324, 346, 432, 422];
+const word = String(P.word || V.word || 'FOOD').split(/\s+/)[0].replace(/[.,!?:;"“”']/g, '');
+const w = document.getElementById('w'); w.innerHTML = [...word].map(c => `<span>${c}</span>`).join('');
+w.style.fontSize = '300px'; const ww = [...w.children].reduce((a, c) => a + c.getBoundingClientRect().width, 0); w.style.fontSize = Math.min(560, 300 * 1015 / ww) + 'px';
+const h = w.getBoundingClientRect().height; w.style.top = Math.max(60, f[1] + f[3] * .1 - h * .62) + 'px';
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('#w span', { yPercent: 70, opacity: 0 }, { yPercent: 0, opacity: 1, duration: .3, ease: EASE.rise, stagger: .45 / Math.max(1, word.length) }, .05);
+tl.to('#w', { y: -20, duration: 2.4, ease: 'none' }, .5);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

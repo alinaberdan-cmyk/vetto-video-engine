@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Text hook 7 (ref "open / hand / reveal"): my hands open apart (one up, one down) and the yellow text is revealed
+   between them, the reveal growing from the middle line outward with the hands. */
+#t { left: 0; right: 0; text-align: center; color: var(--y, #FAFD6C); clip-path: inset(50% 0 50% 0); }
+#t div { line-height: .9; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="t" class="hk"></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params, f = HK.face(V); document.getElementById('root').style.setProperty('--y', P.color || '#FAFD6C');
+const ls = HK.lines(HK.words(HK.text(P, V)), 3);
+const t = document.getElementById('t'); t.innerHTML = ls.map(l => `<div>${HK.esc(l)}</div>`).join('');
+[...t.children].forEach(d => HK.fit(d, 760, 110));
+const h = t.getBoundingClientRect().height;
+// between the hands when found, else on the chest
+const hs = HK.hands(V); let mid = f[1] + f[3] * 1.9, cx = 540;
+if (hs.length >= 2) { const a = hs[0], b = hs[1]; mid = ((a[1] + a[3] / 2) + (b[1] + b[3] / 2)) / 2; cx = ((a[0] + a[2] / 2) + (b[0] + b[2] / 2)) / 2; }
+t.style.top = Math.max(200, Math.min(1600, mid - h / 2)) + 'px'; t.style.left = (cx - 540) + 'px';
+const tl = gsap.timeline({ paused: true });
+tl.to('#t', { clipPath: 'inset(0% 0 0% 0)', duration: .62, ease: EASE.out }, .1);
+tl.to('#t', { opacity: 0, duration: .22, ease: EASE.inOut }, 2.74);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

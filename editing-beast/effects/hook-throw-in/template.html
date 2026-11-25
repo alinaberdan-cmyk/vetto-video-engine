@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Text hook 1 (ugcwithnyomi ref, 0–3 s "text hooks / in your next video"): the title is thrown in from the top-right
+   corner (where the hand flicks), lands at chest height, a small yellow subline wipes in under it, then three doodle
+   spark strokes pop at the title's top-left corner. Wide heavy sans, lowercase, soft shadow. */
+#t { text-align: center; }
+#sub { font-size: 40px; letter-spacing: -.01em; clip-path: inset(0 100% 0 0); margin-top: 6px; }
+svg#sp { position: absolute; overflow: visible; width: 120px; height: 120px; }
+#sp path { fill: none; stroke: #fff; stroke-width: 7; stroke-linecap: round; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="t" class="hk"><div id="ti"></div><div id="sub" class="y"></div></div>
+  <svg id="sp" viewBox="0 0 120 120"><path d="M70 92 L52 62"/><path d="M52 98 L20 82"/><path d="M84 84 L82 48"/></svg>
+</div>
+<script>
+/*VARS*/
+const P = V.params, f = HK.face(V); document.getElementById('root').style.setProperty('--y', P.color || '#FAFD6C');
+let ws = HK.words(HK.text(P, V)), title = ws.join(' '), sub = (P.subline || '').trim();
+if (!sub && ws.length > 3) { title = ws.slice(0, 2).join(' '); sub = ws.slice(2).join(' '); }
+const ti = document.getElementById('ti'); ti.textContent = title; HK.fit(ti, 940, 112);
+const sb = document.getElementById('sub'); sb.textContent = sub; if (sub) HK.fit(sb, 900, 40);
+const t = document.getElementById('t'), r = t.getBoundingClientRect();
+const ty = Math.min(1320, Math.max(640, f[1] + f[3] * 1.35)); t.style.left = (1080 - r.width) / 2 + 'px'; t.style.top = ty + 'px';
+const tw = ti.getBoundingClientRect();
+const sp = document.getElementById('sp'); sp.style.left = ((1080 - tw.width) / 2 - 78) + 'px'; sp.style.top = (ty - 92) + 'px';
+document.querySelectorAll('#sp path').forEach(p => { const L = p.getTotalLength(); gsap.set(p, { strokeDasharray: L, strokeDashoffset: L }); });
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('#t', { x: 520, y: -ty + 60, rotation: 14, scale: .72, opacity: 0 }, { x: 0, y: 0, rotation: 0, scale: 1, opacity: 1, duration: .62, ease: EASE.out }, .04);
+tl.to('#sub', { clipPath: 'inset(0 0% 0 0)', duration: .34, ease: EASE.out }, .62);
+tl.to('#sp path', { strokeDashoffset: 0, duration: .16, ease: EASE.out, stagger: .05 }, .95);
+tl.fromTo('#sp', { scale: .7, transformOrigin: '80% 80%' }, { scale: 1, duration: .3, ease: 'back.out(3)' }, .95);
+tl.to(['#t', '#sp'], { opacity: 0, duration: .22, ease: EASE.inOut }, 2.74);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

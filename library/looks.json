@@ -1,0 +1,1553 @@
+{
+ "fonts": [
+  {
+   "family": "TikTok Sans",
+   "file": "TikTokSans-Bold.ttf",
+   "weight": 700,
+   "style": "normal",
+   "group": "bold",
+   "ro": true,
+   "ass": {
+    "name": "TikTok Sans 36pt",
+    "bold": 1,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Lilita One",
+   "file": "LilitaOne-Regular.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "bold",
+   "ro": true,
+   "ass": {
+    "name": "Lilita One",
+    "bold": 0,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Onest",
+   "file": "Onest-Bold.ttf",
+   "weight": 700,
+   "style": "normal",
+   "group": "bold",
+   "ro": true,
+   "ass": {
+    "name": "Onest",
+    "bold": 1,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Anton",
+   "file": "Anton-Regular.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "bold",
+   "ro": true,
+   "ass": {
+    "name": "Anton",
+    "bold": 0,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Barlow Condensed",
+   "file": "BarlowCondensed-Bold.ttf",
+   "weight": 700,
+   "style": "normal",
+   "group": "bold",
+   "ro": true,
+   "ass": {
+    "name": "Barlow Condensed",
+    "bold": 1,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Montserrat",
+   "file": "Montserrat-ExtraBoldItalic.ttf",
+   "weight": 800,
+   "style": "italic",
+   "group": "bold",
+   "ro": true,
+   "ass": {
+    "name": "Montserrat ExtraBold",
+    "bold": 0,
+    "italic": 1
+   }
+  },
+  {
+   "family": "Instrument Sans",
+   "file": "InstrumentSans-Bold.ttf",
+   "weight": 700,
+   "style": "normal",
+   "group": "simple",
+   "ro": true,
+   "ass": {
+    "name": "Instrument Sans",
+    "bold": 1,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Instrument Sans Condensed",
+   "file": "InstrumentSans-CondensedMedium.ttf",
+   "weight": 500,
+   "style": "normal",
+   "group": "simple",
+   "ro": true,
+   "ass": {
+    "name": "Instrument Sans Condensed Medium",
+    "bold": 0,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Nunito Sans Condensed",
+   "file": "NunitoSans-CondensedMedium.ttf",
+   "weight": 500,
+   "style": "normal",
+   "group": "simple",
+   "ro": true,
+   "ass": {
+    "name": "Nunito Sans Normal Condensed Medium",
+    "bold": 0,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Didact Gothic",
+   "file": "DidactGothic-Regular.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "simple",
+   "ro": true,
+   "ass": {
+    "name": "Didact Gothic",
+    "bold": 0,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Barlow Condensed SemiBold",
+   "file": "BarlowCondensed-SemiBold.ttf",
+   "weight": 600,
+   "style": "normal",
+   "group": "simple",
+   "ro": true,
+   "ass": {
+    "name": "Barlow Condensed SemiBold",
+    "bold": 0,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Gelasio",
+   "file": "Gelasio-Bold.ttf",
+   "weight": 700,
+   "style": "normal",
+   "group": "serif",
+   "ro": true,
+   "ass": {
+    "name": "Gelasio",
+    "bold": 1,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Bodoni Moda",
+   "file": "BodoniModa-Italic.ttf",
+   "weight": 400,
+   "style": "italic",
+   "group": "serif",
+   "ro": true,
+   "ass": {
+    "name": "Bodoni Moda",
+    "bold": 0,
+    "italic": 1
+   }
+  },
+  {
+   "family": "Source Serif 4",
+   "file": "SourceSerif4-Regular.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "serif",
+   "ro": true,
+   "ass": {
+    "name": "Source Serif 4",
+    "bold": 0,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Source Serif 4 Light",
+   "file": "SourceSerif4-Light.ttf",
+   "weight": 300,
+   "style": "normal",
+   "group": "serif",
+   "ro": true,
+   "ass": {
+    "name": "Source Serif 4 24pt Light",
+    "bold": 0,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Calistoga",
+   "file": "Calistoga-Regular.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "retro",
+   "ro": true,
+   "ass": {
+    "name": "Calistoga",
+    "bold": 0,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Coiny",
+   "file": "Coiny-Regular.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "retro",
+   "ro": true,
+   "ass": {
+    "name": "Coiny",
+    "bold": 0,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Sansita",
+   "file": "Sansita-BlackItalic.ttf",
+   "weight": 900,
+   "style": "italic",
+   "group": "retro",
+   "ro": true,
+   "ass": {
+    "name": "Sansita",
+    "bold": 1,
+    "italic": 1
+   }
+  },
+  {
+   "family": "Courier Prime",
+   "file": "CourierPrime-Bold.ttf",
+   "weight": 700,
+   "style": "normal",
+   "group": "retro",
+   "ro": true,
+   "ass": {
+    "name": "Courier Prime",
+    "bold": 1,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Space Mono",
+   "file": "SpaceMono-Regular.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "retro",
+   "ro": true,
+   "ass": {
+    "name": "Space Mono",
+    "bold": 0,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Comic Neue",
+   "file": "ComicNeue-Bold.ttf",
+   "weight": 700,
+   "style": "normal",
+   "group": "handwritten",
+   "ro": true,
+   "ass": {
+    "name": "Comic Neue",
+    "bold": 1,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Dancing Script",
+   "file": "DancingScript-Variable.ttf",
+   "weight": 700,
+   "style": "normal",
+   "group": "handwritten",
+   "ro": true,
+   "ass": {
+    "name": "Dancing Script",
+    "bold": 0,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Meow Script",
+   "file": "MeowScript-Regular.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "handwritten",
+   "ro": true,
+   "ass": {
+    "name": "Meow Script",
+    "bold": 0,
+    "italic": 0
+   }
+  },
+  {
+   "family": "Bebas Neue",
+   "css_family": "Bebas Neue",
+   "file": "BebasNeue-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "bold",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Bebas Neue",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Archivo Black",
+   "css_family": "Archivo Black",
+   "file": "ArchivoBlack-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "bold",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Archivo Black",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Oswald 700",
+   "css_family": "Oswald",
+   "file": "Oswald-700.ttf",
+   "weight": 700,
+   "style": "normal",
+   "group": "bold",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Oswald",
+    "bold": true,
+    "italic": false,
+    "subfamily": "Bold",
+    "weight": 700
+   }
+  },
+  {
+   "family": "Poppins 800",
+   "css_family": "Poppins",
+   "file": "Poppins-800.ttf",
+   "weight": 800,
+   "style": "normal",
+   "group": "bold",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Poppins ExtraBold",
+    "bold": true,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 800
+   }
+  },
+  {
+   "family": "Inter Tight 800",
+   "css_family": "Inter Tight",
+   "file": "InterTight-800.ttf",
+   "weight": 800,
+   "style": "normal",
+   "group": "bold",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Inter Tight ExtraBold",
+    "bold": true,
+    "italic": false,
+    "subfamily": "ExtraBold",
+    "weight": 800
+   }
+  },
+  {
+   "family": "Unbounded 800",
+   "css_family": "Unbounded",
+   "file": "Unbounded-800.ttf",
+   "weight": 800,
+   "style": "normal",
+   "group": "bold",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Unbounded ExtraBold",
+    "bold": true,
+    "italic": false,
+    "subfamily": "ExtraBold",
+    "weight": 800
+   }
+  },
+  {
+   "family": "Syne 800",
+   "css_family": "Syne",
+   "file": "Syne-800.ttf",
+   "weight": 800,
+   "style": "normal",
+   "group": "bold",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Syne ExtraBold",
+    "bold": true,
+    "italic": false,
+    "subfamily": "ExtraBold",
+    "weight": 800
+   }
+  },
+  {
+   "family": "Rubik 900",
+   "css_family": "Rubik",
+   "file": "Rubik-900.ttf",
+   "weight": 900,
+   "style": "normal",
+   "group": "bold",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Rubik Black",
+    "bold": true,
+    "italic": false,
+    "subfamily": "Black",
+    "weight": 900
+   }
+  },
+  {
+   "family": "Bricolage Grotesque 800",
+   "css_family": "Bricolage Grotesque",
+   "file": "BricolageGrotesque-800.ttf",
+   "weight": 800,
+   "style": "normal",
+   "group": "bold",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Bricolage Grotesque ExtraBold",
+    "bold": true,
+    "italic": false,
+    "subfamily": "ExtraBold",
+    "weight": 800
+   }
+  },
+  {
+   "family": "Big Shoulders Display 900",
+   "css_family": "Big Shoulders Display",
+   "file": "BigShouldersDisplay-900.ttf",
+   "weight": 900,
+   "style": "normal",
+   "group": "bold",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Big Shoulders Display Black",
+    "bold": true,
+    "italic": false,
+    "subfamily": "Black",
+    "weight": 900
+   }
+  },
+  {
+   "family": "Anybody 900",
+   "css_family": "Anybody",
+   "file": "Anybody-900.ttf",
+   "weight": 900,
+   "style": "normal",
+   "group": "bold",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Anybody Black",
+    "bold": true,
+    "italic": false,
+    "subfamily": "Black",
+    "weight": 900
+   }
+  },
+  {
+   "family": "Playfair Display Italic 700",
+   "css_family": "Playfair Display",
+   "file": "PlayfairDisplay-Italic-700.ttf",
+   "weight": 700,
+   "style": "italic",
+   "group": "serif",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Playfair Display",
+    "bold": true,
+    "italic": true,
+    "subfamily": "Bold Italic",
+    "weight": 700
+   }
+  },
+  {
+   "family": "Playfair Display 900",
+   "css_family": "Playfair Display",
+   "file": "PlayfairDisplay-900.ttf",
+   "weight": 900,
+   "style": "normal",
+   "group": "serif",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Playfair Display Black",
+    "bold": true,
+    "italic": false,
+    "subfamily": "Black",
+    "weight": 900
+   }
+  },
+  {
+   "family": "Instrument Serif",
+   "css_family": "Instrument Serif",
+   "file": "InstrumentSerif-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "serif",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Instrument Serif",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Instrument Serif Italic",
+   "css_family": "Instrument Serif",
+   "file": "InstrumentSerif-Italic-400.ttf",
+   "weight": 400,
+   "style": "italic",
+   "group": "serif",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Instrument Serif",
+    "bold": false,
+    "italic": true,
+    "subfamily": "Italic",
+    "weight": 400
+   }
+  },
+  {
+   "family": "DM Serif Display",
+   "css_family": "DM Serif Display",
+   "file": "DMSerifDisplay-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "serif",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "DM Serif Display",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "DM Serif Display Italic",
+   "css_family": "DM Serif Display",
+   "file": "DMSerifDisplay-Italic-400.ttf",
+   "weight": 400,
+   "style": "italic",
+   "group": "serif",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "DM Serif Display",
+    "bold": false,
+    "italic": true,
+    "subfamily": "Italic",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Fraunces Italic 700",
+   "css_family": "Fraunces",
+   "file": "Fraunces-Italic-700.ttf",
+   "weight": 700,
+   "style": "italic",
+   "group": "serif",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Fraunces",
+    "bold": true,
+    "italic": true,
+    "subfamily": "Bold Italic",
+    "weight": 700
+   }
+  },
+  {
+   "family": "Cormorant Garamond Italic 700",
+   "css_family": "Cormorant Garamond",
+   "file": "CormorantGaramond-Italic-700.ttf",
+   "weight": 700,
+   "style": "italic",
+   "group": "serif",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Cormorant Garamond",
+    "bold": true,
+    "italic": true,
+    "subfamily": "Bold Italic",
+    "weight": 700
+   }
+  },
+  {
+   "family": "EB Garamond Italic 500",
+   "css_family": "EB Garamond",
+   "file": "EBGaramond-Italic-500.ttf",
+   "weight": 500,
+   "style": "italic",
+   "group": "serif",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "EB Garamond Medium",
+    "bold": false,
+    "italic": true,
+    "subfamily": "Medium Italic",
+    "weight": 500
+   }
+  },
+  {
+   "family": "Abril Fatface",
+   "css_family": "Abril Fatface",
+   "file": "AbrilFatface-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "serif",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Abril Fatface",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Young Serif",
+   "css_family": "Young Serif",
+   "file": "YoungSerif-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "serif",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Young Serif",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Caveat 700",
+   "css_family": "Caveat",
+   "file": "Caveat-700.ttf",
+   "weight": 700,
+   "style": "normal",
+   "group": "handwritten",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Caveat",
+    "bold": true,
+    "italic": false,
+    "subfamily": "Bold",
+    "weight": 700
+   }
+  },
+  {
+   "family": "Permanent Marker",
+   "css_family": "Permanent Marker",
+   "file": "PermanentMarker-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "handwritten",
+   "ro": false,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Permanent Marker",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Kalam 700",
+   "css_family": "Kalam",
+   "file": "Kalam-700.ttf",
+   "weight": 700,
+   "style": "normal",
+   "group": "handwritten",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Kalam",
+    "bold": true,
+    "italic": false,
+    "subfamily": "Bold",
+    "weight": 700
+   }
+  },
+  {
+   "family": "Shadows Into Light",
+   "css_family": "Shadows Into Light",
+   "file": "ShadowsIntoLight-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "handwritten",
+   "ro": false,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Shadows Into Light",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Gochi Hand",
+   "css_family": "Gochi Hand",
+   "file": "GochiHand-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "handwritten",
+   "ro": false,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Gochi Hand",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Rock Salt",
+   "css_family": "Rock Salt",
+   "file": "RockSalt-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "handwritten",
+   "ro": false,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Rock Salt",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Reenie Beanie",
+   "css_family": "Reenie Beanie",
+   "file": "ReenieBeanie-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "handwritten",
+   "ro": false,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Reenie Beanie",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Pacifico",
+   "css_family": "Pacifico",
+   "file": "Pacifico-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "handwritten",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Pacifico",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Bungee",
+   "css_family": "Bungee",
+   "file": "Bungee-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "retro",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Bungee",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Righteous",
+   "css_family": "Righteous",
+   "file": "Righteous-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "retro",
+   "ro": false,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Righteous",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Rubik Mono One",
+   "css_family": "Rubik Mono One",
+   "file": "RubikMonoOne-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "retro",
+   "ro": false,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Rubik Mono One",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Press Start 2P",
+   "css_family": "Press Start 2P",
+   "file": "PressStart2P-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "retro",
+   "ro": false,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Press Start 2P",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Monoton",
+   "css_family": "Monoton",
+   "file": "Monoton-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "retro",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Monoton",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Shrikhand",
+   "css_family": "Shrikhand",
+   "file": "Shrikhand-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "retro",
+   "ro": false,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Shrikhand",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Bagel Fat One",
+   "css_family": "Bagel Fat One",
+   "file": "BagelFatOne-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "retro",
+   "ro": false,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Bagel Fat One",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "Chango",
+   "css_family": "Chango",
+   "file": "Chango-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "retro",
+   "ro": false,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Chango",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 400
+   }
+  },
+  {
+   "family": "DM Sans 700",
+   "css_family": "DM Sans",
+   "file": "DMSans-700.ttf",
+   "weight": 700,
+   "style": "normal",
+   "group": "simple",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "DM Sans",
+    "bold": true,
+    "italic": false,
+    "subfamily": "Bold",
+    "weight": 700
+   }
+  },
+  {
+   "family": "Manrope 800",
+   "css_family": "Manrope",
+   "file": "Manrope-800.ttf",
+   "weight": 800,
+   "style": "normal",
+   "group": "simple",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Manrope ExtraBold",
+    "bold": true,
+    "italic": false,
+    "subfamily": "ExtraBold",
+    "weight": 800
+   }
+  },
+  {
+   "family": "Plus Jakarta Sans 800",
+   "css_family": "Plus Jakarta Sans",
+   "file": "PlusJakartaSans-800.ttf",
+   "weight": 800,
+   "style": "normal",
+   "group": "simple",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Plus Jakarta Sans ExtraBold",
+    "bold": true,
+    "italic": false,
+    "subfamily": "ExtraBold",
+    "weight": 800
+   }
+  },
+  {
+   "family": "Figtree 800",
+   "css_family": "Figtree",
+   "file": "Figtree-800.ttf",
+   "weight": 800,
+   "style": "normal",
+   "group": "simple",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Figtree ExtraBold",
+    "bold": true,
+    "italic": false,
+    "subfamily": "ExtraBold",
+    "weight": 800
+   }
+  },
+  {
+   "family": "Space Grotesk 700",
+   "css_family": "Space Grotesk",
+   "file": "SpaceGrotesk-700.ttf",
+   "weight": 700,
+   "style": "normal",
+   "group": "simple",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Space Grotesk",
+    "bold": true,
+    "italic": false,
+    "subfamily": "Bold",
+    "weight": 700
+   }
+  },
+  {
+   "family": "IBM Plex Mono 600",
+   "css_family": "IBM Plex Mono",
+   "file": "IBMPlexMono-600.ttf",
+   "weight": 600,
+   "style": "normal",
+   "group": "simple",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "IBM Plex Mono SemiBold",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular",
+    "weight": 600
+   }
+  },
+  {
+   "family": "Great Vibes",
+   "css_family": "Great Vibes",
+   "file": "gf/GreatVibes-400.ttf",
+   "weight": 400,
+   "style": "normal",
+   "group": "handwritten",
+   "ro": true,
+   "source": "Google Fonts (OFL)",
+   "ass": {
+    "name": "Great Vibes",
+    "bold": false,
+    "italic": false,
+    "subfamily": "Regular"
+   }
+  }
+ ],
+ "font_groups": [
+  "all",
+  "bold",
+  "simple",
+  "serif",
+  "retro",
+  "handwritten"
+ ],
+ "palettes": [
+  {
+   "id": "classic",
+   "name": "Classic white",
+   "source": "draft",
+   "text": "#FFFFFF",
+   "highlight": "#FCDB1D",
+   "outline": "#111111",
+   "box_color": "#111111"
+  },
+  {
+   "id": "vetto",
+   "name": "Vetto spectrum",
+   "source": "Vetto theme.css",
+   "text": "#FFFFFF",
+   "highlight": "#FE48B7",
+   "outline": "#1E1E1E",
+   "box_color": "#1E1E1E",
+   "swatches": [
+    "#FC1D1D",
+    "#FEA048",
+    "#FCDB1D",
+    "#1DFC72",
+    "#3CE2FF",
+    "#421DFC",
+    "#FE48B7"
+   ]
+  },
+  {
+   "id": "fred",
+   "name": "Fred Mey · indigo",
+   "source": "account colour",
+   "text": "#FFFFFF",
+   "highlight": "#421DFC",
+   "outline": "#0B0530",
+   "box_color": "#421DFC"
+  },
+  {
+   "id": "frank",
+   "name": "Frank Mey · cyan",
+   "source": "account colour",
+   "text": "#FFFFFF",
+   "highlight": "#3CE2FF",
+   "outline": "#06303A",
+   "box_color": "#06303A"
+  },
+  {
+   "id": "fmpt2",
+   "name": "feedmeplzthanks 2 · pink",
+   "source": "account colour",
+   "text": "#FFFFFF",
+   "highlight": "#FE48B7",
+   "outline": "#3A0626",
+   "box_color": "#FE48B7"
+  },
+  {
+   "id": "hr",
+   "name": "Hongry Royalty · orange",
+   "source": "account colour",
+   "text": "#FFFFFF",
+   "highlight": "#FEA048",
+   "outline": "#3A1E06",
+   "box_color": "#FEA048"
+  },
+  {
+   "id": "neurofam",
+   "name": "Warm orange (PDF)",
+   "source": "neurofam PDF",
+   "text": "#FFFFFF",
+   "highlight": "#E8572A",
+   "outline": "#0E0D0C",
+   "box_color": "#0E0D0C"
+  },
+  {
+   "id": "ink",
+   "name": "Ink on paper",
+   "source": "draft",
+   "text": "#1E1E1E",
+   "highlight": "#421DFC",
+   "outline": "#F3F3F3",
+   "box_color": "#FFFFFF"
+  },
+  {
+   "id": "studio",
+   "name": "Cream & wine",
+   "source": "draft",
+   "text": "#FFFFFF",
+   "highlight": "#E8B4BC",
+   "outline": "#5A0F22",
+   "box_color": "#9C1131",
+   "swatches": [
+    "#F5F0E8",
+    "#9C1131",
+    "#3A1219"
+   ]
+  },
+  {
+   "id": "butter",
+   "name": "Butter box",
+   "source": "draft",
+   "text": "#111111",
+   "highlight": "#111111",
+   "outline": "#FFE45C",
+   "box_color": "#FFE45C",
+   "swatches": [
+    "#FFE45C",
+    "#111111"
+   ]
+  },
+  {
+   "id": "neon",
+   "name": "Neon night",
+   "source": "draft",
+   "text": "#FFFFFF",
+   "highlight": "#39FF14",
+   "outline": "#0A0A0A",
+   "box_color": "#0A0A0A",
+   "swatches": [
+    "#0A0A0A",
+    "#39FF14",
+    "#FF2BD6"
+   ]
+  },
+  {
+   "id": "pastel",
+   "name": "Pastel pop",
+   "source": "draft",
+   "text": "#FFFFFF",
+   "highlight": "#FFB3E6",
+   "outline": "#7A4FA3",
+   "box_color": "#C9B6FF",
+   "swatches": [
+    "#FFB3E6",
+    "#C9B6FF",
+    "#B5F2E3"
+   ]
+  },
+  {
+   "id": "sunset",
+   "name": "Sunset",
+   "source": "draft",
+   "text": "#FFF6EC",
+   "highlight": "#FF7A3D",
+   "outline": "#4A1530",
+   "box_color": "#D9367A",
+   "swatches": [
+    "#FFB347",
+    "#FF7A3D",
+    "#D9367A"
+   ]
+  },
+  {
+   "id": "ocean",
+   "name": "Ocean",
+   "source": "draft",
+   "text": "#FFFFFF",
+   "highlight": "#5CE1E6",
+   "outline": "#06233F",
+   "box_color": "#0B3D6B",
+   "swatches": [
+    "#06233F",
+    "#0B3D6B",
+    "#5CE1E6"
+   ]
+  },
+  {
+   "id": "mono",
+   "name": "Black & white",
+   "source": "draft",
+   "text": "#FFFFFF",
+   "highlight": "#FFFFFF",
+   "outline": "#000000",
+   "box_color": "#000000",
+   "swatches": [
+    "#000000",
+    "#FFFFFF"
+   ]
+  },
+  {
+   "id": "paper",
+   "name": "White box, black words",
+   "source": "draft",
+   "text": "#111111",
+   "highlight": "#E8452A",
+   "outline": "#FFFFFF",
+   "box_color": "#FFFFFF",
+   "swatches": [
+    "#FFFFFF",
+    "#111111",
+    "#E8452A"
+   ]
+  },
+  {
+   "id": "retro70",
+   "name": "Retro 70s",
+   "source": "draft",
+   "text": "#FFF1D6",
+   "highlight": "#F2A541",
+   "outline": "#5B3A1E",
+   "box_color": "#B5532A",
+   "swatches": [
+    "#F2A541",
+    "#B5532A",
+    "#5B3A1E"
+   ]
+  },
+  {
+   "id": "teal-orange",
+   "name": "Cinema teal & orange",
+   "source": "draft",
+   "text": "#FFFFFF",
+   "highlight": "#FF9F43",
+   "outline": "#0C3B40",
+   "box_color": "#0C3B40",
+   "swatches": [
+    "#0C3B40",
+    "#1B8A8F",
+    "#FF9F43"
+   ]
+  },
+  {
+   "id": "candy",
+   "name": "Candy red",
+   "source": "draft",
+   "text": "#FFFFFF",
+   "highlight": "#FFD1DC",
+   "outline": "#B0001E",
+   "box_color": "#E10032",
+   "swatches": [
+    "#E10032",
+    "#FFFFFF",
+    "#FFD1DC"
+   ]
+  },
+  {
+   "id": "matcha",
+   "name": "Matcha",
+   "source": "draft",
+   "text": "#F4F7E8",
+   "highlight": "#B6E36A",
+   "outline": "#2F4A1E",
+   "box_color": "#5C7A3A",
+   "swatches": [
+    "#2F4A1E",
+    "#5C7A3A",
+    "#B6E36A"
+   ]
+  },
+  {
+   "id": "lilac",
+   "name": "Lilac",
+   "source": "draft",
+   "text": "#FFFFFF",
+   "highlight": "#D9C2FF",
+   "outline": "#3B2266",
+   "box_color": "#7C5CC4",
+   "swatches": [
+    "#3B2266",
+    "#7C5CC4",
+    "#D9C2FF"
+   ]
+  },
+  {
+   "id": "cobalt",
+   "name": "Cobalt",
+   "source": "draft",
+   "text": "#FFFFFF",
+   "highlight": "#FFE45C",
+   "outline": "#0A1F8F",
+   "box_color": "#1F3BD1",
+   "swatches": [
+    "#0A1F8F",
+    "#1F3BD1",
+    "#FFE45C"
+   ]
+  },
+  {
+   "id": "earth",
+   "name": "Earth",
+   "source": "draft",
+   "text": "#F7EFE3",
+   "highlight": "#D9A066",
+   "outline": "#3D2B1F",
+   "box_color": "#7A5236",
+   "swatches": [
+    "#3D2B1F",
+    "#7A5236",
+    "#D9A066"
+   ]
+  },
+  {
+   "id": "gold-lux",
+   "name": "Black & gold",
+   "source": "draft",
+   "text": "#F6E7C1",
+   "highlight": "#D4AF37",
+   "outline": "#0B0B0B",
+   "box_color": "#0B0B0B",
+   "swatches": [
+    "#0B0B0B",
+    "#D4AF37",
+    "#F6E7C1"
+   ]
+  }
+ ],
+ "textboxes": [
+  {
+   "id": "none",
+   "name": "No box",
+   "note": "outline only"
+  },
+  {
+   "id": "box",
+   "name": "Solid box",
+   "note": "a filled box behind each line"
+  },
+  {
+   "id": "plate",
+   "name": "Dark plate",
+   "note": "translucent plate (PDF: Me over a grid)"
+  },
+  {
+   "id": "glass",
+   "name": "Glass plate",
+   "note": "blurred glass, light top edge (PDF: Glass explainer)"
+  },
+  {
+   "id": "sticker",
+   "name": "Sticker",
+   "note": "white label, slight tilt (PDF: You as a sticker)"
+  },
+  {
+   "id": "note",
+   "name": "Handwritten note",
+   "note": "handwriting with a scribble underline (Alina's brief)"
+  }
+ ],
+ "grades": [
+  {
+   "id": "natural",
+   "name": "Natural",
+   "ffmpeg": "",
+   "css": "none"
+  },
+  {
+   "id": "warm",
+   "name": "Warm",
+   "ffmpeg": "colorbalance=rs=.06:gs=.02:bs=-.06:rm=.05:bm=-.05,eq=saturation=1.08",
+   "css": "sepia(.18) saturate(1.12)"
+  },
+  {
+   "id": "cool",
+   "name": "Cool",
+   "ffmpeg": "colorbalance=rs=-.05:bs=.07:rm=-.03:bm=.05",
+   "css": "hue-rotate(-8deg) saturate(.95) brightness(1.02)"
+  },
+  {
+   "id": "cinematic",
+   "name": "Cinematic",
+   "ffmpeg": "colorbalance=rs=-.08:bs=.10:rh=.08:bh=-.08,eq=contrast=1.12:saturation=.92,vignette=PI/5",
+   "css": "contrast(1.12) saturate(.9) hue-rotate(-6deg)"
+  },
+  {
+   "id": "editorial",
+   "name": "Editorial",
+   "ffmpeg": "eq=contrast=1.15:saturation=.72:brightness=.01",
+   "css": "contrast(1.15) saturate(.72)"
+  },
+  {
+   "id": "film",
+   "name": "Vintage film",
+   "ffmpeg": "curves=preset=vintage,noise=alls=10:allf=t,vignette=PI/4",
+   "css": "sepia(.32) contrast(.92) saturate(.85)"
+  },
+  {
+   "id": "bw",
+   "name": "Black & white",
+   "ffmpeg": "hue=s=0,eq=contrast=1.12",
+   "css": "grayscale(1) contrast(1.12)"
+  },
+  {
+   "id": "punchy",
+   "name": "Punchy",
+   "ffmpeg": "eq=contrast=1.18:saturation=1.3",
+   "css": "contrast(1.18) saturate(1.3)"
+  },
+  {
+   "id": "soft",
+   "name": "Soft pastel",
+   "ffmpeg": "eq=contrast=.9:saturation=.85:brightness=.04,colorbalance=rh=.04:bh=.04",
+   "css": "contrast(.9) saturate(.85) brightness(1.06)"
+  },
+  {
+   "id": "clean-contrast",
+   "name": "Clean contrast (Clean White)",
+   "ffmpeg": "eq=contrast=1.14:brightness=-.01:saturation=1.02,colorbalance=bs=.05:bm=.02",
+   "css": "contrast(1.14) brightness(.99) hue-rotate(-4deg)"
+  },
+  {
+   "id": "neon-presenter",
+   "name": "Neon presenter (Neon Dimension)",
+   "ffmpeg": "eq=contrast=1.2:brightness=-.05:saturation=1.08,colorbalance=rs=-.10:bs=.14:rm=-.04:bm=.08:bh=.08,vignette=PI/4.5,noise=alls=9:allf=t",
+   "css": "contrast(1.2) brightness(.92) saturate(1.08) hue-rotate(12deg)"
+  },
+  {
+   "id": "night",
+   "name": "Night neon",
+   "ffmpeg": "eq=contrast=1.2:saturation=1.25:brightness=-.04,colorbalance=bs=.12:rh=.06",
+   "css": "contrast(1.2) saturate(1.25) brightness(.95) hue-rotate(10deg)"
+  }
+ ],
+ "caption_anims": [
+  {
+   "id": "pop",
+   "name": "Pop",
+   "note": "the spoken word grows a little and takes the highlight colour"
+  },
+  {
+   "id": "bounce",
+   "name": "Bounce",
+   "note": "each word springs in (70% → 115% → 100%)"
+  },
+  {
+   "id": "karaoke",
+   "name": "Karaoke fill",
+   "note": "the highlight fills each word as it is said"
+  },
+  {
+   "id": "reveal",
+   "name": "Word by word",
+   "note": "words appear only when they are said"
+  },
+  {
+   "id": "rise",
+   "name": "Fade up",
+   "note": "each line fades in and slides up"
+  },
+  {
+   "id": "box",
+   "name": "Box on the word",
+   "note": "a coloured box sits behind the spoken word"
+  },
+  {
+   "id": "glow",
+   "name": "Glow",
+   "note": "the spoken word glows in the highlight colour"
+  },
+  {
+   "id": "punch",
+   "name": "One big word",
+   "note": "one word at a time, large, with a small punch-in"
+  },
+  {
+   "id": "still",
+   "name": "Still",
+   "note": "no motion, the spoken word only changes colour"
+  },
+  {
+   "id": "blurin",
+   "name": "Blur-in (Clean White)",
+   "note": "words appear as they are said, blurring in (14 px → 0 in 0.2 s), soft white glow, no box or stroke"
+  },
+  {
+   "id": "lexicon",
+   "name": "Cut on the word (Cinema Lexicon)",
+   "note": "1–3 small words cut hard on the spoken word, no motion; the key word alone and big (caps or italic); low on your take, mid-frame on example clips, dark on cream cards"
+  },
+  {
+   "id": "glowpop",
+   "name": "Glow pop (Neon Dimension)",
+   "note": "1–2 words in glowing caps, each chunk pops 112 % → 100 % in 0.09 s"
+  },
+  {
+   "id": "slam",
+   "name": "Slam + keyword block",
+   "note": "each line slams in (130% → 100%), its longest word gets a colour block (idea: lemo-opuscar caption-news, our own numbers)"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Cinema Lexicon, a button of the product pops when it is named or tapped (CL01 v6 "there's a surprise button over here",
+   13.74–15.50 s): the button in its own colours, tilted, springs in over the take high in the frame, leaves before the cut. */
+.clip.take { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
+#pill { position: absolute; left: 0; top: 230px; padding: 24px 48px; border-radius: 999px; font: 800 64px/1 'Inter Tight', sans-serif; color: #fff;
+        white-space: nowrap; box-shadow: 0 10px 24px rgba(0,0,0,.18); opacity: 0; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip take" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="pill"></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params || {}, B = V.brand || {}, C = Object.assign({ accent: '#E028B0' }, B.colors || {});
+const HOLD = Math.max(.6, Math.min(2.9, +P.hold || 1.76));
+const want = String(P.label || '').toLowerCase();
+const p = (B.pills || []).concat(B.cta_pill ? [B.cta_pill] : []).find(x => x.label.toLowerCase() === want) || B.cta_pill || {};
+const el = document.getElementById('pill');
+el.textContent = P.label || p.label || V.word || 'Tap';
+el.style.background = p.color || '#111';
+el.style.color = p.ink || '#fff';
+el.style.border = `5px solid ${p.shadow || C.accent}`;
+el.style.left = Math.round((1080 - el.getBoundingClientRect().width) / 2) + 'px';
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('#pill', { scale: .5, rotation: 0, opacity: 0 }, { scale: 1, rotation: -5, opacity: 1, duration: .26, ease: 'back.out(2.4)' }, .02);
+tl.to('#pill', { scale: .6, opacity: 0, duration: .14, ease: 'power2.in' }, HOLD - .16);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

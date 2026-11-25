@@ -1,0 +1,61 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* PDF p.5 "Match cut on one word": no video. 16 article pages change with hard cuts every 0.12–0.2 s; the word sits
+   exactly in the centre on a red-orange highlight, only the text around it changes. Pages differ: typewriter, serif
+   newspaper, grotesque, paper shades, text sizes. Very close up: lines cropped by the frame, more blur further from
+   the centre, light vignette and paper grain. On every cut the camera jolts 6 px and slowly pushes in.
+   The article text is this video's own words (no publication names, no figures). */
+.page { position: absolute; inset: -1100px; display: none; padding: 0; }
+.page .txt { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); text-align: justify; hyphens: auto; color: #1d1a16; }
+.page .hl { background: #E8452A; color: #fff; padding: .02em .16em; border-radius: .08em; }
+#blur { position: absolute; inset: 0; backdrop-filter: blur(5px); -webkit-mask-image: radial-gradient(ellipse 34% 22% at 50% 50%, transparent 40%, #000 100%); mask-image: radial-gradient(ellipse 34% 22% at 50% 50%, transparent 40%, #000 100%); }
+#vig { position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 55%, rgba(20,10,0,.45) 100%); }
+#grain { position: absolute; inset: 0; opacity: .22; mix-blend-mode: multiply; }
+#cam { position: absolute; inset: 0; transform-origin: 540px 960px; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div id="cam"></div><div id="blur"></div><div id="vig"></div>
+  <svg id="grain" width="1080" height="1920"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+</div>
+<script>
+/*VARS*/
+let seed = 1234; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const WORD = (V.params.word || V.word || 'FOOD');
+const said = (V.params.topic_text || V.words.map(w => w.text).join(' ') || 'food every day');
+const filler = said.replace(/[0-9]+/g, '').split(/\s+/).filter(Boolean);
+const looks = [
+  ['Courier Prime', 700, '#EDE6D6', 46, 1.5], ['Gelasio', 700, '#F4EFE4', 58, 1.32], ['Instrument Sans', 700, '#FAFAF7', 52, 1.25],
+  ['Source Serif 4', 400, '#E9E1CF', 62, 1.38], ['Space Mono', 400, '#F1ECE2', 44, 1.55], ['Bodoni Moda', 400, '#F6F1E7', 66, 1.3],
+  ['TikTok Sans', 700, '#ECEAE4', 50, 1.28], ['Gelasio', 700, '#E3DAC6', 70, 1.25]];
+const cam = document.getElementById('cam'), pages = [];
+for (let i = 0; i < 16; i++) {
+  const L = looks[i % looks.length], pg = document.createElement('div'); pg.className = 'page';
+  pg.style.background = L[2];
+  const words = [];
+  for (let k = 0; k < 1500; k++) words.push(`<span class="wd">${filler[Math.floor(rnd() * filler.length)]}</span>`);
+  pg.innerHTML = `<div class="txt" style="font-family:'${L[0]}';font-weight:${L[1]};font-size:${L[3]}px;line-height:${L[4]};font-style:${L[0] === 'Bodoni Moda' ? 'italic' : 'normal'}">${words.join(' ')}</div>`;
+  cam.appendChild(pg); pages.push(pg);
+}
+// the highlight goes on the word nearest the page's middle (so the page always covers the frame), then the page
+// moves so that word sits exactly in the centre of the frame
+pages.forEach(pg => { pg.style.display = 'block';
+  const pr = pg.getBoundingClientRect(), pcx = pr.left + pr.width / 2, pcy = pr.top + pr.height / 2;
+  let best = null, bd = 1e12;
+  pg.querySelectorAll('.wd').forEach(sp => { const b = sp.getBoundingClientRect(), d = (b.left + b.width / 2 - pcx) ** 2 + (b.top + b.height / 2 - pcy) ** 2; if (d < bd) { bd = d; best = sp; } });
+  best.className = 'hl'; best.textContent = WORD;
+  const hl = pg.querySelector('.hl').getBoundingClientRect(), r = document.getElementById('root').getBoundingClientRect();
+  pg.style.transform = `translate(${540 - (hl.left - r.left + hl.width / 2)}px, ${960 - (hl.top - r.top + hl.height / 2)}px)`; pg.style.display = 'none'; });
+const cuts = []; let t = 0; while (t < 3 && cuts.length < 16) { cuts.push(t); t += 0.12 + rnd() * 0.08; }
+const jolts = cuts.map(() => [(rnd() - .5) * 12, (rnd() - .5) * 12]);
+const st = { t: 0 };
+function draw() {
+  let k = 0; for (let i = 0; i < cuts.length; i++) if (st.t >= cuts[i]) k = i;
+  pages.forEach((p, i) => p.style.display = i === k ? 'block' : 'none');
+  const s = 1.18 + st.t * 0.06;                      // close up, slowly pushing in
+  cam.style.transform = `translate(${jolts[k][0]}px, ${jolts[k][1]}px) scale(${s})`;
+}
+const tl = gsap.timeline({ paused: true });
+tl.fromTo(st, { t: 0 }, { t: 3, duration: 3, ease: 'none', onUpdate: draw }, 0);
+draw();
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

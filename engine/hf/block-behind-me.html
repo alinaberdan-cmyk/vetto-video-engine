@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Text hook 3 (ref "going / underneath / your text"): a tight three-line block hangs in the room at head height; I
+   move under and through it, so my body covers the letters (person cutout over the text). */
+#t { left: 0; right: 0; text-align: center; }
+#t div { line-height: .9; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="t" class="hk"></div>
+  <video id="cut" class="clip full" data-start="0" data-duration="3" src="assets/cut.webm" muted></video>
+</div>
+<script>
+/*VARS*/
+const P = V.params, f = HK.face(V);
+const ls = HK.lines(HK.words(HK.text(P, V)), +(P.lines || 3));
+const t = document.getElementById('t'); t.innerHTML = ls.map(l => `<div>${HK.esc(l)}</div>`).join('');
+[...t.children].forEach(d => HK.fit(d, 900, 118));
+const h = t.getBoundingClientRect().height;
+t.style.top = Math.max(160, Math.min(1500, f[1] + f[3] * .6 - h / 2)) + 'px';
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('#t', { opacity: 0, scale: .9 }, { opacity: 1, scale: 1, duration: .28, ease: 'back.out(1.8)' }, .05);
+tl.to('#t', { opacity: 0, duration: .22, ease: EASE.inOut }, 2.74);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

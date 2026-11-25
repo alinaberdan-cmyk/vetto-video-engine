@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Masked title rise (values: mengto/skills media/html-reel + web-design/masked-reveal, MIT): an italic serif setup line,
+   then a huge condensed payoff; every word rises into view from 135 % below inside its own mask (padding 0.14 em /
+   0.2 em so nothing is clipped) over 0.32 s with a cubic ease-out, shrinking stagger. The footage dims a little. */
+#dim { position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.05) 55%); opacity: 0; }
+#t { position: absolute; left: 60px; right: 60px; top: 240px; text-align: center; color: #fff; }
+.l1 { font: italic 400 104px/1.05 'Instrument Serif', 'Bodoni Moda', serif; }
+.l2 { font: 400 200px/.92 'Anton'; text-transform: uppercase; margin-top: 10px; }
+.m { display: inline-block; overflow: hidden; padding: .14em .06em .2em; margin: -.14em -.02em -.2em; vertical-align: top; }
+.m > span { display: inline-block; transform: translateY(135%); }
+.dot { color: var(--acc); }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="dim"></div><div id="t"><div class="l1"></div><div class="l2"></div></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params, acc = P.color || '#EFB36C';
+document.getElementById('t').style.setProperty('--acc', acc);
+const setup = (P.setup || '').trim(), pay = (P.word || V.word || 'FOOD').trim().replace(/[.,!?]+$/, '');
+const wrap = (s, cls) => s.split(/\s+/).filter(Boolean).map(w => `<span class="m"><span>${w}</span></span>`).join(' ');
+document.querySelector('.l1').innerHTML = setup ? wrap(setup) : '';
+document.querySelector('.l2').innerHTML = wrap(pay) + '<span class="m"><span class="dot">.</span></span>';
+// payoff no wider than the frame
+const l2 = document.querySelector('.l2'); const w = l2.getBoundingClientRect().width; if (w > 960) l2.style.fontSize = (200 * 960 / w) + 'px';
+// sit in the empty space above the head when the face is low enough, else at the top
+if (V.face) document.getElementById('t').style.top = Math.max(150, Math.min(260, V.face[1] - document.getElementById('t').getBoundingClientRect().height - 40)) + 'px';
+const tl = gsap.timeline({ paused: true });
+tl.to('#dim', { opacity: 1, duration: .3, ease: EASE.out }, 0);
+const words = [...document.querySelectorAll('.m > span')];
+const nSetup = document.querySelectorAll('.l1 .m').length;
+words.forEach((s, i) => tl.to(s, { y: 0, yPercent: 0, transform: 'translateY(0%)', duration: .32, ease: EASE.rise }, .08 + (i < nSetup ? STAGGER(i, .045) : .42 + STAGGER(i - nSetup, .06))));
+tl.to('#t', { opacity: 0, y: -16, duration: .24, ease: EASE.inOut }, 2.7);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

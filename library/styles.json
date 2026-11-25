@@ -1,0 +1,1020 @@
+[
+ {
+  "id": "warm-diary",
+  "name": "Warm Diary",
+  "look": "Personal, like a diary page: handwritten title, soft warm footage, words appear as they are said.",
+  "palette": {
+   "bg": "#7A4A2E",
+   "accent": "#FFB347",
+   "text": "#FFF6EC"
+  },
+  "fonts": {
+   "title": "Caveat 700",
+   "caption": "DM Sans 700"
+  },
+  "caption": {
+   "mode": "word by word",
+   "position": "lower",
+   "case": "sentence",
+   "box": "none"
+  },
+  "textbox": "none",
+  "text": {
+   "font": "DM Sans 700",
+   "title_font": "Caveat 700",
+   "color": "#FFF6EC",
+   "title_color": "#FFF6EC",
+   "highlight": "#FFB347",
+   "outline": "#4A1530",
+   "box": "none",
+   "position": "lower",
+   "words_per_line": 3,
+   "case": "as spoken",
+   "size": 76,
+   "anim": "reveal"
+  },
+  "grade": "warm",
+  "pace": "Calm",
+  "effects_suggested": [
+   "handwriting-on-word",
+   "word-image-pop"
+  ],
+  "source": "draft (Claude, 16 Nov 2026)",
+  "status": "draft",
+  "pacing": {
+   "value": "Calm pace",
+   "status": "draft"
+  },
+  "engine": "engine"
+ },
+ {
+  "id": "bold-punch",
+  "name": "Bold Punch",
+  "look": "Loud and fast: tall condensed title, yellow box captions that slam in, punchy colour, very lively cuts.",
+  "palette": {
+   "bg": "#111111",
+   "accent": "#FFE45C",
+   "text": "#FFFFFF"
+  },
+  "fonts": {
+   "title": "Bebas Neue",
+   "caption": "Archivo Black"
+  },
+  "caption": {
+   "mode": "slam",
+   "position": "middle",
+   "case": "upper",
+   "box": "keyword block"
+  },
+  "textbox": "solid box",
+  "text": {
+   "font": "Archivo Black",
+   "title_font": "Bebas Neue",
+   "color": "#FFFFFF",
+   "title_color": "#FFFFFF",
+   "highlight": "#FFE45C",
+   "outline": "#111111",
+   "box_text": "#111111",
+   "box": "none",
+   "position": "middle",
+   "words_per_line": 2,
+   "case": "upper",
+   "size": 84,
+   "anim": "slam"
+  },
+  "grade": "punchy",
+  "pace": "Very lively",
+  "effects_suggested": [
+   "screen-push-digital",
+   "split-clones"
+  ],
+  "source": "draft (Claude, 16 Nov 2026)",
+  "status": "draft",
+  "pacing": {
+   "value": "Very lively pace",
+   "status": "draft"
+  },
+  "engine": "engine"
+ },
+ {
+  "id": "editorial-serif",
+  "name": "Editorial Serif",
+  "look": "Magazine feel: italic serif title, light serif captions that fade up, muted contrasty colour.",
+  "palette": {
+   "bg": "#E9E4DA",
+   "accent": "#E8452A",
+   "text": "#111111"
+  },
+  "fonts": {
+   "title": "Playfair Display Italic 700",
+   "caption": "Instrument Serif"
+  },
+  "caption": {
+   "mode": "fade up",
+   "position": "middle",
+   "case": "sentence",
+   "box": "white box"
+  },
+  "textbox": "white box",
+  "text": {
+   "font": "Instrument Serif",
+   "title_font": "Playfair Display Italic 700",
+   "color": "#111111",
+   "title_color": "#FFFFFF",
+   "highlight": "#E8452A",
+   "outline": "#FFFFFF",
+   "box": "box",
+   "box_color": "#FFFFFF",
+   "position": "middle",
+   "words_per_line": 4,
+   "case": "as spoken",
+   "size": 80,
+   "anim": "rise"
+  },
+  "grade": "editorial",
+  "pace": "Medium",
+  "effects_suggested": [
+   "match-cut",
+   "zoom-through-text"
+  ],
+  "source": "draft (Claude, 16 Nov 2026)",
+  "status": "draft",
+  "pacing": {
+   "value": "Medium pace",
+   "status": "draft"
+  },
+  "engine": "engine"
+ },
+ {
+  "id": "pastel-soft",
+  "name": "Pastel Soft",
+  "look": "Gentle and friendly: italic soft serif title, bouncy rounded captions, pastel colours and soft light.",
+  "palette": {
+   "bg": "#E7D9F7",
+   "accent": "#FFB3E6",
+   "text": "#FFFFFF"
+  },
+  "fonts": {
+   "title": "Fraunces Italic 700",
+   "caption": "Poppins 800"
+  },
+  "caption": {
+   "mode": "bounce",
+   "position": "lower",
+   "case": "lower",
+   "box": "none"
+  },
+  "textbox": "none",
+  "text": {
+   "font": "Poppins 800",
+   "title_font": "Fraunces Italic 700",
+   "color": "#FFFFFF",
+   "title_color": "#FFFFFF",
+   "highlight": "#FFB3E6",
+   "outline": "#7A4FA3",
+   "box": "none",
+   "position": "lower",
+   "words_per_line": 3,
+   "case": "lower",
+   "size": 74,
+   "anim": "bounce"
+  },
+  "grade": "soft",
+  "pace": "Medium",
+  "effects_suggested": [
+   "sticker-cutout",
+   "word-image-pop"
+  ],
+  "source": "draft (Claude, 16 Nov 2026)",
+  "status": "draft",
+  "pacing": {
+   "value": "Medium pace",
+   "status": "draft"
+  },
+  "engine": "engine"
+ },
+ {
+  "id": "retro-groove",
+  "name": "Retro Groove",
+  "look": "70s poster: chunky retro title, karaoke fill captions, mustard and brown, film grain.",
+  "palette": {
+   "bg": "#5B3A1E",
+   "accent": "#F2A541",
+   "text": "#FFF1D6"
+  },
+  "fonts": {
+   "title": "Bungee",
+   "caption": "Rubik 900"
+  },
+  "caption": {
+   "mode": "karaoke",
+   "position": "lower",
+   "case": "upper",
+   "box": "none"
+  },
+  "textbox": "none",
+  "text": {
+   "font": "Rubik 900",
+   "title_font": "Bungee",
+   "color": "#FFF1D6",
+   "title_color": "#F2A541",
+   "highlight": "#F2A541",
+   "outline": "#5B3A1E",
+   "box": "none",
+   "position": "lower",
+   "words_per_line": 3,
+   "case": "upper",
+   "size": 78,
+   "anim": "karaoke"
+  },
+  "grade": "film",
+  "pace": "Medium",
+  "effects_suggested": [
+   "sticker-cutout",
+   "split-clones"
+  ],
+  "source": "draft (Claude, 16 Nov 2026)",
+  "status": "draft",
+  "pacing": {
+   "value": "Medium pace",
+   "status": "draft"
+  },
+  "engine": "engine"
+ },
+ {
+  "id": "minimal-lux",
+  "name": "Minimal Lux",
+  "look": "Quiet luxury: thin italic serif title in gold, small calm captions, deep contrast, slow pace.",
+  "palette": {
+   "bg": "#0B0B0B",
+   "accent": "#D4AF37",
+   "text": "#F6E7C1"
+  },
+  "fonts": {
+   "title": "Cormorant Garamond Italic 700",
+   "caption": "Manrope 800"
+  },
+  "caption": {
+   "mode": "still",
+   "position": "lower",
+   "case": "upper",
+   "box": "none"
+  },
+  "textbox": "none",
+  "text": {
+   "font": "Manrope 800",
+   "title_font": "Cormorant Garamond Italic 700",
+   "color": "#F6E7C1",
+   "title_color": "#D4AF37",
+   "highlight": "#D4AF37",
+   "outline": "#0B0B0B",
+   "box": "none",
+   "position": "lower",
+   "words_per_line": 4,
+   "case": "upper",
+   "size": 58,
+   "anim": "still"
+  },
+  "grade": "cinematic",
+  "pace": "Calm",
+  "effects_suggested": [
+   "phone-3d-float"
+  ],
+  "source": "draft (Claude, 16 Nov 2026)",
+  "status": "draft",
+  "pacing": {
+   "value": "Calm pace",
+   "status": "draft"
+  },
+  "engine": "engine"
+ },
+ {
+  "id": "night-neon",
+  "name": "Night Neon",
+  "look": "Club night: wide display title, glowing neon captions, deep blue-green night colour.",
+  "palette": {
+   "bg": "#0A0A0A",
+   "accent": "#39FF14",
+   "text": "#FFFFFF"
+  },
+  "fonts": {
+   "title": "Unbounded 800",
+   "caption": "Space Grotesk 700"
+  },
+  "caption": {
+   "mode": "glow",
+   "position": "lower",
+   "case": "upper",
+   "box": "none"
+  },
+  "textbox": "none",
+  "text": {
+   "font": "Space Grotesk 700",
+   "title_font": "Unbounded 800",
+   "color": "#FFFFFF",
+   "title_color": "#39FF14",
+   "highlight": "#39FF14",
+   "outline": "#0A0A0A",
+   "box": "none",
+   "position": "lower",
+   "words_per_line": 3,
+   "case": "upper",
+   "size": 76,
+   "anim": "glow"
+  },
+  "grade": "night",
+  "pace": "Very lively",
+  "effects_suggested": [
+   "screen-push-digital",
+   "vhs-glitch"
+  ],
+  "source": "draft (Claude, 16 Nov 2026)",
+  "status": "draft",
+  "pacing": {
+   "value": "Very lively pace",
+   "status": "draft"
+  },
+  "engine": "engine"
+ },
+ {
+  "id": "clean-creator",
+  "name": "Clean Creator",
+  "look": "The everyday creator reel: bold clean sans, white captions with a small pop on the spoken word, natural colour.",
+  "palette": {
+   "bg": "#3B3B3B",
+   "accent": "#FCDB1D",
+   "text": "#FFFFFF"
+  },
+  "fonts": {
+   "title": "Inter Tight 800",
+   "caption": "Inter Tight 800"
+  },
+  "caption": {
+   "mode": "pop",
+   "position": "lower",
+   "case": "sentence",
+   "box": "none"
+  },
+  "textbox": "none",
+  "text": {
+   "font": "Inter Tight 800",
+   "title_font": "Inter Tight 800",
+   "color": "#FFFFFF",
+   "title_color": "#FFFFFF",
+   "highlight": "#FCDB1D",
+   "outline": "#111111",
+   "box": "none",
+   "position": "lower",
+   "words_per_line": 3,
+   "case": "as spoken",
+   "size": 78,
+   "anim": "pop"
+  },
+  "grade": "natural",
+  "pace": "Medium",
+  "effects_suggested": [
+   "word-image-pop",
+   "notification-stack"
+  ],
+  "source": "draft (Claude, 16 Nov 2026)",
+  "status": "draft",
+  "pacing": {
+   "value": "Medium pace",
+   "status": "draft"
+  },
+  "engine": "engine"
+ },
+ {
+  "id": "cinematic-promo",
+  "name": "Cinematic Promo",
+  "look": "Film trailer: serif setup line then a huge condensed payoff word, warm-gold spoken word, cinematic colour, framing change every 2–4 s.",
+  "palette": {
+   "bg": "#1B1612",
+   "accent": "#EFB36C",
+   "text": "#FFFFFF"
+  },
+  "fonts": {
+   "title": "Instrument Serif Italic",
+   "caption": "Inter Tight 800"
+  },
+  "caption": {
+   "mode": "pop",
+   "position": "middle",
+   "case": "sentence",
+   "box": "none"
+  },
+  "textbox": "none",
+  "text": {
+   "font": "Inter Tight 800",
+   "title_font": "Instrument Serif Italic",
+   "color": "#FFFFFF",
+   "title_color": "#FFFFFF",
+   "highlight": "#EFB36C",
+   "outline": "#1B1612",
+   "box": "none",
+   "position": "middle",
+   "words_per_line": 3,
+   "case": "as spoken",
+   "size": 78,
+   "anim": "pop"
+  },
+  "grade": "cinematic",
+  "pace": "Medium",
+  "effects_suggested": [
+   "title-mask-rise",
+   "zoom-through-text",
+   "freeze-frame"
+  ],
+  "source_note": "caption values from mengto/skills media/html-reel (MIT)",
+  "source": "draft (Claude, 16 Nov 2026)",
+  "status": "draft",
+  "pacing": {
+   "value": "Medium pace",
+   "status": "draft"
+  },
+  "engine": "engine"
+ },
+ {
+  "id": "tech-mono",
+  "name": "Tech Mono",
+  "look": "Builder / product demo: monospace captions that appear word by word, cool blue colour, UI effects.",
+  "palette": {
+   "bg": "#06233F",
+   "accent": "#5CE1E6",
+   "text": "#FFFFFF"
+  },
+  "fonts": {
+   "title": "Space Grotesk 700",
+   "caption": "IBM Plex Mono 600"
+  },
+  "caption": {
+   "mode": "word by word",
+   "position": "lower",
+   "case": "lower",
+   "box": "dark plate"
+  },
+  "textbox": "dark plate",
+  "text": {
+   "font": "IBM Plex Mono 600",
+   "title_font": "Space Grotesk 700",
+   "color": "#FFFFFF",
+   "title_color": "#5CE1E6",
+   "highlight": "#5CE1E6",
+   "outline": "#06233F",
+   "box": "plate",
+   "box_color": "#06233F",
+   "position": "lower",
+   "words_per_line": 3,
+   "case": "lower",
+   "size": 64,
+   "anim": "reveal"
+  },
+  "grade": "cool",
+  "pace": "Medium",
+  "effects_suggested": [
+   "apple-ui-toggles",
+   "phone-3d-float",
+   "liquid-glass-graph"
+  ],
+  "source": "draft (Claude, 16 Nov 2026)",
+  "status": "draft",
+  "pacing": {
+   "value": "Medium pace",
+   "status": "draft"
+  },
+  "engine": "engine"
+ },
+ {
+  "id": "handwritten-notes",
+  "name": "Handwritten Notes",
+  "look": "Study notes: handwritten captions on a white tape box behind the spoken word, natural colour.",
+  "palette": {
+   "bg": "#F1ECE2",
+   "accent": "#E8452A",
+   "text": "#111111"
+  },
+  "fonts": {
+   "title": "Caveat 700",
+   "caption": "Kalam 700"
+  },
+  "caption": {
+   "mode": "box on the word",
+   "position": "lower",
+   "case": "lower",
+   "box": "word box"
+  },
+  "textbox": "word box",
+  "text": {
+   "font": "Kalam 700",
+   "title_font": "Caveat 700",
+   "color": "#FFFFFF",
+   "title_color": "#FFFFFF",
+   "highlight": "#FFFFFF",
+   "box_text": "#111111",
+   "outline": "#111111",
+   "box": "none",
+   "position": "lower",
+   "words_per_line": 3,
+   "case": "lower",
+   "size": 80,
+   "anim": "box"
+  },
+  "grade": "natural",
+  "pace": "Medium",
+  "effects_suggested": [
+   "pencil-outline",
+   "handwriting-on-word"
+  ],
+  "source": "draft (Claude, 16 Nov 2026)",
+  "status": "draft",
+  "pacing": {
+   "value": "Medium pace",
+   "status": "draft"
+  },
+  "engine": "engine"
+ },
+ {
+  "id": "feedme-fun",
+  "name": "FeedMe Fun",
+  "look": "Food and fun first: chunky title, bouncy pink captions, punchy colour, very lively.",
+  "palette": {
+   "bg": "#3A0626",
+   "accent": "#FE48B7",
+   "text": "#FFFFFF"
+  },
+  "fonts": {
+   "title": "Rubik 900",
+   "caption": "Poppins 800"
+  },
+  "caption": {
+   "mode": "bounce",
+   "position": "lower",
+   "case": "lower",
+   "box": "none"
+  },
+  "textbox": "none",
+  "text": {
+   "font": "Poppins 800",
+   "title_font": "Rubik 900",
+   "color": "#FFFFFF",
+   "title_color": "#FFFFFF",
+   "highlight": "#FE48B7",
+   "outline": "#3A0626",
+   "box": "none",
+   "position": "lower",
+   "words_per_line": 2,
+   "case": "lower",
+   "size": 82,
+   "anim": "bounce"
+  },
+  "grade": "punchy",
+  "pace": "Very lively",
+  "effects_suggested": [
+   "word-image-pop",
+   "sticker-cutout",
+   "notification-stack"
+  ],
+  "source_note": "colours: feedmeplzthanks 2 account pink",
+  "source": "draft (Claude, 16 Nov 2026)",
+  "status": "draft",
+  "pacing": {
+   "value": "Very lively pace",
+   "status": "draft"
+  },
+  "engine": "engine"
+ },
+ {
+  "id": "one-big-word",
+  "name": "One Big Word",
+  "look": "One word at a time, huge, with a small punch-in; black and white footage so the word carries the colour.",
+  "palette": {
+   "bg": "#111111",
+   "accent": "#E8452A",
+   "text": "#FFFFFF"
+  },
+  "fonts": {
+   "title": "Anton",
+   "caption": "Anton"
+  },
+  "caption": {
+   "mode": "one big word",
+   "position": "middle",
+   "case": "upper",
+   "box": "none"
+  },
+  "textbox": "none",
+  "text": {
+   "font": "Anton",
+   "title_font": "Anton",
+   "color": "#FFFFFF",
+   "title_color": "#FFFFFF",
+   "highlight": "#E8452A",
+   "outline": "#000000",
+   "box": "none",
+   "position": "middle",
+   "words_per_line": 1,
+   "case": "upper",
+   "size": 120,
+   "anim": "punch"
+  },
+  "grade": "bw",
+  "pace": "Very lively",
+  "effects_suggested": [
+   "freeze-frame",
+   "match-cut"
+  ],
+  "source": "draft (Claude, 16 Nov 2026)",
+  "status": "draft",
+  "pacing": {
+   "value": "Very lively pace",
+   "status": "draft"
+  },
+  "engine": "engine"
+ },
+ {
+  "id": "clean-white",
+  "name": "Clean White",
+  "source": "Editing Beast (approved there 17 Nov 2026)",
+  "status": "draft",
+  "look": "Minimal, premium talking head: white glowing captions that build a statement word by word with a blur-in, heavy sans mixed with an italic serif, sparse light leaks, and a silver 'clean-white' card set-piece. For one person talking, calm insight, 10–60 s.",
+  "palette": {
+   "bg": "#D6D8DA",
+   "accent": "#FFFFFF",
+   "text": "#FFFFFF"
+  },
+  "fonts": {
+   "title": "EB Garamond Italic 500",
+   "caption": "Inter Tight 800"
+  },
+  "caption": {
+   "mode": "word by word, blur-in",
+   "position": "chest height (or above the head on a close selfie)",
+   "case": "as spoken",
+   "box": "none, white glow"
+  },
+  "textbox": "none",
+  "text": {
+   "font": "Inter Tight 800",
+   "title_font": "EB Garamond Italic 500",
+   "color": "#FFFFFF",
+   "title_color": "#FFFFFF",
+   "highlight": "#FFFFFF",
+   "outline": "#FFFFFF",
+   "outline_w": 0,
+   "glow": "#FFFFFF",
+   "box": "none",
+   "position": "upper",
+   "words_per_line": 2,
+   "case": "as spoken",
+   "size": 54,
+   "anim": "blurin"
+  },
+  "grade": "clean-contrast",
+  "pace": "Calm",
+  "effects_suggested": [
+   "statement-stack",
+   "white-card",
+   "light-leak",
+   "title-mask-rise"
+  ],
+  "rules": [
+   "hard cuts by default, at most 3 light leaks / flashes per 15 s",
+   "3–6 statement stacks per 15 s, never on the face",
+   "one punch-in (112–118 %) per talking-head segment",
+   "sound effects only on transitions, never on text",
+   "−15 LUFS, true peak −1.5"
+  ],
+  "source_file": "~/Editing Beast/styles/clean-white/STYLE.md",
+  "pacing": {
+   "value": "Calm pace",
+   "status": "draft"
+  },
+  "engine": "engine"
+ },
+ {
+  "id": "cinema-lexicon",
+  "name": "Cinema Lexicon",
+  "source": "Editing Beast (approved there 17 Nov 2026; rebuilt 18 Nov 2026 on Alina's approved CL01 v6)",
+  "status": "draft",
+  "look": "Words-led edit as in Alina's approved CL01 v6: the creator's take carries the voice, and every phrase that names a thing, an action or a feeling cuts to its own literal example clip (Pexels, never 3 in a row). The product's own brand frames it: a cream open card with a script word and huge caps, the app's real buttons dropping on the take, a button popping when it is named, swipe chips, the screen recording in a phone, a giant number, and for ads a close card with icon, chat bubbles and slogan. Small white captions cut on each word, one key word in three or four big. Swish on every cut, pops on buttons, a funky bed 9 dB under the voice.",
+  "palette": {
+   "bg": "#FCF0D4",
+   "accent": "#E028B0",
+   "text": "#FFFFFF",
+   "ink": "#1B1B1F"
+  },
+  "fonts": {
+   "title": "Lilita One",
+   "caption": "Inter Tight 800",
+   "script": "Great Vibes"
+  },
+  "caption": {
+   "mode": "1–3 words cut on the word, no motion; 1 key word in 3–4 alone and big (caps ≤ 5 letters, else italic)",
+   "position": "low on the take (82 %), mid on example clips (49 %), high while buttons drop, dark on cream cards",
+   "case": "lower",
+   "box": "none, soft shadow"
+  },
+  "textbox": "none; cream brand cards",
+  "text": {
+   "font": "Inter Tight 800",
+   "title_font": "Lilita One",
+   "color": "#FFFFFF",
+   "title_color": "#E028B0",
+   "highlight": "#FFFFFF",
+   "outline": "#000000",
+   "outline_w": 0,
+   "shadow": true,
+   "box": "none",
+   "position": "lower",
+   "words_per_line": 3,
+   "case": "lower",
+   "size": 50,
+   "anim": "lexicon",
+   "key_scale": 2.8,
+   "dark": "#1B1B1F"
+  },
+  "grade": "natural",
+  "pace": "Medium",
+  "effects_suggested": [
+   "lexicon-open",
+   "lexicon-ui-drop",
+   "lexicon-ui-pop",
+   "lexicon-swipe",
+   "lexicon-number",
+   "lexicon-phone-demo",
+   "lexicon-close"
+  ],
+  "rules": [
+   "one phrase that names a thing, action or feeling → one literal example clip that acts out its human meaning (Pexels, no watermark); never 3 in a row, the creator's take between",
+   "no clips on the product's own moments ('this app', 'over here'): the take, or the product's real UI, shows those",
+   "the brand comes from the product: its colours, display font, icon, screens and real buttons (brand kit)",
+   "open card on the first call to action; close card only for ads, and the last frame held 1.3 s; interviews end on the punchline",
+   "captions small and cut on the word; a key word in 3–4 alone and big",
+   "swish on every clip cut, pops on buttons, a reverse rise into cards, bed ~9 dB under the voice, −15 LUFS",
+   "'no pictures' in the brief: no clips, punch-ins on the key words, captions on the chest (CL02)"
+  ],
+  "source_file": "~/Editing Beast/styles/cinema-lexicon/STYLE.md",
+  "fonts_status": "the brand kit's display face replaces Lilita One when it has one",
+  "pacing": {
+   "value": "Medium pace, a new picture every 1.7 s, no punch-ins (CL01 v6 measured: 34 cuts a minute, 0 punch-ins)",
+   "status": "measured"
+  },
+  "example": "~/Editing Beast/projects/cl01/out/CL01_cinema-lexicon_v6.mp4",
+  "engine": "engine"
+ },
+ {
+  "id": "neon-dimension",
+  "name": "Neon Dimension",
+  "source": "Editing Beast (approved there 17 Nov 2026)",
+  "status": "draft",
+  "look": "High-energy explainer: the talking head keeps cutting into dark neon worlds; on the presenter, 1–2 words in wide glowing white caps at chest height; in the worlds, a small lead-in plus a huge skewed neon key word; a light burn or glitch on every change; grain and vignette over everything.",
+  "palette": {
+   "bg": "#05060A",
+   "accent": "#39FF6A",
+   "text": "#FFFFFF"
+  },
+  "fonts": {
+   "title": "Anton",
+   "caption": "Unbounded 800"
+  },
+  "caption": {
+   "mode": "1–2 words, glowing caps, small pop",
+   "position": "chest height",
+   "case": "upper",
+   "box": "none, white glow"
+  },
+  "textbox": "none",
+  "text": {
+   "font": "Unbounded 800",
+   "title_font": "Anton",
+   "color": "#FFFFFF",
+   "title_color": "#D9FFE3",
+   "highlight": "#FFFFFF",
+   "outline": "#FFFFFF",
+   "outline_w": 0,
+   "glow": "#FFFFFF",
+   "box": "none",
+   "position": "middle",
+   "words_per_line": 2,
+   "case": "upper",
+   "size": 70,
+   "anim": "glowpop"
+  },
+  "grade": "neon-presenter",
+  "pace": "Very lively",
+  "effects_suggested": [
+   "neon-keyword",
+   "neon-pill",
+   "light-burn",
+   "phone-3d-float",
+   "zoom-through-text"
+  ],
+  "rules": [
+   "a neon key word for every concrete claim, number, problem or result (50–60 % of the runtime)",
+   "one neon colour per moment: green money/yes, red problem, cyan calm/tech, purple AI/game, pink desire",
+   "a light burn or glitch with a sub boom + swish on every change",
+   "a neon pill for the CTA at the end",
+   "music bed 7–8 dB under the voice, about −14.5 LUFS"
+  ],
+  "source_file": "~/Editing Beast/styles/neon-dimension/STYLE.md",
+  "pacing": {
+   "value": "Very lively pace",
+   "status": "draft"
+  },
+  "engine": "engine"
+ },
+ {
+  "id": "meme-chaos",
+  "name": "Meme Chaos",
+  "source": "Editing Beast draft 18 Nov 2026, learned from Alina's final dumb-scale edit (17 Nov 2026)",
+  "status": "draft",
+  "look": "One uncut office take of friends doing a challenge, kept raw; every person's turn gets its own meme moment (explosion, disco lights, XP wallpaper, big-face warp, clapping-cat sticker, crash line), each with a meme sound on the exact frame; zoom pulses on claps; a wavy sparkle hook over the first seconds; plain white captions low on the frame; upbeat music bed that switches to elevator music for the punchline.",
+  "palette": {
+   "bg": "#FFFFFF",
+   "accent": "#1C5428",
+   "text": "#FFFFFF"
+  },
+  "fonts": {
+   "title": "Coiny",
+   "caption": "TikTok Sans"
+  },
+  "caption": {
+   "mode": "2–4 word phrases, hard swap",
+   "position": "low (75 % of the height)",
+   "case": "lower, as spoken",
+   "box": "none, thin dark outline + soft shadow"
+  },
+  "textbox": "none",
+  "text": {
+   "font": "TikTok Sans",
+   "title_font": "Coiny",
+   "color": "#FFFFFF",
+   "title_color": "#FFFFFF",
+   "highlight": "#FFFFFF",
+   "outline": "#000000",
+   "outline_w": 3,
+   "shadow": true,
+   "box": "none",
+   "position": "lower",
+   "words_per_line": 4,
+   "case": "lower",
+   "size": 66,
+   "anim": "still"
+  },
+  "grade": "natural",
+  "pace": "Medium",
+  "effects_suggested": [
+   "wavy-sparkle-hook",
+   "meme-explosion",
+   "disco-lights",
+   "xp-background",
+   "greenscreen-meme",
+   "face-warp",
+   "clap-pulse",
+   "crash-line"
+  ],
+  "rules": [
+   "keep the take raw: cut only dead waits (1–3 s with nothing happening); no transitions, hard cuts only",
+   "one meme moment per person's turn, never the same effect twice; the effect and its sound land on the same frame",
+   "a meme sound on every entrance and big moment (Spawn, Vine boom, Windows XP, Faa, explosion); applause on real claps",
+   "clap zoom pulses (1.05–1.08, 0.2 s) whenever people clap",
+   "music: an upbeat bed ~2 dB under the voice in the intro, level with it after; switch to elevator music for the punchline",
+   "mix at −14.5 LUFS integrated; meme hits 2–9 dB over the speech, the biggest (Windows XP, Faa) loudest"
+  ],
+  "sfx_suggested": [
+   "Spawn",
+   "Vine boom",
+   "Windows XP Start",
+   "Faaa",
+   "Crowd Applause",
+   "Explosion · meme blast",
+   "Disco beat (Alina)"
+  ],
+  "source_file": "~/Editing Beast/styles/meme-chaos/STYLE.md",
+  "pacing": {
+   "value": "Medium pace",
+   "status": "draft"
+  },
+  "engine": "engine"
+ },
+ {
+  "id": "butter-steps",
+  "name": "Butter Steps",
+  "source": "Editing Beast (approved there 18 Nov 2026)",
+  "source_file": "~/Editing Beast/styles/butter-steps/STYLE.md",
+  "status": "draft",
+  "look": "Calm locked-off talking head teaching a process in N steps: a step header (yellow STEP n + white caps) and clean white UI cards in the top third, one-word lowercase captions at chest height with key words in butter yellow, a serif-italic hook title over a wall of past reels, voice only, ends in 'comment WORD'.",
+  "palette": {
+   "bg": "#2D2216",
+   "accent": "#F5EEA8",
+   "text": "#FFFFFF"
+  },
+  "fonts": {
+   "title": "Playfair Display Italic 700",
+   "caption": "Inter Tight 800"
+  },
+  "caption": {
+   "mode": "one word at a time, lowercase",
+   "position": "chest (68 %)",
+   "case": "lower",
+   "box": "none, soft shadow"
+  },
+  "textbox": "white rounded UI cards",
+  "text": {
+   "font": "Inter Tight 800",
+   "title_font": "Playfair Display Italic 700",
+   "color": "#FFFFFF",
+   "title_color": "#F5EEA8",
+   "highlight": "#F5EEA8",
+   "outline": "#000000",
+   "outline_w": 0,
+   "shadow": true,
+   "box": "none",
+   "position": "middle",
+   "cap_pos": {
+    "x": 0.5,
+    "y": 0.68,
+    "w": 0.86
+   },
+   "words_per_line": 1,
+   "case": "lower",
+   "size": 64,
+   "anim": "still"
+  },
+  "grade": "natural",
+  "pace": "Medium",
+  "effects_suggested": [
+   "title-mask-rise",
+   "notification-stack",
+   "apple-ui-toggles"
+  ],
+  "rules": [
+   "jump cuts only, no zooms, no transitions",
+   "every on-screen change hits its word",
+   "voice only, no music, about −14 LUFS"
+  ],
+  "pacing": {
+   "value": "Medium pace",
+   "status": "draft"
+  },
+  "engine": "engine"
+ },
+ {
+  "id": "star-glitch",
+  "name": "Star Glitch",
+  "source": "Editing Beast (approved there 18 Nov 2026)",
+  "source_file": "~/Desktop/Editing Beast/styles/star-glitch/STYLE.md",
+  "status": "draft",
+  "was": "cream-scatter",
+  "look": "Chatty locked-off talking head where the captions are the design: one cream colour (#FBFCDA), one ultra-tight heavy grotesk, no stroke or shadow, sized by importance and scattered, with (asides), >quotes< and a typing_ cursor; an identity sting (★ glitch name, counter, script logo, zoom-through into a fast music montage), big PiP screen recordings, a payoff card, then 'ok bye !'.",
+  "palette": {
+   "bg": "#1C1B17",
+   "accent": "#FBFCDA",
+   "text": "#FBFCDA"
+  },
+  "fonts": {
+   "title": "Inter Tight 800",
+   "caption": "Inter Tight 800"
+  },
+  "caption": {
+   "mode": "one word at a time, hard cut, sized by importance",
+   "position": "scattered",
+   "case": "lower",
+   "box": "none"
+  },
+  "textbox": "none",
+  "text": {
+   "font": "Inter Tight 800",
+   "title_font": "Inter Tight 800",
+   "color": "#FBFCDA",
+   "title_color": "#FBFCDA",
+   "highlight": "#FBFCDA",
+   "outline": "#000000",
+   "outline_w": 0,
+   "box": "none",
+   "position": "middle",
+   "words_per_line": 1,
+   "case": "lower",
+   "size": 92,
+   "anim": "still"
+  },
+  "grade": "natural",
+  "pace": "Very lively",
+  "effects_suggested": [
+   "stack-behind-me",
+   "hanging-keyword"
+  ],
+  "rules": [
+   "captions cream #FBFCDA, no stroke/shadow, hard cuts on the word",
+   "jump cuts only, no punch-ins, no grade",
+   "identity sting: ★ glitch name, counter, script logo, zoom-through into a 0.3 s-per-cut montage",
+   "music only under the montage (about 5 dB under the voice)",
+   "−15 LUFS"
+  ],
+  "pacing": {
+   "value": "Very lively pace",
+   "status": "draft"
+  },
+  "engine": "engine"
+ }
+]

@@ -1,0 +1,59 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Cinema Lexicon open bookend, as in Alina's approved CL01 v6 (1.18–2.30 s): the brand's cream ground, the phrase in three
+   tiers that fly in one by one (a script word in the accent colour, small connector words, the object in huge caps),
+   the app's phone rising tilted, its UI pills popping, the app icon; then everything whips off left with blur and the take is back. */
+#ground { position: absolute; inset: 0; }
+#dare { position: absolute; left: 0; width: 1080px; top: 150px; text-align: center; font: 400 250px/1 'Great Vibes', cursive; opacity: 0; white-space: nowrap; }
+#try { position: absolute; left: 0; width: 1080px; top: 420px; text-align: center; font-size: 84px; line-height: 1; opacity: 0; white-space: nowrap; }
+#app { position: absolute; left: 0; width: 1080px; top: 510px; text-align: center; font-size: 170px; line-height: 1; text-transform: uppercase; opacity: 0; white-space: nowrap; }
+#icon { position: absolute; left: 150px; top: 700px; width: 210px; height: 210px; border-radius: 48px; overflow: hidden; box-shadow: 0 18px 40px rgba(0,0,0,.25); z-index: 2; }
+#icon img { width: 100%; height: 100%; display: block; }
+#phone { position: absolute; left: 270px; top: 760px; width: 540px; height: 893px; border-radius: 44px; overflow: hidden; box-shadow: 0 34px 80px rgba(0,0,0,.28); background: #111; }
+#phone img { width: 100%; height: 100%; object-fit: cover; }
+.pill { position: absolute; padding: 18px 34px; border-radius: 999px; font: 800 40px/1 'Inter Tight', sans-serif; color: #fff; letter-spacing: -0.01em; white-space: nowrap; box-shadow: 0 10px 24px rgba(0,0,0,.18); }
+#card { position: absolute; inset: 0; }
+#card .clip { width: 1080px; height: 1920px; object-fit: cover; }
+#gfx { position: absolute; inset: 0; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div id="card"><video class="clip" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video></div>
+  <div id="gfx"><div id="ground"></div><div id="dare"></div><div id="try"></div><div id="app"></div></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params || {}, B = V.brand || {}, C = Object.assign({ ground: '#FCF0D4', accent: '#E028B0', ink: '#1B1B1F' }, B.colors || {});
+const FONT = `'${B.font || 'Lilita One'}', 'Lilita One', sans-serif`;
+const HOLD = Math.max(.7, Math.min(2.6, +P.hold || 1.12));
+const g = document.getElementById('gfx');
+document.getElementById('ground').style.background = C.ground;
+// the three tiers: given by the director, else split from the words (first word script, last two huge, the rest small)
+const ws = String(P.text || V.word || '').replace(/\s+/g, ' ').trim().split(' ').filter(Boolean);
+const script = P.script != null ? P.script : (ws[0] || '');
+const big = P.big != null ? P.big : ws.slice(-2).join(' ');
+const small = P.small != null ? P.small : ws.slice(1, Math.max(1, ws.length - 2)).join(' ');
+const dare = document.getElementById('dare'), tr = document.getElementById('try'), app = document.getElementById('app');
+dare.textContent = script; tr.textContent = small; app.textContent = big;
+dare.style.color = C.accent; app.style.color = C.accent; tr.style.color = C.ink;
+tr.style.fontFamily = FONT; app.style.fontFamily = FONT;
+HK.fit(app, 1000, 170); HK.fit(tr, 980, 84); HK.fit(dare, 1000, 250);
+if (!small) { app.style.top = '440px'; }
+// the product: phone with its screen, icon, three UI pills (only what the brand kit has)
+const pills = (B.open_pills || B.pills || []).slice(0, 3), spots = [[40, 960, -12], [700, 1240, 10], [110, 1470, 7]];
+if (B.phone) g.insertAdjacentHTML('beforeend', `<div id="phone"><img src="${B.phone}" alt=""></div>`);
+if (B.icon) g.insertAdjacentHTML('beforeend', `<div id="icon"><img src="${B.icon}" alt=""></div>`);
+pills.forEach((p, i) => g.insertAdjacentHTML('beforeend', `<div class="pill" id="pl${i}" style="left:${spots[i][0]}px;top:${spots[i][1]}px;background:${p.color || C.accent};color:${p.ink || '#fff'}">${HK.esc(p.label)}</div>`));
+if (!B.phone && !B.icon) { ['dare', 'try', 'app'].forEach((id, i) => document.getElementById(id).style.top = (parseInt(getComputedStyle(document.getElementById(id)).top) + 420) + 'px'); }
+const tl = gsap.timeline({ paused: true });
+tl.set('#gfx', { opacity: 1 }, 0);
+tl.fromTo('#dare', { opacity: 0, y: 40, filter: 'blur(10px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: .2, ease: 'expo.out' }, 0);
+tl.fromTo('#try', { opacity: 0 }, { opacity: 1, duration: .01 }, .12);
+tl.fromTo('#app', { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: .18, ease: 'expo.out' }, Math.min(.6, HOLD * .55));
+if (B.phone) tl.fromTo('#phone', { y: 700, rotation: 0 }, { y: 0, rotation: -5, duration: .34, ease: 'expo.out' }, .02);
+pills.forEach((p, i) => tl.fromTo('#pl' + i, { scale: 0, rotation: 0 }, { scale: 1, rotation: spots[i][2], duration: .24, ease: 'back.out(2.2)' }, .22 + i * .16));
+if (B.icon) tl.fromTo('#icon', { scale: 0, rotation: 0 }, { scale: 1, rotation: -8, duration: .26, ease: 'back.out(2.4)' }, Math.min(.62, HOLD * .55));
+// whip off left with blur, the take is under it
+tl.to('#gfx > *:not(#ground)', { x: -260, opacity: 0, filter: 'blur(16px)', duration: .12, ease: 'power3.in' }, HOLD - .13);
+tl.to('#ground', { opacity: 0, duration: .01 }, HOLD);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

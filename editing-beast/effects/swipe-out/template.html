@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Text hook 8 (ref "swipe / out"): the text pops out of my hand small, jumps to the top-left of the frame, holds,
+   and at the end I swipe it away: it slides out of frame with a skew and motion blur. */
+#t { text-align: left; transform-origin: 0 50%; }
+#t div { line-height: .88; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="t" class="hk"></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params, f = HK.face(V);
+const ls = HK.lines(HK.words(HK.text(P, V)), 2);
+const t = document.getElementById('t'); t.innerHTML = ls.map(l => `<div>${HK.esc(l)}</div>`).join('');
+HK.fit(t, 560, 104);
+const R = t.getBoundingClientRect();
+const ty = Math.max(150, f[1] - R.height - 40); t.style.left = '70px'; t.style.top = ty + 'px';
+const hs = HK.hands(V); const hand = hs[0] || [f[0] + f[2] * .6, f[1] + f[3] * 1.6, 100, 100];
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('#t', { x: hand[0] - 70, y: hand[1] - ty, scale: .3, opacity: 0 }, { opacity: 1, duration: .1 }, .05);
+tl.to('#t', { x: 0, y: 0, scale: 1, duration: .42, ease: EASE.out }, .1);
+tl.to('#t', { x: -1200, skewX: 18, filter: 'blur(14px)', duration: .34, ease: 'power2.in' }, 2.4);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

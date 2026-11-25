@@ -1,0 +1,74 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<link rel="stylesheet" href="/ui/vetto/fonts.css"><link rel="stylesheet" href="/ui/fonts-extra.css">
+<style>
+/* Preview only: one style card in the Style step. Your frame in the style's colour grade, your words as captions in
+   the style's text look and caption motion (same rules as the editor preview and engine/render.py), the hook in the
+   style's title font. */
+.grp { position: absolute; text-align: center; line-height: 1.12; transform: translate(-50%, -50%); }
+.grp .w { display: inline-block; padding: .04em .14em; border-radius: .2em; margin: 0 .02em; }
+#ti { position: absolute; text-align: center; line-height: 1.08; transform: translate(-50%, -50%); }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video id="bg" class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="ti"></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params, tx = P.tx || {}, root = document.getElementById('root');
+document.getElementById('bg').style.filter = P.grade_css || 'none';
+const an = tx.anim || 'pop', hi = tx.highlight || '#FCDB1D', col = tx.color || '#fff', ow = tx.outline_w ?? 6;
+const cs = x => tx.case === 'upper' ? x.toUpperCase() : tx.case === 'lower' ? x.toLowerCase() : x;
+const look = (el, fam, weight, style, color) => {
+  el.style.fontFamily = `'${fam}', 'TikTok Sans', sans-serif`; el.style.fontWeight = weight || 700; el.style.fontStyle = style || 'normal'; el.style.color = color;
+  if (tx.glow) el.style.textShadow = `0 0 .07em ${tx.glow}8c,0 0 .16em ${tx.glow}4d,0 .04em .18em rgb(0 0 0 / .3)`;
+  else if (!tx.box || tx.box === 'none') { if (ow > 0) { el.style.webkitTextStroke = `${(.09 * ow / 6).toFixed(3)}em ${tx.outline || '#000'}`; el.style.paintOrder = 'stroke fill'; }
+    el.style.textShadow = `0 .06em .2em rgb(0 0 0 / ${tx.shadow || ow > 0 ? .35 : .2})`; }
+};
+const boxCss = { box: `background:${tx.box_color || '#000'};`, plate: 'background:rgb(0 0 0 / .55);', glass: 'background:rgb(255 255 255 / .18);', sticker: 'background:#fff;color:#111;' }[tx.box] || '';
+const PY = { upper: .22, middle: .48, lower: .74 };
+const cp = tx.cap_pos || { x: .5, y: PY[tx.position || 'lower'] ?? .74, w: .86 };
+// words: the ones said in these 3 s (relative times), else the text spread evenly
+let words = (V.words || []).filter(w => w.t < 2.7);
+if (!words.length) words = HK.words(V.word || 'your words here').map((w, i) => ({ text: w, t: .1 + i * .3, e: .1 + i * .3 + .28 }));
+const per = an === 'punch' ? 1 : Math.max(1, +tx.words_per_line || 3);
+const groups = []; for (let i = 0; i < words.length; i += per) groups.push(words.slice(i, i + per));
+const tl = gsap.timeline({ paused: true });
+groups.forEach((g, gi) => {
+  const el = document.createElement('div'); el.className = 'grp';
+  el.style.left = cp.x * 1080 + 'px'; el.style.top = cp.y * 1920 + 'px'; el.style.width = cp.w * 1080 + 'px';
+  el.style.fontSize = (+tx.size || 78) * (an === 'punch' ? 1.5 : 1) + 'px';
+  look(el, tx.font_css || tx.font, tx.font_weight, tx.font_style, col);
+  const key = an === 'slam' ? g.reduce((b, w, i) => w.text.length > g[b].text.length ? i : b, 0) : -1;
+  el.innerHTML = g.map((w, i) => `<span class="w" style="${boxCss}${i === key ? `background:${hi};color:${tx.box_text || '#111'};-webkit-text-stroke:0;` : ''}">${HK.esc(cs(w.text))}</span>`).join(' ');
+  root.appendChild(el);
+  const gs = g[0].t, ge = groups[gi + 1] ? groups[gi + 1][0].t : Math.min(2.95, g[g.length - 1].e + .4);
+  tl.set(el, { autoAlpha: 0 }, 0).set(el, { autoAlpha: 1 }, gs).set(el, { autoAlpha: 0 }, ge);
+  if (an === 'rise') tl.fromTo(el, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: .16, ease: EASE.out }, gs);
+  if (an === 'glowpop') tl.fromTo(el, { scale: 1.12 }, { scale: 1, duration: .09 }, gs);
+  if (an === 'slam') tl.fromTo(el, { scale: 1.3 }, { scale: .96, duration: .09 }, gs).to(el, { scale: 1, duration: .06 }, gs + .09);
+  const sp = [...el.querySelectorAll('.w')];
+  sp.forEach((s, i) => {
+    const t = g[i].t, tn = g[i + 1] ? g[i + 1].t : ge;
+    if (an === 'reveal' || an === 'blurin') tl.set(s, { opacity: 0 }, 0);
+    if (an === 'blurin') tl.fromTo(s, { opacity: 0, filter: 'blur(14px)' }, { opacity: 1, filter: 'blur(0px)', duration: .2, ease: EASE.out }, t);
+    else if (an === 'reveal') tl.set(s, { opacity: 1 }, t);
+    if (i === key) return;
+    const on = { color: hi }, off = { color: col };
+    if (an === 'pop') { on.scale = 1.08; off.scale = 1; }
+    if (an === 'glow') { on.textShadow = `0 0 .35em ${hi},0 0 .7em ${hi}`; off.textShadow = s.style.textShadow || el.style.textShadow; }
+    if (an === 'box') { on.backgroundColor = hi; on.color = tx.box_text || '#111'; off.backgroundColor = 'rgba(0,0,0,0)'; }
+    if (an === 'bounce') tl.fromTo(s, { scale: .7 }, { scale: 1.16, duration: .1, ease: EASE.out }, t).to(s, { scale: 1, duration: .09 }, t + .1);
+    if (an === 'punch') tl.fromTo(s, { scale: 1.24 }, { scale: 1, duration: .14, ease: EASE.out }, t);
+    tl.set(s, on, t);
+    if (an !== 'karaoke') tl.set(s, off, tn);
+  });
+});
+if (P.title) {
+  const ti = document.getElementById('ti'), tp = tx.title_pos || { x: .5, y: .15, w: .84 };
+  ti.textContent = P.title; ti.style.left = tp.x * 1080 + 'px'; ti.style.top = tp.y * 1920 + 'px'; ti.style.width = tp.w * 1080 + 'px';
+  ti.style.fontSize = (+tx.title_size || Math.round((+tx.size || 78) * 1.15)) + 'px';
+  look(ti, tx.title_css || tx.title_font || tx.font, tx.title_weight, tx.title_style, tx.title_color || col);
+}
+tl.set({}, {}, 3);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

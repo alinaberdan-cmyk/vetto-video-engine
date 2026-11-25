@@ -1,0 +1,44 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* PDF p.6 "Zoom + proof cards": the camera pushes in smoothly on the face, 1 → 1.14, aimed at the face found in the
+   frame. White rounded cards land beside the head: first left (label, big orange number, note); after half a second
+   it leaves and a second card lands right. Cards never cover the face. Only real numbers. */
+#zoom { position: absolute; inset: 0; }
+.pc { position: absolute; width: 330px; padding: 26px 30px 28px; background: #fff; border-radius: 30px; box-shadow: 0 24px 60px rgba(0,0,0,.35); opacity: 0; }
+.pc .l { font: 600 26px/1.2 'Instrument Sans'; color: #6b6b6b; text-transform: uppercase; letter-spacing: .05em; }
+.pc .n { font: 700 104px/1.05 'TikTok Sans'; color: #E8572A; margin: 8px 0 6px; }
+.pc .x { font: 500 28px/1.25 'Instrument Sans'; color: #222; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div id="zoom"><video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video></div>
+  <div class="pc" id="c1"><div class="l"></div><div class="n"></div><div class="x"></div></div>
+  <div class="pc" id="c2"><div class="l"></div><div class="n"></div><div class="x"></div></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params, f = V.face;
+const fill = (id, l, n, x) => { const c = document.getElementById(id); c.querySelector('.l').textContent = l || ''; c.querySelector('.n').textContent = n; c.querySelector('.x').textContent = x || ''; };
+fill('c1', P.card1_label, P.card1_number, P.card1_note);
+fill('c2', P.card2_label, P.card2_number, P.card2_note);
+const fx = f[0] + f[2] / 2, fy = f[1] + f[3] / 2, S = 1.14;
+document.getElementById('zoom').style.transformOrigin = `${fx}px ${fy}px`;
+// face box after the zoom, to keep the cards beside the head
+const fl = fx + (f[0] - fx) * S, fr = fx + (f[0] + f[2] - fx) * S, ft = fy + (f[1] - fy) * S;
+const c1 = document.getElementById('c1'), c2 = document.getElementById('c2');
+// a side is usable only if a 330 px card fits between the frame edge and the face; else the card goes under the chin
+const CW = 330, leftOk = fl - 30 >= CW + 20, rightOk = 1080 - fr - 30 >= CW + 20;
+const fb = fy + (f[1] + f[3] - fy) * S;
+const place = (c, side, dy) => {
+  if (side === 'left' && leftOk) { c.style.left = (fl - CW - 30) + 'px'; c.style.top = Math.max(140, ft + dy) + 'px'; }
+  else if (side === 'right' && rightOk) { c.style.left = (fr + 30) + 'px'; c.style.top = Math.max(140, ft + dy) + 'px'; }
+  else if (leftOk || rightOk) place(c, leftOk ? 'left' : 'right', dy);
+  else { c.style.left = (fx - CW / 2) + 'px'; c.style.top = Math.min(1920 - 420, fb + 40) + 'px'; }
+};
+place(c1, 'left', 0); place(c2, 'right', 40);
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('#zoom', { scale: 1 }, { scale: S, duration: 3, ease: 'power1.inOut' }, 0);
+tl.fromTo('#c1', { opacity: 0, x: -60, rotation: -4 }, { opacity: 1, x: 0, rotation: -2, duration: .35, ease: EASE.out }, .15);
+tl.to('#c1', { opacity: 0, x: -60, duration: .26, ease: EASE.inOut }, .15 + .35 + .5);
+tl.fromTo('#c2', { opacity: 0, x: 60, rotation: 4 }, { opacity: 1, x: 0, rotation: 2, duration: .35, ease: EASE.out }, 1.2);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

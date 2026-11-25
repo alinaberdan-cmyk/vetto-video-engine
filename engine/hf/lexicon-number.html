@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Cinema Lexicon giant number (CL01 v6 "in less than 10 minutes", 34.92–36.20 s): the brand's cream card, the lead-in in
+   small ink type, the number huge in the accent colour sliding in from the right with motion blur, the unit under it. */
+.clip.take { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
+#card { position: absolute; inset: 0; }
+#ground { position: absolute; inset: 0; }
+#lead { position: absolute; left: 0; width: 1080px; top: 560px; text-align: center; font-size: 76px; line-height: 1; white-space: nowrap; opacity: 0; }
+#num { position: absolute; left: 0; width: 1080px; top: 690px; text-align: center; font-size: 560px; line-height: 1; white-space: nowrap; opacity: 0; }
+#unit { position: absolute; left: 0; width: 1080px; top: 1270px; text-align: center; font-size: 140px; line-height: 1; white-space: nowrap; opacity: 0; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip take" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="card"><div id="ground"></div><div id="lead"></div><div id="num"></div><div id="unit"></div></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params || {}, B = V.brand || {}, C = Object.assign({ ground: '#FCF0D4', accent: '#E028B0', ink: '#1B1B1F' }, B.colors || {});
+const FONT = `'${B.font || 'Lilita One'}', 'Lilita One', sans-serif`;
+const HOLD = Math.max(.8, Math.min(2.8, +P.hold || 1.28));
+document.getElementById('ground').style.background = C.ground;
+const lead = document.getElementById('lead'), num = document.getElementById('num'), unit = document.getElementById('unit');
+lead.textContent = P.lead || ''; num.textContent = P.number || V.word || ''; unit.textContent = P.unit || '';
+[lead, num, unit].forEach(e => e.style.fontFamily = FONT);
+lead.style.color = C.ink; unit.style.color = C.ink; num.style.color = C.accent;
+HK.fit(num, 1000, 560); HK.fit(unit, 1000, 140); HK.fit(lead, 1000, 76);
+// when to show each part: the lead at once, the number on its word, the unit on its word (relative times from the director)
+const tNum = Math.max(.1, Math.min(HOLD - .3, +P.t_number || .7)), tUnit = Math.max(tNum + .1, Math.min(HOLD - .1, +P.t_unit || tNum + .2));
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('#lead', { opacity: 0 }, { opacity: 1, duration: .01 }, .02);
+tl.fromTo('#num', { x: 900, opacity: 0, filter: 'blur(30px)' }, { x: 0, opacity: 1, filter: 'blur(0px)', duration: .24, ease: 'expo.out' }, tNum);
+tl.fromTo('#unit', { opacity: 0 }, { opacity: 1, duration: .01 }, tUnit);
+tl.set('#card', { opacity: 0 }, HOLD);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

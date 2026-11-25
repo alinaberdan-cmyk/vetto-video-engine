@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Neon Dimension transitions §7: light burn (white radial flash with warm edges, 0.08 s up, 0.22 s down, the frame
+   brightened x1.6) on the cut, then the incoming shot zoom-blurs in (scale 1.35 + 18 px blur → 1 in 0.22 s).
+   kind = glitch: 4 frames of offset colour bars, scanlines and a ±14 px shake instead. */
+#v { position: absolute; inset: 0; }
+#burn { position: absolute; inset: 0; background: radial-gradient(circle at 50% 45%, #ffffff 0%, #fff4dc 35%, #ffb36b 70%, rgba(255,120,40,.6) 100%); opacity: 0; mix-blend-mode: screen; }
+#bars { position: absolute; inset: 0; opacity: 0; background: repeating-linear-gradient(0deg, rgba(255,0,80,.45) 0 26px, rgba(0,220,255,.4) 26px 44px, transparent 44px 120px); mix-blend-mode: screen; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div id="v"><video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video></div>
+  <div id="burn"></div><div id="bars"></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params, kind = String(P.kind || 'burn').toLowerCase();
+const tl = gsap.timeline({ paused: true });
+if (kind.startsWith('g')) {
+  tl.set('#bars', { opacity: 1 }, .02);
+  [14, -12, 9, -6].forEach((x, i) => tl.set('#v', { x, filter: i % 2 ? 'hue-rotate(40deg)' : 'saturate(1.6)' }, .02 + i * .033));
+  tl.set('#bars', { opacity: 0 }, .16).set('#v', { x: 0, filter: 'none' }, .16);
+} else {
+  tl.to('#burn', { opacity: 1, duration: .08, ease: 'none' }, .02).to('#v', { filter: 'brightness(1.6)', duration: .08, ease: 'none' }, .02);
+  tl.to('#burn', { opacity: 0, duration: .22, ease: EASE.out }, .1).to('#v', { filter: 'brightness(1)', duration: .22 }, .1);
+  tl.fromTo('#v', { scale: 1.35 }, { scale: 1, duration: .22, ease: EASE.out }, .1);
+  tl.fromTo('#v .clip', { filter: 'blur(18px)' }, { filter: 'blur(0px)', duration: .22, ease: EASE.out }, .1);
+}
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

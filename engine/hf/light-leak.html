@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Clean White transitions §5: a light leak sweeping left → right (peak at frame 3 of 6), cool (mint → white →
+   lavender) or warm (yellow → orange → red); "flash" = a white flash instead. The rest of the 3 s is the clip, with
+   a 1.12 punch-in under the leak (the cut it hides). */
+#v { position: absolute; inset: 0; transform-origin: 50% 45%; }
+#leak { position: absolute; left: -900px; top: -200px; width: 1500px; height: 2300px; mix-blend-mode: screen; opacity: 0; filter: blur(40px); }
+#flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div id="v"><video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video></div>
+  <div id="leak"></div><div id="flash"></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params, tone = String(P.tone || 'cool').toLowerCase();
+const leak = document.getElementById('leak');
+leak.style.background = tone.startsWith('w') ? 'radial-gradient(ellipse at 50% 50%, #FFE58A 0%, #FF8A3D 35%, #E2402C 60%, transparent 75%)'
+  : 'radial-gradient(ellipse at 50% 50%, #ffffff 0%, #BFF5D0 30%, #C9B8FF 55%, transparent 75%)';
+const tl = gsap.timeline({ paused: true });
+if (tone.startsWith('f')) {
+  tl.to('#flash', { opacity: 1, duration: .07, ease: 'none' }, .05).to('#flash', { opacity: 0, duration: .18, ease: EASE.out }, .12);
+} else {
+  tl.fromTo('#leak', { x: 0, opacity: 0 }, { x: 1500, duration: .36, ease: 'none' }, .02);
+  tl.to('#leak', { opacity: 1, duration: .1, ease: 'none' }, .02).to('#leak', { opacity: 0, duration: .2, ease: 'none' }, .18);
+}
+if (String(P.punch || 'yes').toLowerCase() !== 'no') tl.set('#v', { scale: 1.12 }, .12);   // punch = no: the director handles punch-ins
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

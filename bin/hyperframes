@@ -1,0 +1,7 @@
+#!/bin/zsh
+# HyperFrames for the Vetto Video Engine: the engine's own ffmpeg/ffprobe, no telemetry, no skill installs.
+ENG="${0:A:h:h}"
+export HYPERFRAMES_FFMPEG_PATH="${VETTO_FFMPEG:-$(command -v ffmpeg || echo "$ENG/bin/ffmpeg")}"
+export HYPERFRAMES_FFPROBE_PATH="$ENG/tools/node_modules/@ffprobe-installer/darwin-arm64/ffprobe"
+export HYPERFRAMES_NO_TELEMETRY=1 HYPERFRAMES_SKIP_SKILLS=1 DO_NOT_TRACK=1
+exec "$ENG/tools/node_modules/.bin/hyperframes" "$@"

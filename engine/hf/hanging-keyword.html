@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Cinema Lexicon §5.2: the key word big (8–14 % of the width), italic for a stressed word or CAPS for a shout; the small
+   connector words (35–45 % of its size) hang off its corners: the ones before it top-left, after it bottom-right.
+   Hard cut on each spoken onset, no animation. Centred at 45–55 % of the height. White, no stroke, faint shadow. */
+#k { position: absolute; left: 0; right: 0; text-align: center; color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.25); }
+#k .big { font: 800 140px/.9 'Inter Tight', sans-serif; letter-spacing: -.035em; display: inline-block; }
+#k .big.it { font-style: italic; }
+#k .sm { font: 800 54px/1 'Inter Tight', sans-serif; display: block; letter-spacing: -.02em; }
+#k .pre { text-align: left; } #k .post { text-align: right; }
+#box { display: inline-block; text-align: center; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="k"><div id="box"></div></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params, ws = HK.words(HK.text(P, V)).slice(0, 6);
+const want = (P.key || '').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
+let ki = want ? ws.findIndex(w => w.toLowerCase().replace(/[^\p{L}\p{N}]/gu, '') === want) : -1;
+if (ki < 0) ki = ws.reduce((b, w, i) => w.length > ws[b].length ? i : b, 0);
+const caps = String(P.caps || '').toLowerCase().startsWith('y');
+const box = document.getElementById('box');
+box.innerHTML = (ki ? `<span class="sm pre">${HK.esc(ws.slice(0, ki).join(' '))}</span>` : '') +
+  `<span class="big ${caps ? '' : 'it'}" data-i="${ki}">${HK.esc(caps ? ws[ki].toUpperCase() : ws[ki])}</span>` +
+  (ki < ws.length - 1 ? `<span class="sm post">${HK.esc(ws.slice(ki + 1).join(' '))}</span>` : '');
+HK.fit(box.querySelector('.big'), 900, 140);
+const k = document.getElementById('k'); k.style.top = (960 - k.getBoundingClientRect().height / 2) + 'px';
+const tl = gsap.timeline({ paused: true });
+const pre = box.querySelector('.pre'), big = box.querySelector('.big'), post = box.querySelector('.post');
+[pre, big, post].forEach(e => e && tl.set(e, { opacity: 0 }, 0));
+if (pre) tl.set(pre, { opacity: 1 }, HK.at(V, 0));
+tl.set(big, { opacity: 1 }, HK.at(V, ki));
+if (post) tl.set(post, { opacity: 1 }, HK.at(V, ki + 1));
+tl.set('#k', { opacity: 0 }, 2.85);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

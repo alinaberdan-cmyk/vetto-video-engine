@@ -1,0 +1,38 @@
+[
+ {
+  "id": "reel",
+  "name": "Reel",
+  "size": [
+   1080,
+   1920
+  ],
+  "note": "TikTok and Instagram Reels, 9:16, the main cut"
+ },
+ {
+  "id": "story",
+  "name": "Stories",
+  "size": [
+   1080,
+   1920
+  ],
+  "note": "the reel split at sentence ends, each part 15 s or less"
+ },
+ {
+  "id": "carousel",
+  "name": "Carousel",
+  "size": [
+   1080,
+   1350
+  ],
+  "note": "4:5 slides from the reel's beats, up to 10"
+ },
+ {
+  "id": "cover",
+  "name": "Cover",
+  "size": [
+   1080,
+   1920
+  ],
+  "note": "one frame with the hook as title"
+ }
+]

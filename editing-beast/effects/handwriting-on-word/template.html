@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* From Alina's brief: when the word is said it is written by hand on screen, stroke by stroke over 0.4 s, with a
+   scribbled underline, in her ink colour; placed in empty space, never on the face. */
+#hw { position: absolute; font: 700 150px/1.1 'Dancing Script'; white-space: nowrap; clip-path: inset(0 100% 0 0); text-shadow: 0 4px 18px rgba(0,0,0,.25); }
+svg { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: visible; }
+#ul { fill: none; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="hw"></div><svg><path id="ul"/></svg>
+</div>
+<script>
+/*VARS*/
+const P = V.params, f = V.face, ink = P.color || '#FFFFFF';
+const hw = document.getElementById('hw'); hw.textContent = P.text || V.word || 'food'; hw.style.color = ink;
+if (P.font) hw.style.fontFamily = `'${P.font}', 'Dancing Script'`;
+let w = hw.getBoundingClientRect().width; if (w > 900) { hw.style.fontSize = (150 * 900 / w) + 'px'; w = 900; }
+const h = hw.getBoundingClientRect().height;
+// empty space: the side of the face with more room, at eye level; if neither side fits, above the head
+const leftRoom = f[0], rightRoom = 1080 - f[0] - f[2];
+let x, y;
+if (Math.max(leftRoom, rightRoom) > w * .7) { x = rightRoom > leftRoom ? Math.min(1080 - w - 40, f[0] + f[2] + 20) : Math.max(40, f[0] - w - 20); y = f[1] + f[3] * .25; }
+else { x = (1080 - w) / 2; y = Math.max(120, f[1] - h - 40); }
+hw.style.left = x + 'px'; hw.style.top = y + 'px';
+let seed = 5; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const uy = y + h * .95; let d = `M ${x} ${uy}`;
+for (let i = 1; i <= 6; i++) d += ` Q ${x + w * (i - .5) / 6} ${uy + (rnd() - .5) * 24} ${x + w * i / 6} ${uy + (rnd() - .5) * 14}`;
+d += ` Q ${x + w * .6} ${uy + 30} ${x + w * .15} ${uy + 22}`;   // the pen comes back: a scribble
+const ul = document.getElementById('ul'); ul.setAttribute('d', d); ul.style.stroke = ink;
+const L = ul.getTotalLength(); gsap.set(ul, { strokeDasharray: L, strokeDashoffset: L });
+const tl = gsap.timeline({ paused: true });
+tl.to('#hw', { clipPath: 'inset(0 0% 0 0)', duration: .4, ease: 'none' }, .05);
+tl.to(ul, { strokeDashoffset: 0, duration: .35, ease: 'power1.inOut' }, .45);
+tl.to(['#hw', ul], { opacity: 0, duration: .24, ease: EASE.inOut }, 2.6);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

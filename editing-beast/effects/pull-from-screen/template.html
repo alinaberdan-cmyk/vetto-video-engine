@@ -1,0 +1,34 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Text hook 5 (ref "pulling text out of your screen"): the text first sits small on a screen I hold (a black label,
+   tilted, yellow Title Case), then I pull it out: it flies up and grows into a big yellow title over my head. */
+#box { position: absolute; background: #0d0d0d; border-radius: 10px; transform-origin: 50% 50%; }
+#t { text-align: center; color: var(--y, #FAFD6C); text-transform: none; transform-origin: 50% 50%; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="box"></div><div id="t" class="hk"></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params, f = HK.face(V); document.getElementById('root').style.setProperty('--y', P.color || '#FAFD6C');
+const ls = HK.lines(HK.words(HK.text(P, V)), 3);
+const t = document.getElementById('t'); t.innerHTML = ls.map(l => `<div>${HK.esc(l)}</div>`).join('');
+HK.fit(t, 880, 84);
+const R = t.getBoundingClientRect();
+// where the screen is: left / middle / right, low in the frame (a laptop on the lap, a phone in the hand)
+const side = String(P.screen || 'middle').toLowerCase(), sx = side.startsWith('l') ? 300 : side.startsWith('r') ? 760 : 540;
+const sy = Math.min(1560, f[1] + f[3] * 2.4), small = 240 / R.width;
+const endTop = Math.max(150, f[1] - R.height - 50);
+t.style.left = (1080 - R.width) / 2 + 'px'; t.style.top = endTop + 'px';
+const dx = sx - 540, dy = sy - (endTop + R.height / 2);
+const box = document.getElementById('box'); box.style.width = R.width * small + 40 + 'px'; box.style.height = R.height * small + 30 + 'px';
+box.style.left = sx - (R.width * small + 40) / 2 + 'px'; box.style.top = sy - (R.height * small + 30) / 2 + 'px';
+const tl = gsap.timeline({ paused: true });
+tl.set('#t', { x: dx, y: dy, scale: small, rotation: -8, textTransform: 'capitalize' }, 0).set('#box', { rotation: -8 }, 0);
+tl.fromTo(['#box', '#t'], { opacity: 0 }, { opacity: 1, duration: .16, ease: EASE.out }, .04);
+tl.to('#box', { opacity: 0, scale: .85, duration: .2, ease: EASE.inOut }, .95);
+tl.to('#t', { x: 0, y: 0, scale: 1, rotation: 0, duration: .5, ease: EASE.drawer }, .95).set('#t', { textTransform: 'lowercase' }, 1.2);
+tl.to('#t', { opacity: 0, duration: .22, ease: EASE.inOut }, 2.74);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

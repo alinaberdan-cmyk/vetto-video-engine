@@ -1,0 +1,1 @@
+{"name":"vetto-video-engine-tools","private":true,"description":"Local tools for the Vetto Video Engine: HyperFrames (renderer, cutouts) and an ffprobe binary.","dependencies":{"@ffprobe-installer/ffprobe":"2.1.2","hyperframes":"0.8.186"}}

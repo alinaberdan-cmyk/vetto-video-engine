@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* From Alina's brief: cut me out and place me over another background (a photo from the image bank), matching the
+   light a little and adding a soft contact shadow. The background slowly zooms. */
+#bgimg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: brightness(.88) saturate(1.05); }
+#shadow { position: absolute; left: 140px; width: 800px; top: 1820px; height: 120px; border-radius: 50%; background: rgba(0,0,0,.55); filter: blur(40px); }
+#me video { filter: brightness(1.02) contrast(1.02); }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div id="bgimg"></div><div id="shadow"></div>
+  <div id="me"><video class="clip full" data-start="0" data-duration="3" src="assets/cut.webm" muted></video></div>
+</div>
+<script>
+/*VARS*/
+const pick = Math.max(0, Math.min(V.images.length - 1, +(V.params.image_index || 1) - 1));   // 1 = first photo
+document.getElementById('bgimg').style.backgroundImage = `url(${V.images[pick]})`;
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('#bgimg', { scale: 1.04 }, { scale: 1.12, duration: 3, ease: 'none' }, 0);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

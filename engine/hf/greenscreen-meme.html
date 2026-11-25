@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Meme Chaos (the clapping purple cat in the dumb-scale edit, 17 Nov 2026): a keyed green-screen meme clip pops in
+   beside the person (scale 0.6 → 1 with a small overshoot, 0.2 s), plays (looping) for `hold` s, pops out (0.12 s).
+   Clips live in engine/hf/fx/memes/<name>/, made with library/add_meme_clip.py from any green-screen video. */
+#m { position: absolute; transform-origin: 50% 100%; opacity: 0; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="m"></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params, name = String(P.clip || '').trim().toLowerCase(), meta = (V.memes || {})[name] || { w: 9, h: 16 };
+const at = FX.num(P.at, 0), hold = FX.num(P.hold, 1.25), size = FX.num(P.size, .36), f = HK.face(V);
+const pos = String(P.position || 'right').toLowerCase();
+// height = size × frame height; bottom at 80 % of the frame (on the table line), x by position
+const h = 1920 * size, w = h * meta.w / meta.h;
+const cx = pos.startsWith('l') ? 1080 * .3 : pos.startsWith('c') ? 540 : pos.startsWith('f') ? f[0] + f[2] / 2 : 1080 * .66;
+const box = document.getElementById('m');
+Object.assign(box.style, { width: w + 'px', height: h + 'px', left: (cx - w / 2) + 'px', top: (1920 * .8 - h) + 'px' });
+const tl = gsap.timeline({ paused: true });
+const end = Math.min(2.95, at + hold);
+if (!FX.meme(tl, box, V, name, at, end, true)) {
+  // no clip yet (the editor preview): a green-screen picture shows where the clip will pop in
+  box.innerHTML = '<div style="position:absolute;inset:0;border-radius:26px;background:#00B140;box-shadow:0 18px 40px rgba(0,0,0,.3)">'
+    + '<svg viewBox="0 0 90 160" style="position:absolute;left:18%;top:22%;width:64%;height:70%" fill="#008a32"><circle cx="45" cy="38" r="22"/><path d="M8 160c0-40 16-70 37-70s37 30 37 70z"/></svg>'
+    + '<div style="position:absolute;left:0;right:0;bottom:6%;text-align:center;font:700 42px/1 \'Instrument Sans\',sans-serif;color:#fff;opacity:.85">green screen</div></div>';
+}
+tl.fromTo(box, { opacity: 1, scale: .6 }, { scale: 1, duration: .2, ease: 'back.out(1.8)' }, at);
+tl.to(box, { scale: .7, opacity: 0, duration: .12, ease: EASE.inOut }, end - .12);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

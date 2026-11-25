@@ -1,0 +1,53 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* From Alina's brief: when the word that names an object is said, a hand-drawn pencil outline goes around it:
+   graphite texture, a slightly wobbly line drawn on over 0.5 s, a small arrow and a handwritten label; it follows
+   the object if it moves (the hand holding it, found by Apple Vision), stays 1.5 s, then is erased. */
+svg { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: visible; }
+.pen { fill: none; stroke: #2b2b2b; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; filter: url(#graphite); }
+#lab { font: 700 100px 'Dancing Script'; fill: #fff; stroke: #2b2b2b; stroke-width: 2.5px; paint-order: stroke fill; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <svg><defs><filter id="graphite"><feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="2" seed="3" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="5" result="d"/><feComposite in="d" in2="n" operator="arithmetic" k1="0" k2="1" k3="-0.25" k4="0"/></filter></defs>
+    <g id="grp"><path id="ring" class="pen" style="stroke:#fff;stroke-width:16;filter:none;opacity:.9"/><path id="ring2" class="pen"/><path id="arrow" class="pen"/><text id="lab"></text></g></svg>
+</div>
+<script>
+/*VARS*/
+const P = V.params;
+let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+// the object: Alina's box if she pointed at it (params.box = [x,y,w,h] in 0..1), else the hand that is not on the face
+const handAt = tr => { const f = tr.face; const hs = (tr.hands || []).filter(h => !f || !(h[0] < f[0] + f[2] && h[0] + h[2] > f[0] && h[1] < f[1] + f[3] && h[1] + h[3] > f[1]));
+  return hs.sort((a, b) => b[2] * b[3] - a[2] * a[3])[0]; };
+let keys = V.track.map(tr => ({ t: tr.t, b: handAt(tr) })).filter(k => k.b);
+if (P.box) keys = [{ t: 0, b: [P.box[0] * 1080, P.box[1] * 1920, P.box[2] * 1080, P.box[3] * 1920] }];
+if (!keys.length) keys = [{ t: 0, b: [640, 760, 260, 260] }];
+// object = the hand box grown a little (what it holds)
+const grow = b => { const g = .45; return [b[0] - b[2] * g / 2, b[1] - b[3] * g / 2, b[2] * (1 + g), b[3] * (1 + g)]; };
+const clampB = b => { const w = Math.min(b[2], 900), h = Math.min(b[3], 900); return [Math.min(Math.max(b[0], 40), 1040 - w), Math.min(Math.max(b[1], 120), 1800 - h), w, h]; };
+const b0 = clampB(grow(keys[0].b)), cx0 = b0[0] + b0[2] / 2, cy0 = b0[1] + b0[3] / 2;
+// a wobbly loop drawn by hand, a little more than one turn
+let d = '';
+for (let i = 0; i <= 64; i++) {
+  const a = -Math.PI / 2 + i / 64 * Math.PI * 2.12, wob = 1 + (rnd() - .5) * .09;
+  const x = cx0 + Math.cos(a) * b0[2] * .58 * wob, y = cy0 + Math.sin(a) * b0[3] * .58 * wob;
+  d += (i ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1) + ' ';
+}
+['ring', 'ring2'].forEach(id => document.getElementById(id).setAttribute('d', d));
+// label above or below the loop, whichever has room; arrow from the label to the loop
+const above = b0[1] > 360, lx = Math.min(Math.max(cx0, 220), 860), ly = above ? b0[1] - 150 : b0[1] + b0[3] + 190;
+const lab = document.getElementById('lab'); lab.textContent = P.label || V.word || 'this'; lab.setAttribute('x', lx); lab.setAttribute('y', ly); lab.setAttribute('text-anchor', 'middle');
+const ay0 = above ? ly + 20 : ly - 80, ay1 = above ? b0[1] - 10 : b0[1] + b0[3] + 10;
+document.getElementById('arrow').setAttribute('d', `M ${lx} ${ay0} Q ${lx + 40} ${(ay0 + ay1) / 2} ${cx0} ${ay1} M ${cx0 - 22} ${ay1 + (above ? -26 : 26)} L ${cx0} ${ay1} L ${cx0 + 24} ${ay1 + (above ? -22 : 22)}`);
+const len = id => document.getElementById(id).getTotalLength();
+const tl = gsap.timeline({ paused: true });
+['ring', 'ring2'].forEach(id => { const L = len(id); gsap.set('#' + id, { strokeDasharray: L, strokeDashoffset: L });
+  tl.to('#' + id, { strokeDashoffset: 0, duration: .5, ease: 'power1.inOut' }, .05); tl.to('#' + id, { strokeDashoffset: -L, duration: .3, ease: EASE.inOut }, 2.1); });
+const La = len('arrow'); gsap.set('#arrow', { strokeDasharray: La, strokeDashoffset: La });
+tl.to('#arrow', { strokeDashoffset: 0, duration: .3 }, .45).to('#arrow', { strokeDashoffset: La, duration: .25 }, 2.1);
+tl.fromTo('#lab', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .3 }, .5).to('#lab', { opacity: 0, duration: .25 }, 2.15);
+// follow the object
+keys.forEach((k, i) => { if (!i) return; const b = clampB(grow(k.b)); tl.to('#grp', { x: b[0] + b[2] / 2 - cx0, y: b[1] + b[3] / 2 - cy0, duration: k.t - keys[i - 1].t, ease: 'none' }, keys[i - 1].t); });
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

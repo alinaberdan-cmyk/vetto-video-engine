@@ -1,0 +1,35 @@
+/* Shared by every effect template: fonts (Vetto text-look faces + Anton), the 1080x1920 root, helpers. */
+@font-face { font-family: 'Anton'; src: url('Anton-Regular.ttf'); }
+@font-face { font-family: 'TikTok Sans'; src: url('TikTokSans-Bold.ttf'); font-weight: 700; }
+@font-face { font-family: 'Instrument Sans'; src: url('InstrumentSans-Bold.ttf'); font-weight: 700; }
+@font-face { font-family: 'Dancing Script'; src: url('DancingScript-Variable.ttf'); font-weight: 400 700; }
+@font-face { font-family: 'Bodoni Moda'; src: url('BodoniModa-Italic.ttf'); font-style: italic; }
+@font-face { font-family: 'Courier Prime'; src: url('CourierPrime-Bold.ttf'); font-weight: 700; }
+@font-face { font-family: 'Gelasio'; src: url('Gelasio-Bold.ttf'); font-weight: 700; }
+@font-face { font-family: 'Source Serif 4'; src: url('SourceSerif4-Regular.ttf'); }
+@font-face { font-family: 'Space Mono'; src: url('SpaceMono-Regular.ttf'); }
+@font-face { font-family: 'Meow Script'; src: url('MeowScript-Regular.ttf'); }
+@font-face { font-family: 'Instrument Serif'; src: url('InstrumentSerif-400.ttf'); }
+@font-face { font-family: 'Instrument Serif'; src: url('InstrumentSerif-Italic-400.ttf'); font-style: italic; }
+html, body { margin: 0; background: #000; }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #000; font-family: 'Instrument Sans', 'Helvetica Neue', sans-serif; }
+.full { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+.abs { position: absolute; }
+.dim { position: absolute; inset: 0; background: #000; opacity: 0; }
+/* text hooks (17 Nov 2026, from the ugcwithnyomi reference): wide heavy sans + handwriting */
+@font-face { font-family: 'Unbounded'; src: url('Unbounded-800.ttf'); font-weight: 800; }
+@font-face { font-family: 'Gochi Hand'; src: url('GochiHand-400.ttf'); }
+@font-face { font-family: 'Caveat'; src: url('Caveat-700.ttf'); font-weight: 700; }
+.hk { position: absolute; font-family: 'Unbounded', 'Archivo Black', sans-serif; font-weight: 800; color: #fff; letter-spacing: -.035em;
+      line-height: .9; text-transform: lowercase; text-shadow: 0 6px 26px rgba(0,0,0,.28); white-space: nowrap; }
+.hk .y { color: var(--y, #FAFD6C); }
+/* Editing Beast styles (17 Nov 2026): Clean White / Cinema Lexicon / Neon Dimension stand-in faces */
+@font-face { font-family: 'Inter Tight'; src: url('InterTight-800.ttf'); font-weight: 800; }
+@font-face { font-family: 'EB Garamond'; src: url('EBGaramond-Italic-500.ttf'); font-style: italic; font-weight: 500; }
+@font-face { font-family: 'Montserrat'; src: url('Montserrat-ExtraBoldItalic.ttf'); font-style: italic; font-weight: 800; }
+.glowtxt { color: #fff; text-shadow: 0 0 6px rgba(255,255,255,.55), 0 0 18px rgba(255,255,255,.35), 0 0 36px rgba(255,255,255,.15); }
+/* Meme Chaos (18 Nov 2026): the wavy hook face */
+@font-face { font-family: 'Coiny'; src: url('Coiny-Regular.ttf'); }
+/* Cinema Lexicon v6 (18 Nov 2026): brand display face + the open card's script word */
+@font-face { font-family: 'Lilita One'; src: url('LilitaOne-Regular.ttf'); }
+@font-face { font-family: 'Great Vibes'; src: url('GreatVibes-400.ttf'); }

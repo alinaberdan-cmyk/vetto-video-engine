@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Text hook 4 (ref "writing text / on screen"): yellow handwriting appears letter by letter as if my finger writes
+   it in the air, near the raised hand, in two lines. Gochi Hand, Caveat for letters it lacks (ș, ț). */
+#t { font: 400 112px/1.05 'Gochi Hand', 'Caveat', cursive; color: var(--y, #FAFD6C); position: absolute; white-space: nowrap; text-shadow: 0 4px 18px rgba(0,0,0,.25); letter-spacing: .04em; }
+#t span { display: inline-block; opacity: 0; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="t"></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params, f = HK.face(V); document.getElementById('root').style.setProperty('--y', P.color || '#FAFD6C');
+const ls = HK.lines(HK.words(HK.text(P, V)), 2);
+const t = document.getElementById('t');
+t.innerHTML = ls.map((l, k) => `<div style="padding-left:${k * 1.6}em">${[...l].map(c => c === ' ' ? '<span>&nbsp;</span>' : `<span>${HK.esc(c)}</span>`).join('')}</div>`).join('');
+HK.fit(t, 1000, 112);
+// near the raised hand (above the head when no hand is found)
+const hs = HK.hands(V).slice().sort((a, b) => a[1] - b[1]); const hand = hs[0];
+const h = t.getBoundingClientRect().height, w = t.getBoundingClientRect().width;
+const y = hand ? hand[1] - h * .2 : f[1] - h - 30;
+t.style.top = Math.max(110, Math.min(1500, y)) + 'px'; t.style.left = Math.max(30, Math.min(1050 - w, hand ? hand[0] - 40 : 40)) + 'px';
+const tl = gsap.timeline({ paused: true });
+const ch = [...t.querySelectorAll('span')], step = Math.min(.075, 1.7 / ch.length);
+ch.forEach((c, i) => tl.fromTo(c, { opacity: 0, scale: .6, rotation: (i % 3 - 1) * 6 }, { opacity: 1, scale: 1, rotation: 0, duration: .12, ease: EASE.out }, .08 + i * step));
+tl.to('#t', { opacity: 0, duration: .22, ease: EASE.inOut }, 2.74);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

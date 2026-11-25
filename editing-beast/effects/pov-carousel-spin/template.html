@@ -1,0 +1,54 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* PDF p.4 "Carousel around me": 8 cards 4:5 spin in a ring around me; ring centre at chest height, slight tilt;
+   cards behind me are hidden by me, cards in front pass over me but never cover the face; first 0.6 s the cards
+   fly out from behind me into the ring, then ~110 degrees per second; background slightly darkened. */
+.card { position: absolute; width: 300px; height: 375px; left: 0; top: 0; border-radius: 22px; overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,.45); background: #fff; }
+.card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+#cut { z-index: 5; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted style="z-index:0"></video>
+  <div class="dim" id="dim" style="z-index:1"></div>
+  <video id="cut" class="clip full" data-start="0" data-duration="3" src="assets/cut.webm" muted></video>
+</div>
+<script>
+/*VARS*/
+const root = document.getElementById('root');
+const N = 8, imgs = V.images.length ? V.images : [];
+const cards = [];
+for (let i = 0; i < N; i++) {
+  const c = document.createElement('div'); c.className = 'card';
+  c.innerHTML = `<img src="${imgs[i % imgs.length]}">`;
+  root.appendChild(c); cards.push(c);
+}
+const f = V.face;                                   // [x, y, w, h]
+const cx = f[0] + f[2] / 2, chestY = Math.min(1400, f[1] + f[3] * 1.55);
+const faceTop = f[1] - 40, faceBottom = f[1] + f[3] + 40;
+const R = 480, tilt = 0.45;                         // ring radius, vertical squash (the slight tilt)
+const st = { a: 0, spread: 0 };
+function draw() {
+  cards.forEach((c, i) => {
+    const ang = (st.a + i * 360 / N) * Math.PI / 180;
+    const s = Math.sin(ang), co = Math.cos(ang);
+    const front = co > 0;
+    const r = R * st.spread;
+    const x = cx + s * r - 150, y = chestY + co * r * tilt - 188 + (1 - st.spread) * 60;
+    const depth = 0.6 + 0.4 * (co + 1) / 2;       // front cards a little bigger
+    // never cover the face: a front card whose box meets the face drops below it
+    let yy = y;
+    if (front && yy < faceBottom && yy + 375 * depth > faceTop && x < f[0] + f[2] && x + 300 * depth > f[0]) yy = faceBottom;
+    c.style.transform = `translate(${x}px, ${yy}px) scale(${depth}) rotateY(${-s * 28}deg)`;
+    c.style.zIndex = front ? 10 : 2;
+    c.style.opacity = st.spread < .05 ? 0 : 1;
+    c.style.filter = front ? 'none' : 'brightness(.8)';
+  });
+}
+const tl = gsap.timeline({ paused: true, onUpdate: draw });
+tl.to('#dim', { opacity: .28, duration: .4 }, 0);
+tl.fromTo(st, { spread: 0 }, { spread: 1, duration: .6, ease: 'back.out(1.4)', onUpdate: draw }, 0);
+tl.fromTo(st, { a: -40 }, { a: -40 + 110 * 3, duration: 3, ease: 'none', onUpdate: draw }, 0);
+draw();
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

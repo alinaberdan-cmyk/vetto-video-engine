@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Neon Dimension world type §4.2 over the presenter (the engine has no 3D worlds yet): the room goes dark with one
+   neon colour, a small white lowercase lead-in builds word by word, then the key word SLAMS in: Anton caps,
+   skewX(-7deg), near-white core with a neon glow, from scale 2.2 + 16 px blur to 1 in 0.2 s, slow push to 1.07.
+   Red and pink flicker. Grain, dust specks and a vignette over everything. */
+#v { position: absolute; inset: 0; filter: brightness(.38) contrast(1.25) saturate(.8); }
+#tint { position: absolute; inset: 0; mix-blend-mode: color; opacity: .55; }
+#vig { position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,.75) 100%); }
+#grain { position: absolute; inset: -50px; opacity: .18; background-image: radial-gradient(rgba(255,255,255,.9) 1px, transparent 1.4px), radial-gradient(rgba(0,0,0,.9) 1px, transparent 1.4px); background-size: 7px 9px, 11px 6px; }
+#lead { position: absolute; left: 0; right: 0; top: 640px; text-align: center; color: #fff; font: 800 58px/1.1 'Inter Tight', sans-serif; letter-spacing: -.01em; text-shadow: 0 0 12px rgba(255,255,255,.4); }
+#lead .w { opacity: 0; display: inline-block; margin: 0 .1em; }
+#key { position: absolute; left: 0; right: 0; top: 730px; text-align: center; font: 400 290px/.92 'Anton'; text-transform: uppercase; }
+#key span { display: inline-block; transform: skewX(-7deg); }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div id="v"><video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video></div>
+  <div id="tint"></div><div id="vig"></div>
+  <div id="lead"></div><div id="key"><span></span></div><div id="grain"></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params;
+const NEON = { green: ['#39FF6A', '#D9FFE3'], red: ['#FF2A2A', '#FFD6D6'], cyan: ['#22D3FF', '#DDF7FF'], purple: ['#B455FF', '#F0E0FF'], pink: ['#FF2E9A', '#FFE0F0'], gold: ['#FFD23F', '#FFF6D8'] };
+const name = String(P.neon || 'green').toLowerCase(), [neon, core] = NEON[name] || NEON.green;
+document.getElementById('tint').style.background = neon;
+const ws = HK.words(HK.text(P, V)).slice(0, 7);
+const want = (P.key || '').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
+let ki = want ? ws.findIndex(w => w.toLowerCase().replace(/[^\p{L}\p{N}]/gu, '') === want) : -1;
+if (ki < 0) ki = ws.length - 1;
+const lead = ws.filter((_, i) => i !== ki);
+document.getElementById('lead').innerHTML = lead.map(w => `<span class="w">${HK.esc(w.toLowerCase())}</span>`).join(' ');
+HK.fit(document.getElementById('lead'), 960, 58);
+const k = document.querySelector('#key span'); k.textContent = ws[ki].replace(/[.,!?]+$/, '');
+k.style.color = core; k.style.textShadow = `0 0 6px ${neon}, 0 0 22px ${neon}, 0 0 60px ${neon}, 0 0 120px ${neon}`;
+HK.fit(document.getElementById('key'), 980, 290);
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('#v', { filter: 'brightness(1) contrast(1) saturate(1)' }, { filter: 'brightness(.38) contrast(1.25) saturate(.8)', duration: .18 }, 0);
+tl.fromTo(['#tint', '#vig'], { opacity: 0 }, { opacity: (i) => i ? 1 : .55, duration: .18 }, 0);
+[...document.querySelectorAll('#lead .w')].forEach((w, i) => tl.fromTo(w, { opacity: 0, filter: 'blur(8px)' }, { opacity: 1, filter: 'blur(0px)', duration: .14, ease: EASE.out }, .1 + i * .14));
+const ks = .15 + lead.length * .14 + .1;
+tl.fromTo('#key', { scale: 2.2, opacity: 0, filter: 'blur(16px)' }, { scale: 1, opacity: 1, filter: 'blur(0px)', duration: .2, ease: 'expo.out' }, ks);
+tl.to('#key', { scale: 1.07, duration: 2.6 - ks, ease: 'none' }, ks + .2);
+if (name === 'red' || name === 'pink') [0, 1, 2].forEach(i => tl.to('#key', { opacity: .35, duration: .03, yoyo: true, repeat: 1 }, ks + .22 + i * .07));
+for (let i = 0; i < 12; i++) tl.set('#grain', { x: (i * 31) % 40 - 20, y: (i * 47) % 40 - 20 }, i * .25);
+tl.to(['#lead', '#key'], { opacity: 0, filter: 'blur(10px)', duration: .1 }, 2.86);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Green-screen background (Alina, 18 Nov 2026; was "Windows XP background"): the room behind the person is replaced by
+   a photo or video she attaches in the chat bar ("Want a change?"), the last one attached unless the effect's `file`
+   field names another. The person is cut out (HyperFrames remove-background) and stays in front. The background is
+   made into a 3 s 1080x1920 clip (assets/bg.mp4, cover-fitted; a short video loops) by engine/hfx.py. Fades in and
+   out in 3 frames; by default it covers the whole 3 s piece (`at`, `hold` move it). */
+#bg { position: absolute; inset: 0; opacity: 0; }
+#bg .clip { width: 1080px; height: 1920px; object-fit: cover; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="bg"><video class="clip full" data-start="0" data-duration="3" src="assets/bg.mp4" muted></video></div>
+  <video id="cut" class="clip full" data-start="0" data-duration="3" src="assets/cut.webm" muted></video>
+</div>
+<script>
+/*VARS*/
+const P = V.params, at = FX.num(P.at, 0), hold = FX.num(P.hold, 3);
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('#bg', { opacity: 0 }, { opacity: 1, duration: .1, ease: 'none' }, at);
+if (at + hold < 2.95) tl.to('#bg', { opacity: 0, duration: .1, ease: 'none' }, at + hold);
+tl.set({}, {}, 3);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

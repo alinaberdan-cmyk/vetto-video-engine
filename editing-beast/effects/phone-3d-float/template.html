@@ -1,0 +1,32 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* PDF p.8 "Video in a 3D phone": dark warm background with a soft orange side light; a logo-free phone drawn in code
+   (rounded body, metal edge, camera cutout) with the video on its screen. It starts turned 38° on the vertical axis
+   and 12° on the horizontal; in 0.9 s it turns to face the camera and a glare sweeps the glass. Then it floats up
+   and down 10 px and slowly comes closer. A soft shadow under it moves with it. */
+#root { background: radial-gradient(ellipse 70% 60% at 0% 40%, rgba(232,120,50,.55), transparent 70%), radial-gradient(ellipse at 50% 60%, #2a1a12, #0c0807 75%); perspective: 2200px; }
+#wrap { position: absolute; left: 540px; top: 930px; width: 0; height: 0; transform-style: preserve-3d; }
+#phone { position: absolute; left: -330px; top: -680px; width: 660px; height: 1360px; border-radius: 96px; padding: 22px; box-sizing: border-box;
+  background: linear-gradient(135deg, #8d8f94, #3b3d42 30%, #a7a9ae 55%, #2e3034 80%, #74767b);
+  box-shadow: inset 0 0 0 4px #1a1b1d, 0 40px 90px rgba(0,0,0,.55); }
+#screen { position: relative; width: 100%; height: 100%; border-radius: 76px; overflow: hidden; background: #000; }
+#screen video { width: 100%; height: 100%; object-fit: cover; }
+#island { position: absolute; left: 50%; top: 26px; width: 190px; height: 54px; margin-left: -95px; border-radius: 27px; background: #000; z-index: 3; }
+#glare { position: absolute; inset: -40%; background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.38) 50%, transparent 60%); z-index: 2; }
+#shadow { position: absolute; left: 540px; top: 1700px; width: 560px; height: 70px; margin-left: -280px; border-radius: 50%; background: rgba(0,0,0,.6); filter: blur(26px); }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div id="shadow"></div>
+  <div id="wrap"><div id="phone"><div id="screen"><div id="island"></div><div id="glare"></div>
+    <video class="clip" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video></div></div></div>
+</div>
+<script>
+/*VARS*/
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('#wrap', { rotationY: 38, rotationX: 12 }, { rotationY: 0, rotationX: 0, duration: .9, ease: 'power3.out' }, 0);
+tl.fromTo('#glare', { x: -700 }, { x: 700, duration: .9, ease: 'power2.inOut' }, .25);
+tl.fromTo('#wrap', { scale: .86 }, { scale: .96, duration: 3, ease: 'power1.inOut' }, 0);
+tl.to('#wrap', { y: -10, duration: .5, ease: 'sine.inOut' }, .9).to('#wrap', { y: 10, duration: 1, ease: 'sine.inOut' }, 1.4).to('#wrap', { y: 0, duration: .6, ease: 'sine.inOut' }, 2.4);
+tl.to('#shadow', { scale: .92, opacity: .8, duration: .5, ease: 'sine.inOut' }, .9).to('#shadow', { scale: 1.06, opacity: 1, duration: 1, ease: 'sine.inOut' }, 1.4).to('#shadow', { scale: 1, duration: .6 }, 2.4);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

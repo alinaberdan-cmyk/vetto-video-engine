@@ -1,0 +1,49 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Cinema Lexicon close bookend for ads (CL01 v6, 38.44 s to the end): the take shrinks into a rounded card on the brand's
+   cream ground, the app icon + name drop in on top, chat bubbles pop around the card, the slogan fades in under it.
+   (Not for interviews or opinion pieces: those end on the punchline, CL02.) */
+#ground { position: absolute; inset: 0; }
+#shadow { position: absolute; left: 150px; top: 250px; width: 780px; height: 1386px; border-radius: 44px; background: #111; box-shadow: 0 30px 80px rgba(0,0,0,.25); opacity: 0; }
+#plate { position: absolute; inset: 0; overflow: hidden; }
+#plate .clip { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+#brandrow { position: absolute; left: 0; width: 1080px; top: 70px; display: flex; justify-content: center; align-items: center; gap: 26px; opacity: 0; }
+#icon { width: 130px; height: 130px; border-radius: 30px; overflow: hidden; box-shadow: 0 10px 24px rgba(0,0,0,.2); }
+#icon img { width: 100%; height: 100%; display: block; }
+#name { font-size: 76px; line-height: 1; white-space: nowrap; }
+#slogan { position: absolute; left: 0; width: 1080px; top: 1800px; text-align: center; font-size: 58px; line-height: 1; white-space: nowrap; opacity: 0; }
+.bub { position: absolute; width: 230px; height: 120px; border-radius: 34px; opacity: 0; }
+.bub i { position: absolute; left: 34px; height: 14px; border-radius: 7px; background: rgba(255,255,255,.9); }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div id="ground"></div>
+  <div id="shadow"></div>
+  <div id="plate"><video class="clip" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video></div>
+  <div id="brandrow"><div id="name"></div></div>
+  <div id="slogan"></div>
+  <div id="b1" class="bub" style="left:800px;top:330px"><i style="top:36px;width:150px"></i><i style="top:68px;width:100px"></i></div>
+  <div id="b2" class="bub" style="left:40px;top:860px"><i style="top:36px;width:120px"></i><i style="top:68px;width:160px"></i></div>
+  <div id="b3" class="bub" style="left:830px;top:1330px"><i style="top:36px;width:160px"></i><i style="top:68px;width:90px"></i></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params || {}, B = V.brand || {}, C = Object.assign({ ground: '#FCF0D4', accent: '#E028B0', ink: '#1B1B1F' }, B.colors || {});
+const FONT = `'${B.font || 'Lilita One'}', 'Lilita One', sans-serif`;
+document.getElementById('ground').style.background = C.ground;
+const name = document.getElementById('name'), slogan = document.getElementById('slogan');
+name.textContent = P.name != null ? P.name : (B.name || ''); name.style.fontFamily = FONT; name.style.color = C.ink;
+slogan.textContent = P.slogan != null ? P.slogan : (B.slogan || B.tagline || ''); slogan.style.fontFamily = FONT; slogan.style.color = C.accent;
+HK.fit(slogan, 1000, 58);
+if (B.icon) document.getElementById('brandrow').insertAdjacentHTML('afterbegin', `<div id="icon"><img src="${B.icon}" alt=""></div>`);
+document.querySelectorAll('.bub').forEach(b => { b.style.background = C.accent; b.style.boxShadow = `0 14px 30px ${C.accent}59`; });
+const bubbles = P.bubbles === 'no' ? [] : ['#b1', '#b2', '#b3'];
+const tl = gsap.timeline({ paused: true });
+tl.set('#plate', { transformOrigin: '50% 50%', scale: 1, y: 0, clipPath: 'inset(0px 0px 0px 0px round 0px)' }, 0);
+tl.to('#plate', { scale: .722, y: -17, clipPath: 'inset(0px 0px 0px 0px round 60px)', duration: .26, ease: 'power3.inOut' }, 0);
+tl.fromTo('#shadow', { opacity: 0 }, { opacity: 1, duration: .2, ease: 'power2.out' }, .12);
+tl.fromTo('#brandrow', { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: .22, ease: 'expo.out' }, .18);
+if (B.icon) tl.fromTo('#icon', { scale: .4, rotation: -20 }, { scale: 1, rotation: 0, duration: .3, ease: 'back.out(2.4)' }, .18);
+bubbles.forEach((s, i) => tl.fromTo(s, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: .22, ease: 'back.out(2.6)' }, .26 + i * .16));
+tl.fromTo('#slogan', { opacity: 0 }, { opacity: 1, duration: .2, ease: 'power2.out' }, .86);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

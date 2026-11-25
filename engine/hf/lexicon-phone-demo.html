@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Cinema Lexicon product demo (CL01 v6 "look how many options there are", 18.24–19.82 s): the official screen recording
+   inside a black phone frame on the brand's cream card, three of the app's buttons popping around it. Captions go dark. */
+.clip.take { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
+#card { position: absolute; inset: 0; }
+#ground { position: absolute; inset: 0; }
+#scr { position: absolute; left: 260px; top: 338px; width: 560px; height: 1230px; object-fit: cover; border-radius: 68px; }
+#shot { position: absolute; left: 260px; top: 338px; width: 560px; height: 1230px; object-fit: cover; border-radius: 68px; }
+#frame { position: absolute; left: 252px; top: 330px; width: 576px; height: 1246px; border: 16px solid #111; border-radius: 82px; box-shadow: 0 40px 90px rgba(0,0,0,.28); }
+.pill { position: absolute; padding: 18px 34px; border-radius: 999px; font: 800 40px/1 'Inter Tight', sans-serif; color: #fff; white-space: nowrap; box-shadow: 0 10px 24px rgba(0,0,0,.18); }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip take" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="card"><div id="ground"></div><video id="scr" class="clip" data-start="0" data-duration="3" src="assets/brand_screen.mp4" muted></video></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params || {}, B = V.brand || {}, C = Object.assign({ ground: '#FCF0D4', accent: '#E028B0' }, B.colors || {});
+const HOLD = Math.max(.8, Math.min(2.9, +P.hold || 1.58));
+const card = document.getElementById('card');
+document.getElementById('ground').style.background = C.ground;
+// the screen recording is copied (trimmed at screen_video_start) to assets/brand_screen.mp4; previews show the app screen still
+if (!B.screen_video || V.preview) { document.getElementById('scr').style.display = 'none'; if (B.phone) card.insertAdjacentHTML('beforeend', `<img id="shot" src="${B.phone}" alt="">`); }
+card.insertAdjacentHTML('beforeend', '<div id="frame"></div>');
+const ps = (B.cta_pill ? [B.cta_pill] : []).concat(B.pills || []).slice(0, 3), spots = [[60, 520, -8], [760, 860, 9], [70, 1180, -6]];
+ps.forEach((p, i) => card.insertAdjacentHTML('beforeend', `<div class="pill" id="p${i}" style="left:${spots[i][0]}px;top:${spots[i][1]}px;background:${p.color || C.accent};color:${p.ink && /^#1|^#0/.test(p.ink) ? '#fff' : (p.ink || '#fff')};${p.shadow ? `border:5px solid ${p.shadow};` : ''}">${HK.esc(p.label)}</div>`));
+ps.forEach((p, i) => { const el = document.getElementById('p' + i), r = el.getBoundingClientRect(); if (r.right > 1050) el.style.left = Math.max(20, 1050 - r.width) + 'px'; });
+const tl = gsap.timeline({ paused: true });
+ps.forEach((p, i) => tl.fromTo('#p' + i, { scale: 0, rotation: 0 }, { scale: 1, rotation: spots[i][2], duration: .24, ease: 'back.out(2.2)' }, .12 + i * .16));
+tl.set('#card', { opacity: 0 }, HOLD);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

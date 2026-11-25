@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Text hook 2 (ref "placing / text / behind / you"): one huge word per line, stacked tight around the head, each
+   one popping in when it is said; one word in yellow; I stay in front (person cutout over the text). */
+#t { left: 0; right: 0; text-align: center; }
+#t div { display: block; line-height: .86; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="t" class="hk"></div>
+  <video id="cut" class="clip full" data-start="0" data-duration="3" src="assets/cut.webm" muted></video>
+</div>
+<script>
+/*VARS*/
+const P = V.params, f = HK.face(V); document.getElementById('root').style.setProperty('--y', P.color || '#FAFD6C');
+const ws = HK.words(HK.text(P, V)).slice(0, 6);
+const hi = (P.highlight || '').toLowerCase().trim(); const hiI = hi ? ws.findIndex(w => w.toLowerCase().replace(/[^\p{L}\p{N}]/gu, '') === hi.replace(/[^\p{L}\p{N}]/gu, '')) : Math.min(1, ws.length - 1);
+const t = document.getElementById('t');
+t.innerHTML = ws.map((w, i) => `<div class="${i === hiI ? 'y' : ''}">${HK.esc(w)}</div>`).join('');
+const size = ws.length > 4 ? 170 : 205;
+[...t.children].forEach(d => HK.fit(d, 960, size));
+const h = t.getBoundingClientRect().height;
+// the block's middle sits a little below the eyes, so the head covers the middle lines
+t.style.top = Math.max(110, Math.min(1920 - h - 200, f[1] + f[3] * .55 - h / 2)) + 'px';
+const tl = gsap.timeline({ paused: true });
+[...t.children].forEach((d, i) => tl.fromTo(d, { opacity: 0, scale: 1.18 }, { opacity: 1, scale: 1, duration: .18, ease: EASE.out }, HK.at(V, i, .26)));
+tl.to('#t', { opacity: 0, duration: .22, ease: EASE.inOut }, 2.74);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

@@ -1,0 +1,45 @@
+/* Fonts added 16 Nov 2026 from Google Fonts (OFL), generated from looks.json: one CSS family per face. */
+@font-face{font-family:'Bebas Neue';src:url('/lib/fonts/BebasNeue-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Archivo Black';src:url('/lib/fonts/ArchivoBlack-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Oswald 700';src:url('/lib/fonts/Oswald-700.ttf') format('truetype');font-weight:700;font-style:normal}
+@font-face{font-family:'Poppins 800';src:url('/lib/fonts/Poppins-800.ttf') format('truetype');font-weight:800;font-style:normal}
+@font-face{font-family:'Inter Tight 800';src:url('/lib/fonts/InterTight-800.ttf') format('truetype');font-weight:800;font-style:normal}
+@font-face{font-family:'Unbounded 800';src:url('/lib/fonts/Unbounded-800.ttf') format('truetype');font-weight:800;font-style:normal}
+@font-face{font-family:'Syne 800';src:url('/lib/fonts/Syne-800.ttf') format('truetype');font-weight:800;font-style:normal}
+@font-face{font-family:'Rubik 900';src:url('/lib/fonts/Rubik-900.ttf') format('truetype');font-weight:900;font-style:normal}
+@font-face{font-family:'Bricolage Grotesque 800';src:url('/lib/fonts/BricolageGrotesque-800.ttf') format('truetype');font-weight:800;font-style:normal}
+@font-face{font-family:'Big Shoulders Display 900';src:url('/lib/fonts/BigShouldersDisplay-900.ttf') format('truetype');font-weight:900;font-style:normal}
+@font-face{font-family:'Anybody 900';src:url('/lib/fonts/Anybody-900.ttf') format('truetype');font-weight:900;font-style:normal}
+@font-face{font-family:'Playfair Display Italic 700';src:url('/lib/fonts/PlayfairDisplay-Italic-700.ttf') format('truetype');font-weight:700;font-style:italic}
+@font-face{font-family:'Playfair Display 900';src:url('/lib/fonts/PlayfairDisplay-900.ttf') format('truetype');font-weight:900;font-style:normal}
+@font-face{font-family:'Instrument Serif';src:url('/lib/fonts/InstrumentSerif-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Instrument Serif Italic';src:url('/lib/fonts/InstrumentSerif-Italic-400.ttf') format('truetype');font-weight:400;font-style:italic}
+@font-face{font-family:'DM Serif Display';src:url('/lib/fonts/DMSerifDisplay-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'DM Serif Display Italic';src:url('/lib/fonts/DMSerifDisplay-Italic-400.ttf') format('truetype');font-weight:400;font-style:italic}
+@font-face{font-family:'Fraunces Italic 700';src:url('/lib/fonts/Fraunces-Italic-700.ttf') format('truetype');font-weight:700;font-style:italic}
+@font-face{font-family:'Cormorant Garamond Italic 700';src:url('/lib/fonts/CormorantGaramond-Italic-700.ttf') format('truetype');font-weight:700;font-style:italic}
+@font-face{font-family:'EB Garamond Italic 500';src:url('/lib/fonts/EBGaramond-Italic-500.ttf') format('truetype');font-weight:500;font-style:italic}
+@font-face{font-family:'Abril Fatface';src:url('/lib/fonts/AbrilFatface-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Young Serif';src:url('/lib/fonts/YoungSerif-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Caveat 700';src:url('/lib/fonts/Caveat-700.ttf') format('truetype');font-weight:700;font-style:normal}
+@font-face{font-family:'Permanent Marker';src:url('/lib/fonts/PermanentMarker-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Kalam 700';src:url('/lib/fonts/Kalam-700.ttf') format('truetype');font-weight:700;font-style:normal}
+@font-face{font-family:'Shadows Into Light';src:url('/lib/fonts/ShadowsIntoLight-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Gochi Hand';src:url('/lib/fonts/GochiHand-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Rock Salt';src:url('/lib/fonts/RockSalt-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Reenie Beanie';src:url('/lib/fonts/ReenieBeanie-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Pacifico';src:url('/lib/fonts/Pacifico-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Bungee';src:url('/lib/fonts/Bungee-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Righteous';src:url('/lib/fonts/Righteous-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Rubik Mono One';src:url('/lib/fonts/RubikMonoOne-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Press Start 2P';src:url('/lib/fonts/PressStart2P-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Monoton';src:url('/lib/fonts/Monoton-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Shrikhand';src:url('/lib/fonts/Shrikhand-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Bagel Fat One';src:url('/lib/fonts/BagelFatOne-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Chango';src:url('/lib/fonts/Chango-400.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'DM Sans 700';src:url('/lib/fonts/DMSans-700.ttf') format('truetype');font-weight:700;font-style:normal}
+@font-face{font-family:'Manrope 800';src:url('/lib/fonts/Manrope-800.ttf') format('truetype');font-weight:800;font-style:normal}
+@font-face{font-family:'Plus Jakarta Sans 800';src:url('/lib/fonts/PlusJakartaSans-800.ttf') format('truetype');font-weight:800;font-style:normal}
+@font-face{font-family:'Figtree 800';src:url('/lib/fonts/Figtree-800.ttf') format('truetype');font-weight:800;font-style:normal}
+@font-face{font-family:'Space Grotesk 700';src:url('/lib/fonts/SpaceGrotesk-700.ttf') format('truetype');font-weight:700;font-style:normal}
+@font-face{font-family:'IBM Plex Mono 600';src:url('/lib/fonts/IBMPlexMono-600.ttf') format('truetype');font-weight:600;font-style:normal}

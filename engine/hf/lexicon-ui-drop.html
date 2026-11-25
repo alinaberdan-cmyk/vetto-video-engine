@@ -1,0 +1,47 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Cinema Lexicon, the product's real UI buttons (CL01 v6 "food categories", 10.32–11.42 s): the take goes soft-blurred,
+   the app's category buttons (same colours, thick black outline, offset black shadow, round icons) fall from the top one
+   after another and bounce into a pile; then a hard cut back to the take. */
+.clip.take { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
+#blur { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; opacity: 0; }
+#pile { position: absolute; inset: 0; }
+.cat { position: absolute; height: 116px; border-radius: 58px; border: 7px solid #111; box-shadow: 8px 10px 0 #111;
+       display: flex; align-items: center; gap: 18px; padding: 0 46px 0 18px; white-space: nowrap; font-size: 54px; line-height: 1; color: #111; }
+.cat img { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; }
+.cat.noicon { padding-left: 46px; }
+#dice { position: absolute; left: 800px; top: 760px; width: 132px; height: 132px; border-radius: 30px; background: #FEFFF5; border: 7px solid #111; box-shadow: 8px 10px 0 #111; }
+#dice i { position: absolute; left: 50%; top: 50%; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; background: #111; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip take" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <video id="blur" class="clip" data-start="0" data-duration="3" src="assets/blur.mp4" muted></video>
+  <div id="pile"></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params || {}, B = V.brand || {};
+const FONT = `'${B.font || 'Lilita One'}', 'Lilita One', sans-serif`;
+const HOLD = Math.max(.6, Math.min(2.8, +P.hold || 1.1));
+// the app home-screen pile of CL01 v6 (8 buttons + a dice button), reused for any brand's buttons
+const SPOTS = [[70, 1010, -52], [470, 930, 3], [360, 1085, 2], [30, 1300, 8], [420, 1245, 3], [110, 1440, -14], [530, 1400, 3], [430, 1560, 2]];
+const all = (B.pills || []).slice();
+if (B.cta_pill && !all.some(p => p.label === B.cta_pill.label)) all.splice(Math.min(6, all.length), 0, Object.assign({ cta: true }, B.cta_pill));
+const pills = all.slice(0, 8);
+const pile = document.getElementById('pile');
+pills.forEach((p, i) => {
+  const [x, y] = SPOTS[i];
+  const sh = p.shadow ? `box-shadow:8px 10px 0 ${p.shadow};` : '';
+  pile.insertAdjacentHTML('beforeend', `<div class="cat ${p.icon ? '' : 'noicon'}" id="c${i}" style="left:${x}px;top:${y}px;background:${p.color || '#fff'};color:${p.ink || '#111'};font-family:${FONT};${sh}">${p.icon ? `<img src="${p.icon}" alt="">` : ''}${HK.esc(p.label)}</div>`);
+});
+pile.insertAdjacentHTML('beforeend', '<div id="dice"><i></i></div>');
+// keep every button inside the frame
+pills.forEach((p, i) => { const el = document.getElementById('c' + i), r = el.getBoundingClientRect(); if (r.right > 1050) el.style.left = Math.max(20, 1050 - r.width) + 'px'; });
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('#blur', { opacity: 0 }, { opacity: 1, duration: .14, ease: 'power2.out' }, 0);
+[...pills.map((p, i) => ['#c' + i, SPOTS[i][2]]), ['#dice', 6]].forEach(([s, r], i) =>
+  tl.fromTo(s, { y: -1500, rotation: r - 25 }, { y: 0, rotation: r, duration: .42, ease: 'bounce.out' }, .02 + i * .055));
+// hard cut back to the take
+tl.set('#blur, #pile', { opacity: 0 }, HOLD);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

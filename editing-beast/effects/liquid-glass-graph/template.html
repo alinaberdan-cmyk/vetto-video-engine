@@ -1,0 +1,50 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* PDF p.4 "Glass card with graph": card 840x470, radius 44, in the lower half: blurred background, light top edge,
+   dark bottom edge, soft shadow. Top-left small label, right a big percentage counting through the given numbers
+   over 2.2 s in whole numbers; a green line with fill climbs with it, glowing dot at the tip.
+   (Captions of the speech are burned by the engine above the card.) */
+#card { position: absolute; left: 120px; top: 1180px; width: 840px; height: 470px; border-radius: 44px; overflow: hidden;
+  background: rgba(255,255,255,.14); backdrop-filter: blur(28px) saturate(150%); -webkit-backdrop-filter: blur(28px) saturate(150%);
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.55), inset 0 -2px 0 rgba(0,0,0,.35), 0 30px 80px rgba(0,0,0,.35); }
+#label { position: absolute; left: 48px; top: 44px; font: 700 30px/1 'Instrument Sans'; letter-spacing: .08em; color: rgba(255,255,255,.85); text-transform: uppercase; }
+#num { position: absolute; right: 48px; top: 26px; font: 700 128px/1 'TikTok Sans'; color: #fff; font-variant-numeric: tabular-nums; }
+#num small { font-size: 64px; }
+svg { position: absolute; left: 0; bottom: 0; width: 840px; height: 300px; overflow: visible; }
+#dot { filter: drop-shadow(0 0 14px #36E58A) drop-shadow(0 0 30px #36E58A); }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="card"><div id="label"></div><div id="num"><span id="n">0</span><small>%</small></div>
+    <svg viewBox="0 0 840 300"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#36E58A" stop-opacity=".45"/><stop offset="1" stop-color="#36E58A" stop-opacity="0"/></linearGradient>
+      <clipPath id="reveal"><rect id="rv" x="0" y="0" width="0" height="300"/></clipPath></defs>
+      <path id="area" fill="url(#g)" clip-path="url(#reveal)"/><path id="line" fill="none" stroke="#36E58A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#reveal)"/>
+      <circle id="dot" r="12" fill="#B9FFD6"/></svg></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params;
+document.getElementById('label').textContent = P.label || 'Progress';
+const nums = String(P.numbers).split(/[,\s]+/).map(Number).filter(n => !isNaN(n));
+// the line: one point per number, rising left to right, with a little wobble between them
+const pts = nums.map((n, i) => [60 + i * (720 / Math.max(1, nums.length - 1)), 270 - (n / Math.max(...nums, 1)) * 200]);
+const d = pts.map((p, i) => (i ? 'L' : 'M') + p[0] + ' ' + p[1]).join(' ');
+document.getElementById('line').setAttribute('d', d);
+document.getElementById('area').setAttribute('d', d + ` L ${pts[pts.length - 1][0]} 300 L ${pts[0][0]} 300 Z`);
+const st = { p: 0 };
+function draw() {
+  const k = st.p * (nums.length - 1), i = Math.min(nums.length - 2, Math.floor(k)), f = k - i;
+  const a = pts[Math.max(0, i)], b = pts[Math.min(pts.length - 1, i + 1)];
+  const x = nums.length > 1 ? a[0] + (b[0] - a[0]) * f : pts[0][0], y = nums.length > 1 ? a[1] + (b[1] - a[1]) * f : pts[0][1];
+  document.getElementById('rv').setAttribute('width', x + 2);
+  const dot = document.getElementById('dot'); dot.setAttribute('cx', x); dot.setAttribute('cy', y);
+  // whole numbers, stepping through the given values
+  const v = nums.length > 1 ? nums[Math.max(0, i)] + (nums[Math.min(nums.length - 1, i + 1)] - nums[Math.max(0, i)]) * f : nums[0];
+  document.getElementById('n').textContent = Math.round(v);
+}
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('#card', { y: 120, opacity: 0, scale: .96 }, { y: 0, opacity: 1, scale: 1, duration: .45, ease: EASE.drawer }, 0);
+tl.fromTo(st, { p: 0 }, { p: 1, duration: 2.2, ease: 'power1.inOut', onUpdate: draw }, .3);
+draw();
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

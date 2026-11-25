@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=1080, height=1920">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+ @font-face { font-family: "Inter"; font-weight: 700; src: url("assets/fonts/Inter-700.woff2") format("woff2"); }
+ @font-face { font-family: "Inter"; font-weight: 800; src: url("assets/fonts/Inter-800.woff2") format("woff2"); }
+ @font-face { font-family: "Montserrat"; font-weight: 800; src: url("assets/fonts/Montserrat-800.woff2") format("woff2"); }
+ @font-face { font-family: "Playfair Display"; font-style: italic; src: url("assets/fonts/PlayfairDisplay-400i.woff2") format("woff2"); }
+ :root { --butter:#F5EEA8; --butter-pill:#F5EEA6; --ink:#2D2216; --app:#FAECCC; --ok:#2FA35B;
+   --card-shadow:0 18px 50px rgba(0,0,0,.22), 0 2px 6px rgba(0,0,0,.10); }
+ * { margin:0; padding:0; box-sizing:border-box; }
+ html, body { width:1080px; height:1920px; overflow:hidden; background:#000; }
+ #root { position:relative; width:1080px; height:1920px; overflow:hidden; }
+ #base { position:absolute; inset:0; width:1080px; height:1920px; object-fit:cover; }
+ #scrim { position:absolute; left:0; top:0; width:1080px; height:900px; background:linear-gradient(180deg, rgba(0,0,0,.30), rgba(0,0,0,.12) 55%, rgba(0,0,0,0)); }
+ .clip { position:absolute; }
+ #hook { left:0; top:0; width:1080px; height:600px; text-align:center; color:#fff; }
+ .h1 { position:absolute; top:150px; width:100%; font:800 36px/1 "Montserrat"; letter-spacing:.03em; text-shadow:0 2px 12px rgba(0,0,0,.45); }
+ .h2 { position:absolute; top:196px; width:100%; font:italic 400 112px/1.05 "Playfair Display"; color:var(--butter); text-shadow:0 3px 18px rgba(0,0,0,.45); }
+ .h3 { position:absolute; top:336px; width:100%; display:flex; justify-content:center; align-items:center; gap:14px; text-shadow:0 2px 12px rgba(0,0,0,.45); }
+ .h3 span { font:800 40px/1 "Montserrat"; } .h3 img { height:46px; filter:drop-shadow(0 2px 8px rgba(0,0,0,.45)); }
+ .h3 b { font:800 44px/1 "Inter"; letter-spacing:-.02em; }
+ #wall { left:0; top:0; width:1080px; height:1920px; transform-origin:540px 900px; }
+ .th { position:absolute; width:180px; height:300px; border-radius:16px; box-shadow:0 10px 28px rgba(0,0,0,.35); }
+ #pillw { left:0; top:300px; width:1080px; height:120px; display:flex; justify-content:center; }
+ #pill { background:var(--butter-pill); color:var(--ink); font:800 44px/1 "Inter"; letter-spacing:-.02em; padding:20px 34px; border-radius:999px;
+   transform:rotate(-3deg); box-shadow:0 8px 24px rgba(0,0,0,.25); white-space:nowrap; }
+ .hdr { left:0; top:160px; width:1080px; text-align:center; font:800 40px/1 "Montserrat"; color:#fff; letter-spacing:.01em; text-transform:uppercase;
+   text-shadow:0 2px 12px rgba(0,0,0,.5); white-space:nowrap; }
+ .hdr .y { color:#F4EFAB; }
+ .card { position:absolute; left:65px; top:222px; width:950px; height:620px; border-radius:22px; background:var(--app); box-shadow:var(--card-shadow); overflow:hidden; }
+ .cv { position:absolute; top:0; height:620px; -webkit-mask-image:linear-gradient(90deg,transparent,#000 30px,#000 calc(100% - 30px),transparent); }
+ .stk { position:absolute; filter:drop-shadow(0 10px 20px rgba(0,0,0,.3)); }
+ #badgew { left:0; top:0; width:1080px; height:1920px; }
+ .badge { position:absolute; left:80px; top:866px; background:var(--ok); color:#fff; font:800 30px/1 "Montserrat"; letter-spacing:.03em; padding:14px 22px; border-radius:999px;
+   box-shadow:0 8px 20px rgba(0,0,0,.25); transform-origin:0% 50%; }
+ #dmw { left:0; top:0; width:1080px; height:1920px; }
+ .dm { position:absolute; right:70px; top:868px; display:flex; align-items:center; gap:12px; background:#fff; padding:10px 22px 10px 10px; border-radius:999px;
+   box-shadow:0 8px 24px rgba(0,0,0,.25); font:700 28px/1 "Inter"; color:#1D1D1F; transform-origin:100% 50%; }
+ .dm img { width:48px; height:48px; } .dm b { font-weight:800; }
+ .cap { left:0; top:1262px; width:1080px; text-align:center; font:700 66px/1 "Inter"; letter-spacing:-.025em; color:#fff;
+   text-shadow:0 0 3px rgba(0,0,0,.65), 0 0 10px rgba(0,0,0,.35), 0 3px 16px rgba(0,0,0,.6); }
+ .cap.key { color:var(--butter); }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="36.925" data-width="1080" data-height="1920">
+  <video id="base" class="clip" src="assets/rough.mp4" playsinline data-has-audio="true" data-start="0" data-duration="36.925" data-media-start="0" data-track-index="0"></video>
+  <div id="scrim"></div>
+    <div id="hook" class="clip" data-start="0" data-duration="5.850" data-track-index="10">
+      <div class="h1">I DARE YOU TO TRY</div>
+      <div class="h2">this food app</div>
+      <div class="h3"><span>IN</span><img src="assets/icons/logo_wink_white.png" alt=""><b>feedmeplzthanks</b></div>
+    </div>
+  <div id="wall" class="clip" data-start="0" data-duration="6.270" data-track-index="9"><img id="th0" class="th" src="assets/thumbs/dish_0.png" style="left:34px;top:560px;transform:rotate(-4deg)"><img id="th1" class="th" src="assets/thumbs/dish_1.png" style="left:858px;top:600px;transform:rotate(4deg)"><img id="th2" class="th" src="assets/thumbs/dish_2.png" style="left:60px;top:900px;transform:rotate(3deg)"><img id="th3" class="th" src="assets/thumbs/dish_3.png" style="left:884px;top:930px;transform:rotate(-3deg)"><img id="th4" class="th" src="assets/thumbs/dish_4.png" style="left:24px;top:1235px;transform:rotate(-2deg)"><img id="th5" class="th" src="assets/thumbs/dish_5.png" style="left:870px;top:1260px;transform:rotate(2deg)"></div>
+  <div id="pillw" class="clip" data-start="5.850" data-duration="3.440" data-track-index="11"><div id="pill">3 steps → find your food 👇</div></div>
+  <div id="hdr0" class="hdr clip" data-start="9.370" data-duration="3.842" data-track-index="12"><span class="y">STEP 1</span> PICK YOUR MOOD</div>
+  <div id="hdr1" class="hdr clip" data-start="13.212" data-duration="4.160" data-track-index="12"><span class="y">STEP 1</span> OR HIT SURPRISE 🎲</div>
+  <div id="hdr2" class="hdr clip" data-start="17.372" data-duration="3.145" data-track-index="12"><span class="y">STEP 2</span> SWIPE THROUGH</div>
+  <div id="hdr3" class="hdr clip" data-start="20.517" data-duration="3.376" data-track-index="12"><span class="y">STEP 2</span> SWIPE LEFT TO SKIP 👈</div>
+  <div id="hdr4" class="hdr clip" data-start="23.893" data-duration="0.846" data-track-index="12"><span class="y">STEP 2</span> SWIPE RIGHT TO ORDER 👉</div>
+  <div id="hdr5" class="hdr clip" data-start="24.739" data-duration="9.036" data-track-index="12"><span class="y">STEP 3</span> DECIDE IN MINUTES ⏱️</div>
+  <div id="hdr6" class="hdr clip" data-start="33.775" data-duration="3.150" data-track-index="12">SEND IT TO YOUR FRIENDS 💬</div>
+  <div id="k_pills" class="card" style="visibility:hidden">
+        <video id="k_pills-v" class="clip cv" src="assets/cards/k_pills.mp4" muted playsinline data-start="9.370" data-duration="5.953" data-media-start="0" data-track-index="14" style="width:624px;height:620px;left:163px"></video></div>
+  <div id="k_scout" class="card" style="visibility:hidden">
+        <video id="k_scout-v" class="clip cv" src="assets/cards/k_scout.mp4" muted playsinline data-start="15.323" data-duration="2.049" data-media-start="0" data-track-index="14" style="width:880px;height:620px;left:35px"></video></div>
+  <div id="k_deck" class="card" style="visibility:hidden">
+        <video id="k_deck-v" class="clip cv" src="assets/cards/k_deck.mp4" muted playsinline data-start="17.372" data-duration="1.725" data-media-start="0" data-track-index="14" style="width:796px;height:620px;left:77px"></video></div>
+  <div id="k_skip" class="card" style="visibility:hidden">
+        <video id="k_skip-v" class="clip cv" src="assets/cards/k_skip.mp4" muted playsinline data-start="19.097" data-duration="3.120" data-media-start="0" data-track-index="14" style="width:796px;height:620px;left:77px"></video></div>
+  <div id="k_getit" class="card" style="visibility:hidden">
+        <video id="k_getit-v" class="clip cv" src="assets/cards/k_getit.mp4" muted playsinline data-start="22.217" data-duration="2.522" data-media-start="0" data-track-index="14" style="width:796px;height:620px;left:77px"></video></div>
+  <div id="k_receipt" class="card" style="visibility:hidden">
+        <video id="k_receipt-v" class="clip cv" src="assets/cards/k_receipt.mp4" muted playsinline data-start="24.739" data-duration="9.036" data-media-start="0" data-track-index="14" style="width:770px;height:620px;left:90px"></video></div>
+  <div id="k_who" class="card" style="visibility:hidden">
+        <video id="k_who-v" class="clip cv" src="assets/cards/k_who.mp4" muted playsinline data-start="33.775" data-duration="3.150" data-media-start="0" data-track-index="14" style="width:830px;height:620px;left:60px"></video></div>
+  <div id="dicew" class="clip" data-start="13.212" data-duration="2.111" data-track-index="15"><img id="dice" class="stk" src="assets/icons/dice.png" style="left:860px;top:690px;width:150px"></div>
+  <div id="tickw" class="clip" data-start="30.795" data-duration="2.980" data-track-index="15"><img id="tick" class="stk" src="assets/icons/ticket_15_off.png" style="left:790px;top:850px;width:230px;transform:rotate(-8deg)"></div>
+  <div id="badgew" class="clip" data-start="33.055" data-duration="0.720" data-track-index="15"><div id="badge" class="badge">✓ ORDERED IN UNDER 10 MIN</div></div>
+  <div id="dmw" class="clip" data-start="36.055" data-duration="0.870" data-track-index="15"><div id="dm" class="dm"><img src="assets/icons/role_partner_heart.png"><span><b>ana</b> ok we're ordering tonight 🍜</span></div></div>
+    <div id="w000" class="cap clip" data-start="0.000" data-duration="0.540" data-track-index="20">wait</div>
+  <div id="w001" class="cap clip" data-start="0.540" data-duration="0.120" data-track-index="20">i</div>
+  <div id="w002" class="cap clip" data-start="0.660" data-duration="0.200" data-track-index="20">want</div>
+  <div id="w003" class="cap clip" data-start="0.860" data-duration="0.180" data-track-index="20">to</div>
+  <div id="w004" class="cap clip" data-start="1.040" data-duration="0.180" data-track-index="20">dare</div>
+  <div id="w005" class="cap clip" data-start="1.220" data-duration="0.120" data-track-index="20">you</div>
+  <div id="w006" class="cap clip" data-start="1.340" data-duration="0.100" data-track-index="20">to</div>
+  <div id="w007" class="cap clip" data-start="1.440" data-duration="0.240" data-track-index="20">try</div>
+  <div id="w008" class="cap clip" data-start="1.680" data-duration="0.240" data-track-index="20">this</div>
+  <div id="w009" class="cap clip key" data-start="1.920" data-duration="0.390" data-track-index="20">app</div>
+  <div id="w010" class="cap clip" data-start="2.310" data-duration="0.180" data-track-index="20">my</div>
+  <div id="w011" class="cap clip" data-start="2.490" data-duration="0.320" data-track-index="20">friend</div>
+  <div id="w012" class="cap clip" data-start="2.810" data-duration="0.300" data-track-index="20">literally</div>
+  <div id="w013" class="cap clip" data-start="3.110" data-duration="0.360" data-track-index="20">showed</div>
+  <div id="w014" class="cap clip" data-start="3.470" data-duration="0.140" data-track-index="20">it</div>
+  <div id="w015" class="cap clip" data-start="3.610" data-duration="0.120" data-track-index="20">to</div>
+  <div id="w016" class="cap clip" data-start="3.730" data-duration="0.120" data-track-index="20">me</div>
+  <div id="w017" class="cap clip" data-start="3.850" data-duration="0.240" data-track-index="20">today</div>
+  <div id="w018" class="cap clip" data-start="4.090" data-duration="0.140" data-track-index="20">and</div>
+  <div id="w019" class="cap clip" data-start="4.230" data-duration="0.140" data-track-index="20">i</div>
+  <div id="w020" class="cap clip" data-start="4.370" data-duration="0.200" data-track-index="20">have</div>
+  <div id="w021" class="cap clip" data-start="4.570" data-duration="0.180" data-track-index="20">to</div>
+  <div id="w022" class="cap clip" data-start="4.750" data-duration="0.200" data-track-index="20">show</div>
+  <div id="w023" class="cap clip" data-start="4.950" data-duration="0.160" data-track-index="20">it</div>
+  <div id="w024" class="cap clip" data-start="5.110" data-duration="0.080" data-track-index="20">to</div>
+  <div id="w025" class="cap clip" data-start="5.190" data-duration="0.140" data-track-index="20">you</div>
+  <div id="w026" class="cap clip" data-start="5.330" data-duration="0.120" data-track-index="20">as</div>
+  <div id="w027" class="cap clip" data-start="5.450" data-duration="0.400" data-track-index="20">well</div>
+  <div id="w028" class="cap clip" data-start="5.850" data-duration="0.120" data-track-index="20">first</div>
+  <div id="w029" class="cap clip" data-start="5.970" data-duration="0.200" data-track-index="20">of</div>
+  <div id="w030" class="cap clip" data-start="6.170" data-duration="0.440" data-track-index="20">all</div>
+  <div id="w031" class="cap clip" data-start="6.610" data-duration="0.300" data-track-index="20">look</div>
+  <div id="w032" class="cap clip" data-start="6.910" data-duration="0.540" data-track-index="20">how</div>
+  <div id="w033" class="cap clip" data-start="7.450" data-duration="0.260" data-track-index="20">much</div>
+  <div id="w034" class="cap clip key" data-start="7.710" data-duration="0.220" data-track-index="20">fun</div>
+  <div id="w035" class="cap clip" data-start="7.930" data-duration="0.200" data-track-index="20">it</div>
+  <div id="w036" class="cap clip" data-start="8.130" data-duration="0.180" data-track-index="20">is</div>
+  <div id="w037" class="cap clip" data-start="8.310" data-duration="0.180" data-track-index="20">to</div>
+  <div id="w038" class="cap clip" data-start="8.490" data-duration="0.540" data-track-index="20">use</div>
+  <div id="w039" class="cap clip" data-start="9.030" data-duration="0.100" data-track-index="20">so</div>
+  <div id="w040" class="cap clip" data-start="9.130" data-duration="0.100" data-track-index="20">you</div>
+  <div id="w041" class="cap clip" data-start="9.230" data-duration="0.140" data-track-index="20">have</div>
+  <div id="w042" class="cap clip" data-start="9.370" data-duration="0.280" data-track-index="20">all</div>
+  <div id="w043" class="cap clip" data-start="9.650" data-duration="0.200" data-track-index="20">these</div>
+  <div id="w044" class="cap clip" data-start="9.850" data-duration="0.280" data-track-index="20">food</div>
+  <div id="w045" class="cap clip" data-start="10.130" data-duration="0.922" data-track-index="20">categories</div>
+  <div id="w046" class="cap clip" data-start="11.052" data-duration="0.220" data-track-index="20">and</div>
+  <div id="w047" class="cap clip" data-start="11.272" data-duration="0.300" data-track-index="20">even</div>
+  <div id="w048" class="cap clip" data-start="11.572" data-duration="0.200" data-track-index="20">if</div>
+  <div id="w049" class="cap clip" data-start="11.772" data-duration="0.100" data-track-index="20">you</div>
+  <div id="w050" class="cap clip" data-start="11.872" data-duration="0.180" data-track-index="20">don't</div>
+  <div id="w051" class="cap clip" data-start="12.052" data-duration="0.240" data-track-index="20">want</div>
+  <div id="w052" class="cap clip" data-start="12.292" data-duration="0.520" data-track-index="20">something</div>
+  <div id="w053" class="cap clip" data-start="12.812" data-duration="0.280" data-track-index="20">there's</div>
+  <div id="w054" class="cap clip" data-start="13.092" data-duration="0.120" data-track-index="20">a</div>
+  <div id="w055" class="cap clip key" data-start="13.212" data-duration="0.280" data-track-index="20">surprise</div>
+  <div id="w056" class="cap clip" data-start="13.492" data-duration="0.560" data-track-index="20">button</div>
+  <div id="w057" class="cap clip" data-start="14.052" data-duration="0.360" data-track-index="20">over</div>
+  <div id="w058" class="cap clip" data-start="14.412" data-duration="0.460" data-track-index="20">here</div>
+  <div id="w059" class="cap clip" data-start="14.872" data-duration="0.331" data-track-index="20">and</div>
+  <div id="w060" class="cap clip" data-start="15.203" data-duration="0.120" data-track-index="20">it</div>
+  <div id="w061" class="cap clip" data-start="15.323" data-duration="0.280" data-track-index="20">finds</div>
+  <div id="w062" class="cap clip" data-start="15.603" data-duration="0.320" data-track-index="20">food</div>
+  <div id="w063" class="cap clip" data-start="15.923" data-duration="0.300" data-track-index="20">based</div>
+  <div id="w064" class="cap clip" data-start="16.223" data-duration="0.220" data-track-index="20">on</div>
+  <div id="w065" class="cap clip" data-start="16.443" data-duration="0.120" data-track-index="20">your</div>
+  <div id="w066" class="cap clip key" data-start="16.563" data-duration="0.809" data-track-index="20">cravings</div>
+  <div id="w067" class="cap clip" data-start="17.372" data-duration="0.165" data-track-index="20">look</div>
+  <div id="w068" class="cap clip" data-start="17.537" data-duration="0.220" data-track-index="20">how</div>
+  <div id="w069" class="cap clip" data-start="17.757" data-duration="0.200" data-track-index="20">many</div>
+  <div id="w070" class="cap clip" data-start="17.957" data-duration="0.440" data-track-index="20">options</div>
+  <div id="w071" class="cap clip" data-start="18.397" data-duration="0.240" data-track-index="20">there</div>
+  <div id="w072" class="cap clip" data-start="18.637" data-duration="0.460" data-track-index="20">are</div>
+  <div id="w074" class="cap clip" data-start="19.117" data-duration="0.140" data-track-index="20">you</div>
+  <div id="w075" class="cap clip" data-start="19.257" data-duration="0.300" data-track-index="20">don't</div>
+  <div id="w076" class="cap clip" data-start="19.557" data-duration="0.200" data-track-index="20">like</div>
+  <div id="w077" class="cap clip" data-start="19.757" data-duration="0.440" data-track-index="20">something</div>
+  <div id="w078" class="cap clip" data-start="20.197" data-duration="0.120" data-track-index="20">you</div>
+  <div id="w079" class="cap clip" data-start="20.317" data-duration="0.200" data-track-index="20">just</div>
+  <div id="w080" class="cap clip key" data-start="20.517" data-duration="0.240" data-track-index="20">swipe</div>
+  <div id="w081" class="cap clip" data-start="20.757" data-duration="0.380" data-track-index="20">left</div>
+  <div id="w082" class="cap clip" data-start="21.137" data-duration="0.420" data-track-index="20">and</div>
+  <div id="w083" class="cap clip" data-start="21.557" data-duration="0.140" data-track-index="20">if</div>
+  <div id="w084" class="cap clip" data-start="21.697" data-duration="0.140" data-track-index="20">you</div>
+  <div id="w085" class="cap clip" data-start="21.837" data-duration="0.140" data-track-index="20">do</div>
+  <div id="w086" class="cap clip" data-start="21.977" data-duration="0.240" data-track-index="20">end</div>
+  <div id="w087" class="cap clip" data-start="22.217" data-duration="0.220" data-track-index="20">up</div>
+  <div id="w088" class="cap clip" data-start="22.437" data-duration="0.320" data-track-index="20">liking</div>
+  <div id="w089" class="cap clip" data-start="22.757" data-duration="0.500" data-track-index="20">something</div>
+  <div id="w090" class="cap clip" data-start="23.257" data-duration="0.416" data-track-index="20">you</div>
+  <div id="w091" class="cap clip" data-start="23.673" data-duration="0.220" data-track-index="20">just</div>
+  <div id="w092" class="cap clip key" data-start="23.893" data-duration="0.340" data-track-index="20">swipe</div>
+  <div id="w093" class="cap clip" data-start="24.233" data-duration="0.506" data-track-index="20">right</div>
+  <div id="w094" class="cap clip" data-start="24.739" data-duration="0.143" data-track-index="20">i</div>
+  <div id="w095" class="cap clip" data-start="24.882" data-duration="0.220" data-track-index="20">used</div>
+  <div id="w096" class="cap clip" data-start="25.102" data-duration="0.140" data-track-index="20">to</div>
+  <div id="w097" class="cap clip" data-start="25.242" data-duration="0.120" data-track-index="20">be</div>
+  <div id="w098" class="cap clip" data-start="25.362" data-duration="0.180" data-track-index="20">that</div>
+  <div id="w099" class="cap clip" data-start="25.542" data-duration="0.240" data-track-index="20">friend</div>
+  <div id="w100" class="cap clip" data-start="25.782" data-duration="0.160" data-track-index="20">that</div>
+  <div id="w101" class="cap clip" data-start="25.942" data-duration="0.140" data-track-index="20">would</div>
+  <div id="w102" class="cap clip" data-start="26.082" data-duration="0.285" data-track-index="20">take</div>
+  <div id="w103" class="cap clip" data-start="26.367" data-duration="0.400" data-track-index="20">forever</div>
+  <div id="w104" class="cap clip" data-start="26.767" data-duration="0.260" data-track-index="20">to</div>
+  <div id="w105" class="cap clip" data-start="27.027" data-duration="0.240" data-track-index="20">decide</div>
+  <div id="w106" class="cap clip" data-start="27.267" data-duration="0.240" data-track-index="20">what</div>
+  <div id="w107" class="cap clip" data-start="27.507" data-duration="0.200" data-track-index="20">to</div>
+  <div id="w108" class="cap clip" data-start="27.707" data-duration="0.180" data-track-index="20">eat</div>
+  <div id="w109" class="cap clip" data-start="27.887" data-duration="0.200" data-track-index="20">but</div>
+  <div id="w110" class="cap clip" data-start="28.087" data-duration="0.280" data-track-index="20">since</div>
+  <div id="w111" class="cap clip" data-start="28.367" data-duration="0.320" data-track-index="20">i</div>
+  <div id="w112" class="cap clip" data-start="28.687" data-duration="0.400" data-track-index="20">discovered</div>
+  <div id="w113" class="cap clip" data-start="29.087" data-duration="0.280" data-track-index="20">this</div>
+  <div id="w114" class="cap clip" data-start="29.367" data-duration="0.588" data-track-index="20">app</div>
+  <div id="w115" class="cap clip" data-start="29.955" data-duration="0.140" data-track-index="20">it's</div>
+  <div id="w116" class="cap clip" data-start="30.095" data-duration="0.200" data-track-index="20">literally</div>
+  <div id="w117" class="cap clip" data-start="30.295" data-duration="0.280" data-track-index="20">so</div>
+  <div id="w118" class="cap clip" data-start="30.575" data-duration="0.220" data-track-index="20">much</div>
+  <div id="w119" class="cap clip key" data-start="30.795" data-duration="0.280" data-track-index="20">fun</div>
+  <div id="w120" class="cap clip" data-start="31.075" data-duration="0.280" data-track-index="20">and</div>
+  <div id="w121" class="cap clip" data-start="31.355" data-duration="0.200" data-track-index="20">i</div>
+  <div id="w122" class="cap clip" data-start="31.555" data-duration="0.280" data-track-index="20">make</div>
+  <div id="w123" class="cap clip" data-start="31.835" data-duration="0.140" data-track-index="20">up</div>
+  <div id="w124" class="cap clip" data-start="31.975" data-duration="0.160" data-track-index="20">my</div>
+  <div id="w125" class="cap clip" data-start="32.135" data-duration="0.260" data-track-index="20">mind</div>
+  <div id="w126" class="cap clip" data-start="32.395" data-duration="0.240" data-track-index="20">in</div>
+  <div id="w127" class="cap clip" data-start="32.635" data-duration="0.220" data-track-index="20">less</div>
+  <div id="w128" class="cap clip" data-start="32.855" data-duration="0.200" data-track-index="20">than</div>
+  <div id="w129" class="cap clip key" data-start="33.055" data-duration="0.200" data-track-index="20">10</div>
+  <div id="w130" class="cap clip key" data-start="33.255" data-duration="0.540" data-track-index="20">minutes</div>
+  <div id="w131" class="cap clip" data-start="33.795" data-duration="0.100" data-track-index="20">go</div>
+  <div id="w132" class="cap clip" data-start="33.895" data-duration="0.740" data-track-index="20">on</div>
+  <div id="w133" class="cap clip" data-start="34.635" data-duration="0.120" data-track-index="20">share</div>
+  <div id="w134" class="cap clip" data-start="34.755" data-duration="0.120" data-track-index="20">it</div>
+  <div id="w135" class="cap clip" data-start="34.875" data-duration="0.060" data-track-index="20">with</div>
+  <div id="w136" class="cap clip" data-start="34.935" data-duration="0.140" data-track-index="20">your</div>
+  <div id="w137" class="cap clip key" data-start="35.075" data-duration="0.300" data-track-index="20">friends</div>
+  <div id="w138" class="cap clip" data-start="35.375" data-duration="0.160" data-track-index="20">as</div>
+  <div id="w139" class="cap clip" data-start="35.535" data-duration="0.260" data-track-index="20">well</div>
+  <div id="w140" class="cap clip" data-start="35.795" data-duration="0.260" data-track-index="20">and</div>
+  <div id="w141" class="cap clip" data-start="36.055" data-duration="0.160" data-track-index="20">let</div>
+  <div id="w142" class="cap clip" data-start="36.215" data-duration="0.080" data-track-index="20">me</div>
+  <div id="w143" class="cap clip" data-start="36.295" data-duration="0.180" data-track-index="20">know</div>
+  <div id="w144" class="cap clip" data-start="36.475" data-duration="0.100" data-track-index="20">what</div>
+  <div id="w145" class="cap clip" data-start="36.575" data-duration="0.120" data-track-index="20">you</div>
+  <div id="w146" class="cap clip" data-start="36.695" data-duration="0.230" data-track-index="20">think</div>
+    <audio id="sx-th0" class="clip" src="assets/sfx/Pop_02_Quick.wav" data-start="0.40" data-duration="0.11" data-track-index="30" data-volume="0.10"></audio>
+  <audio id="sx-th1" class="clip" src="assets/sfx/Pop_02_Quick.wav" data-start="0.51" data-duration="0.11" data-track-index="31" data-volume="0.10"></audio>
+  <audio id="sx-th2" class="clip" src="assets/sfx/Pop_02_Quick.wav" data-start="0.62" data-duration="0.11" data-track-index="30" data-volume="0.10"></audio>
+  <audio id="sx-th3" class="clip" src="assets/sfx/Pop_02_Quick.wav" data-start="0.73" data-duration="0.11" data-track-index="31" data-volume="0.10"></audio>
+  <audio id="sx-th4" class="clip" src="assets/sfx/Pop_02_Quick.wav" data-start="0.84" data-duration="0.11" data-track-index="30" data-volume="0.10"></audio>
+  <audio id="sx-th5" class="clip" src="assets/sfx/Pop_02_Quick.wav" data-start="0.95" data-duration="0.11" data-track-index="31" data-volume="0.10"></audio>
+  <audio id="sx-pill" class="clip" src="assets/sfx/Pop_01_Tap.wav" data-start="5.850" data-duration="0.14" data-track-index="32" data-volume="0.14"></audio>
+</div>
+<script>
+ window.__timelines = window.__timelines || {};
+ const tl = gsap.timeline({ paused: true });
+  tl.fromTo("#th0",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.12,ease:"back.out(2)"},0.40);
+ tl.fromTo("#th1",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.12,ease:"back.out(2)"},0.51);
+ tl.fromTo("#th2",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.12,ease:"back.out(2)"},0.62);
+ tl.fromTo("#th3",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.12,ease:"back.out(2)"},0.73);
+ tl.fromTo("#th4",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.12,ease:"back.out(2)"},0.84);
+ tl.fromTo("#th5",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.12,ease:"back.out(2)"},0.95);
+ tl.to("#wall",{opacity:0,scale:0.96,duration:0.1},6.170);
+ tl.fromTo("#pill",{scale:0.5,opacity:0},{scale:1,opacity:1,duration:0.2,ease:"back.out(2.2)"},5.850);
+ tl.to("#pill",{opacity:0,duration:0.1},9.190);
+ tl.set("#k_pills",{autoAlpha:1},9.370);tl.set("#k_pills",{autoAlpha:0},15.323);
+ tl.fromTo("#k_pills",{opacity:0.35,filter:"blur(18px)"},{opacity:1,filter:"blur(0px)",duration:0.13,ease:"none",immediateRender:false},9.370);
+ tl.set("#k_scout",{autoAlpha:1},15.323);tl.set("#k_scout",{autoAlpha:0},17.372);
+ tl.set("#k_deck",{autoAlpha:1},17.372);tl.set("#k_deck",{autoAlpha:0},19.097);
+ tl.fromTo("#k_deck",{opacity:0.35,filter:"blur(18px)"},{opacity:1,filter:"blur(0px)",duration:0.13,ease:"none",immediateRender:false},17.372);
+ tl.set("#k_skip",{autoAlpha:1},19.097);tl.set("#k_skip",{autoAlpha:0},22.217);
+ tl.set("#k_getit",{autoAlpha:1},22.217);tl.set("#k_getit",{autoAlpha:0},24.739);
+ tl.set("#k_receipt",{autoAlpha:1},24.739);tl.set("#k_receipt",{autoAlpha:0},33.775);
+ tl.fromTo("#k_receipt",{opacity:0.35,filter:"blur(18px)"},{opacity:1,filter:"blur(0px)",duration:0.13,ease:"none",immediateRender:false},24.739);
+ tl.set("#k_who",{autoAlpha:1},33.775);tl.set("#k_who",{autoAlpha:0},36.925);
+ tl.fromTo("#k_who",{opacity:0.35,filter:"blur(18px)"},{opacity:1,filter:"blur(0px)",duration:0.13,ease:"none",immediateRender:false},33.775);
+ tl.fromTo("#dice",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.12,ease:"back.out(2.4)"},13.212);
+ tl.to("#dice",{rotation:18,duration:0.12,yoyo:true,repeat:3,ease:"sine.inOut"},13.362);
+ tl.fromTo("#tick",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.12,ease:"back.out(2.4)"},30.795);
+ tl.fromTo("#badge",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.12,ease:"back.out(2.4)"},33.055);
+ tl.fromTo("#dm",{scale:0.6,opacity:0},{scale:1,opacity:1,duration:0.12,ease:"back.out(2.4)"},36.055);
+ tl.set({}, {}, 36.925);
+ window.__timelines["main"] = tl;
+</script>
+</body>
+</html>

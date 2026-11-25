@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Freeze-frame + punch (idea: lemo-opuscar "freeze" grammar, our own numbers and code): the clip plays, then on the word
+   a 0.14 s white flash, the frame freezes, pushes in 1.0 → 1.12, colour drops to 45 %, corner brackets close in and a
+   label chip names the moment; at 2.4 s it lets go and the clip plays on. The voice never stops. */
+#frz { position: absolute; inset: 0; opacity: 0; background-size: cover; background-position: center; transform-origin: 50% 40%; }
+#flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+.br { position: absolute; width: 120px; height: 120px; border: 0 solid #fff; opacity: 0; }
+#b1 { left: 70px; top: 300px; border-left-width: 10px; border-top-width: 10px; }
+#b2 { right: 70px; top: 300px; border-right-width: 10px; border-top-width: 10px; }
+#b3 { left: 70px; bottom: 360px; border-left-width: 10px; border-bottom-width: 10px; }
+#b4 { right: 70px; bottom: 360px; border-right-width: 10px; border-bottom-width: 10px; }
+#chip { position: absolute; left: 50%; bottom: 420px; transform: translateX(-50%); padding: 18px 34px; border-radius: 999px; background: #E8452A; color: #fff;
+  font: 700 54px/1 'TikTok Sans'; letter-spacing: .02em; text-transform: uppercase; white-space: nowrap; opacity: 0; }
+#tc { position: absolute; right: 86px; top: 236px; font: 400 30px/1 'Space Mono'; color: #fff; opacity: 0; text-shadow: 0 2px 8px rgba(0,0,0,.5); }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video>
+  <div id="frz"></div><div id="flash"></div>
+  <div class="br" id="b1"></div><div class="br" id="b2"></div><div class="br" id="b3"></div><div class="br" id="b4"></div>
+  <div id="chip"></div><div id="tc">● REC 00:00</div>
+</div>
+<script>
+/*VARS*/
+document.getElementById('frz').style.backgroundImage = 'url(assets/freeze.jpg)';
+document.getElementById('chip').textContent = V.params.label || V.word || 'this';
+const T0 = 0.3, T1 = 2.4;
+const tl = gsap.timeline({ paused: true });
+tl.set('#frz', { opacity: 1 }, T0);
+tl.fromTo('#flash', { opacity: .9 }, { opacity: 0, duration: .14, ease: EASE.out }, T0);
+tl.fromTo('#frz', { scale: 1, filter: 'saturate(1)' }, { scale: 1.12, filter: 'saturate(.45)', duration: T1 - T0, ease: EASE.inOut }, T0);
+['#b1', '#b2', '#b3', '#b4'].forEach((b, i) => {
+  const dx = i % 2 ? -1 : 1, dy = i < 2 ? 1 : -1;
+  tl.fromTo(b, { opacity: 0, x: -dx * 40, y: -dy * 40 }, { opacity: 1, x: 0, y: 0, duration: .28, ease: EASE.out }, T0 + .06 + STAGGER(i, .05));
+});
+tl.fromTo('#chip', { opacity: 0, y: 24, scale: .92 }, { opacity: 1, y: 0, scale: 1, duration: .3, ease: EASE.out }, T0 + .2);
+tl.fromTo('#tc', { opacity: 0 }, { opacity: 1, duration: .2, ease: EASE.out }, T0 + .1);
+tl.to(['#chip', '.br', '#tc'], { opacity: 0, duration: .2, ease: EASE.inOut }, T1 - .2);
+tl.to('#frz', { opacity: 0, duration: .18, ease: EASE.inOut }, T1);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

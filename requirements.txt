@@ -1,0 +1,7 @@
+mlx-whisper==0.4.3
+numpy
+scipy
+numba
+pillow
+fonttools
+requests

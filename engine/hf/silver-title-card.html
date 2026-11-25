@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* Cinema Lexicon bookend §3/§5.3: a silver radial ground (#FCFCFC → #8F8F8F, light breathing), the words fly in one by
+   one in the brand colour, sizes jump (small → huge caps → one script word), no glyph (Alina, 18 Nov 2026: star removed);
+   then the speaker appears in a rounded card that grows to full frame. Stand-ins: Inter Tight 800, Dancing Script. */
+#ground { position: absolute; inset: 0; background: radial-gradient(circle at 50% 45%, #FCFCFC 0%, #E4E4E4 45%, #8F8F8F 100%); }
+#t { position: absolute; left: 60px; right: 60px; top: 520px; text-align: center; color: var(--b, #007A4E); }
+#t .w { display: inline-block; margin: 0 .12em; opacity: 0; }
+.s { font: 800 64px/1.05 'Inter Tight', sans-serif; letter-spacing: -.02em; }
+.h { font: 800 170px/.9 'Inter Tight', sans-serif; text-transform: uppercase; letter-spacing: -.04em; }
+.sc { font: 700 150px/1 'Dancing Script', cursive; }
+#card { position: absolute; inset: 0; transform-origin: 50% 50%; overflow: hidden; }
+#card .clip { width: 1080px; height: 1920px; object-fit: cover; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div id="ground"></div>
+  <div id="t"></div>
+  <div id="card"><video class="clip" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video></div>
+</div>
+<script>
+/*VARS*/
+const P = V.params, brand = P.color || '#007A4E';
+document.getElementById('root').style.setProperty('--b', brand);
+const ws = HK.words(HK.text(P, V)).slice(0, 7);
+const big = ws.reduce((b, w, i) => w.replace(/\W/g, '').length > ws[b].replace(/\W/g, '').length ? i : b, 0);
+const t = document.getElementById('t');
+t.innerHTML = ws.map((w, i) => `<span class="w ${i === ws.length - 1 && i !== big ? 'sc' : i === big ? 'h' : 's'}">${HK.esc(w)}</span>`).join(' ');
+t.querySelectorAll('.h').forEach(h => HK.fit(h, 940, 170));
+const tl = gsap.timeline({ paused: true });
+tl.set('#card', { opacity: 0 }, 0);
+tl.fromTo('#ground', { filter: 'brightness(.96)' }, { filter: 'brightness(1.04)', duration: 3, ease: 'sine.inOut' }, 0);
+[...t.querySelectorAll('.w')].forEach((w, i) => tl.fromTo(w, { opacity: 0, y: 40, scale: 1.25 }, { opacity: 1, y: 0, scale: 1, duration: .2, ease: EASE.out }, .15 + i * .2));
+const tEnd = .15 + ws.length * .2 + .35;
+tl.to('#t', { x: -600, filter: 'blur(14px)', opacity: 0, duration: .2, ease: 'power2.in' }, tEnd);
+tl.fromTo('#card', { opacity: 1, scale: .5, clipPath: 'inset(0px round 90px)' }, { scale: .5, duration: .01 }, tEnd + .05);
+tl.to('#card', { scale: 1, clipPath: 'inset(0px round 0px)', duration: .45, ease: EASE.out }, tEnd + .15);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

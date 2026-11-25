@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>/* Preview only (the export uses ffmpeg): red/blue split, scanlines, noise, tracking wobble and a short roll. */
+#r, #b { position: absolute; inset: 0; mix-blend-mode: screen; }
+#r .clip { filter: url(#red); } #b .clip { filter: url(#blue); }
+#k { position: absolute; inset: 0; background: #000; }
+#scan { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(0,0,0,.28) 0 3px, transparent 3px 7px); }
+#noise { position: absolute; inset: -40px; opacity: .16; background-image: radial-gradient(#fff 1px, transparent 1.5px); background-size: 9px 11px; }
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><filter id="red"><feColorMatrix values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"/></filter>
+<filter id="blue"><feColorMatrix values="0 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/></filter></svg>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div id="k"></div>
+  <div id="r"><video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video></div>
+  <div id="b"><video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video></div>
+  <div id="scan"></div><div id="noise"></div>
+</div>
+<script>
+/*VARS*/
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('#r', { x: -26 }, { x: -10, duration: .3, ease: 'steps(4)' }, 0).fromTo('#b', { x: 26 }, { x: 10, duration: .3, ease: 'steps(4)' }, 0);
+tl.fromTo(['#r', '#b'], { y: -260 }, { y: 0, duration: .32, ease: 'steps(5)' }, 0);
+for (let i = 0; i < 12; i++) tl.to('#noise', { x: (i * 37) % 40 - 20, y: (i * 53) % 40 - 20, duration: .25, ease: 'steps(1)' }, i * .25);
+tl.to(['#r', '#b'], { skewX: 4, duration: .08, yoyo: true, repeat: 3, ease: 'steps(2)' }, 1.4);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>

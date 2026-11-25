@@ -1,0 +1,1692 @@
+[
+ {
+  "n": 1,
+  "file": "Amuzament/baiat_aratand_spre_usa_original.jpg",
+  "cutout": "Amuzament/baiat_aratand_spre_usa_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "boy in hoodie pointing at a door",
+  "meaning": "'get out' / 'you, leave'",
+  "use_when": "someone is told to leave, kicked out, exits; 'bye', 'get out'",
+  "quality": "screenshot"
+ },
+ {
+  "n": 2,
+  "file": "Amuzament/baiat_ascuns_cu_degetul_sus_original.jpg",
+  "cutout": "Amuzament/baiat_ascuns_cu_degetul_sus_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "boy hiding, one finger up",
+  "meaning": "'wait, one thing…' / shy interruption",
+  "use_when": "someone raises a hand to speak, 'wait', 'can I say something'",
+  "quality": "screenshot"
+ },
+ {
+  "n": 3,
+  "file": "Amuzament/baraca_mutata_pentru_dovada_de_domiciliu.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "men carrying a whole shack",
+  "meaning": "'the bank said bring proof of residence' — overdoing a request",
+  "use_when": "someone brings way more than asked, carries something huge",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 4,
+  "file": "Amuzament/barbat_cu_capul_crapat.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "bald man with cracked-looking head",
+  "meaning": "brain broken / overthinking",
+  "use_when": "something makes no sense, a dumb mistake, 'my brain hurts'",
+  "quality": "clean"
+ },
+ {
+  "n": 5,
+  "file": "Amuzament/barbat_cu_mar_pe_post_de_telefon.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "man taking a selfie with an apple as a phone",
+  "meaning": "fake/budget version of something",
+  "use_when": "a cheap or fake version, 'iPhone from Temu', pretending",
+  "quality": "clean"
+ },
+ {
+  "n": 6,
+  "file": "Amuzament/barbat_cu_masca_pe_ceafa_original.jpg",
+  "cutout": "Amuzament/barbat_cu_masca_pe_ceafa_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "man wearing a face mask on the back of his head",
+  "meaning": "'protecting my mental health' — doing it wrong on purpose",
+  "use_when": "rules followed the wrong way, a hood/shirt worn backwards or over the head",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 7,
+  "file": "Amuzament/barbat_cu_ochii_in_doua_directii_subtitrari.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "old man in wig, eyes pointing different ways",
+  "meaning": "'me watching movies with subtitles' — trying to watch two things",
+  "use_when": "looking at two things at once, multitasking chaos",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 8,
+  "file": "Amuzament/barbat_cu_peruca_chel_in_crestet_original.jpg",
+  "cutout": "Amuzament/barbat_cu_peruca_chel_in_crestet_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "man with a bald-top wig",
+  "meaning": "bad haircut / disguise",
+  "use_when": "a silly hairstyle, a bad disguise, a weird hat or hood",
+  "quality": "screenshot"
+ },
+ {
+  "n": 9,
+  "file": "Amuzament/barbat_cu_picioarele_sus_cand_se_spala_pe_jos_original.jpg",
+  "cutout": "Amuzament/barbat_cu_picioarele_sus_cand_se_spala_pe_jos_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "man lifting his legs while someone mops",
+  "meaning": "dodging chores / 'not my job'",
+  "use_when": "someone avoids work, lifts feet, lets others do it",
+  "quality": "screenshot"
+ },
+ {
+  "n": 10,
+  "file": "Amuzament/barbat_hranind_copilul_cu_forta.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "man force-feeding a child noodles",
+  "meaning": "'me memorising the whole semester in 12 hours' — cramming",
+  "use_when": "cramming, rushing, too much at once, study/exam talk",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 11,
+  "file": "Amuzament/barbat_la_birou_razand_original.jpg",
+  "cutout": "Amuzament/barbat_la_birou_razand_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "man at a desk laughing",
+  "meaning": "boss laughing at you",
+  "use_when": "a boss/manager laughs, a 'yeah right' at work",
+  "quality": "screenshot"
+ },
+ {
+  "n": 12,
+  "file": "Amuzament/barbat_razand_cu_gura_mare_original.jpg",
+  "cutout": "Amuzament/barbat_razand_cu_gura_mare_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "man laughing with a huge open mouth",
+  "meaning": "laughing hysterically",
+  "use_when": "something very funny just happened, a big laugh",
+  "quality": "screenshot"
+ },
+ {
+  "n": 13,
+  "file": "Amuzament/barbat_razand_cu_limba_scoasa.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "man laughing, tongue out, in a hoodie",
+  "meaning": "mocking laughter",
+  "use_when": "teasing a friend, 'I can't with you'",
+  "quality": "clean"
+ },
+ {
+  "n": 14,
+  "file": "Amuzament/barbat_razand_in_hohote.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "young man in blue laughing hard",
+  "meaning": "genuine crying-laughing",
+  "use_when": "a joke lands, the group laughs",
+  "quality": "clean"
+ },
+ {
+  "n": 15,
+  "file": "Amuzament/barbat_tragandu_si_pleoapa_in_jos.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "man pulling down his eyelid, tongue out",
+  "meaning": "'nah, as if' — teasing taunt",
+  "use_when": "teasing, 'you wish', a cheeky no",
+  "quality": "clean"
+ },
+ {
+  "n": 16,
+  "file": "Amuzament/barbia_cu_ochelari_ca_o_fata.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "chin with sunglasses drawn like a face",
+  "meaning": "nonsense / absurd visual",
+  "use_when": "something absurd or weird angle, a bad camera angle",
+  "quality": "clean"
+ },
+ {
+  "n": 17,
+  "file": "Amuzament/bebelus_cascand_filmat_de_jos.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "baby yawning, filmed from below",
+  "meaning": "bored / tired / sleepy",
+  "use_when": "boredom, a long wait, 'I'm tired', yawning",
+  "quality": "clean"
+ },
+ {
+  "n": 18,
+  "file": "Amuzament/boxer_desenat_cu_casti_airpods.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "drawing of a boxer with AirPods as gloves",
+  "meaning": "fight / boxing with style",
+  "use_when": "a 'fight me' challenge, AirPods, competition",
+  "quality": "clean"
+ },
+ {
+  "n": 19,
+  "file": "Amuzament/caine_cu_fata_de_om.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "dog with a human face",
+  "meaning": "cursed / uncanny",
+  "use_when": "something weird or cursed-looking",
+  "quality": "screenshot"
+ },
+ {
+  "n": 20,
+  "file": "Amuzament/caini_razand_la_laptop.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "two dogs laughing at a laptop",
+  "meaning": "laughing at something online",
+  "use_when": "laughing at a video, a screen, the comments",
+  "quality": "clean"
+ },
+ {
+  "n": 21,
+  "file": "Amuzament/cal_asezat_pe_saltea.webp",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "horse sitting on a mattress like a person",
+  "meaning": "acting human / relaxed chilling",
+  "use_when": "chilling, sitting like a boss, being lazy",
+  "quality": "clean"
+ },
+ {
+  "n": 22,
+  "file": "Amuzament/cal_care_citeste_in_metrou_original.jpg",
+  "cutout": "Amuzament/cal_care_citeste_in_metrou_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "horse reading in the metro",
+  "meaning": "acting normal while being absurd",
+  "use_when": "acting casual in public, commuting, reading",
+  "quality": "clean"
+ },
+ {
+  "n": 23,
+  "file": "Amuzament/cal_care_gateste_cu_sort.png",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "horse cooking in an apron — 'how it feels cooking'",
+  "meaning": "proud cooking",
+  "use_when": "cooking, making food, chef moments (FeedMe!)",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 24,
+  "file": "Amuzament/cal_care_gateste_oua.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "horse cooking eggs at a stove",
+  "meaning": "cooking like a pro",
+  "use_when": "cooking, breakfast, eggs, food prep",
+  "quality": "clean"
+ },
+ {
+  "n": 25,
+  "file": "Amuzament/cal_curier_pe_scuter_cu_casca.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "horse on a delivery scooter with a helmet",
+  "meaning": "food delivery courier",
+  "use_when": "a delivery, a rider, an order arriving (FeedMe!)",
+  "quality": "clean"
+ },
+ {
+  "n": 26,
+  "file": "Amuzament/cal_in_piscina_printre_oameni.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "horse standing in a pool among people",
+  "meaning": "out of place but owning it",
+  "use_when": "someone out of place, joining uninvited",
+  "quality": "clean"
+ },
+ {
+  "n": 27,
+  "file": "Amuzament/cal_zambind_la_paine.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "horse smiling at bread",
+  "meaning": "pure happiness about food",
+  "use_when": "excited about food, bread, a snack arriving",
+  "quality": "clean"
+ },
+ {
+  "n": 28,
+  "file": "Amuzament/cifra_patru_cu_minge_de_baschet.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "number 4 spinning a basketball — 'Four Play'",
+  "meaning": "pun on 4",
+  "use_when": "the number four, basketball",
+  "quality": "not-a-meme"
+ },
+ {
+  "n": 29,
+  "file": "Amuzament/cioburi_pe_zid_paznic_original.jpg",
+  "cutout": "Amuzament/cioburi_pe_zid_paznic_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "broken glass on a wall — 'Africa's most popular security guard'",
+  "meaning": "security / protection",
+  "use_when": "guarding something, security, 'don't touch'",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 30,
+  "file": "Amuzament/coca_cola_cu_servetel_in_dubai_original.jpg",
+  "cutout": "Amuzament/coca_cola_cu_servetel_in_dubai_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "Coca-Cola wearing a white scarf — 'Coca-Cola in Dubai'",
+  "meaning": "rich/luxury version of something ordinary",
+  "use_when": "luxury, Dubai, fancy version, dressing up something ordinary",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 31,
+  "file": "Amuzament/creier_spalat_in_prosop.png",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "brain in a towel — 'brainwashed'",
+  "meaning": "brainwashed / believes anything",
+  "use_when": "someone repeats an ad, cult-like loyalty, 'they got you'",
+  "quality": "clean"
+ },
+ {
+  "n": 32,
+  "file": "Amuzament/cuplu_si_catel_in_haine_asortate.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "couple and dog in matching outfits — 'there will be signs'",
+  "meaning": "matching outfits / obvious signs",
+  "use_when": "matching clothes, team uniforms, twinning",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 33,
+  "file": "Amuzament/emoji_strengar_brate_incrucisate_original.jpg",
+  "cutout": "Amuzament/emoji_strengar_brate_incrucisate_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "emoji with arms crossed, smirk",
+  "meaning": "cheeky 'not me' / arms crossed",
+  "use_when": "arms crossed with a smirk, 'nope', playful refusal",
+  "quality": "screenshot"
+ },
+ {
+  "n": 34,
+  "file": "Amuzament/fantana_in_servieta_original.jpg",
+  "cutout": "Amuzament/fantana_in_servieta_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "a fountain inside a briefcase",
+  "meaning": "absurd luxury gadget",
+  "use_when": "a weird product, a surprise inside a bag",
+  "quality": "screenshot"
+ },
+ {
+  "n": 35,
+  "file": "Amuzament/fantana_pe_scara_rulanta_original.jpg",
+  "cutout": "Amuzament/fantana_pe_scara_rulanta_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "a fountain on an escalator",
+  "meaning": "absurd, pointless upgrade",
+  "use_when": "something unnecessary, over-designed",
+  "quality": "screenshot"
+ },
+ {
+  "n": 36,
+  "file": "Amuzament/fata_pe_curmala_la_intalnire_original.jpg",
+  "cutout": "Amuzament/fata_pe_curmala_la_intalnire_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "tiny girl on a giant date — 'finally I'm on a date'",
+  "meaning": "pun (date fruit)",
+  "use_when": "dates, dating jokes",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 37,
+  "file": "Amuzament/fata_razand_isteric.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "girl laughing hysterically (Billie Eilish)",
+  "meaning": "unhinged laughter",
+  "use_when": "losing it laughing, chaos",
+  "quality": "clean"
+ },
+ {
+  "n": 38,
+  "file": "Amuzament/fata_trasa_ca_firul_din_camasa.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "man's face pulled like a loose thread",
+  "meaning": "'pulled a loose thread' — it all falls apart",
+  "use_when": "a small mistake ruins everything",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 39,
+  "file": "Amuzament/fata_zambind_viclean_la_calculator.png",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "girl smiling slyly at a computer",
+  "meaning": "scheming / sneaky plan",
+  "use_when": "a sneaky plan, an evil idea, ordering secretly",
+  "quality": "clean"
+ },
+ {
+  "n": 40,
+  "file": "Amuzament/femeie_cantand_toate_vocile_original.jpg",
+  "cutout": "Amuzament/femeie_cantand_toate_vocile_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "woman singing all the voices of a song",
+  "meaning": "trying to do everything at once",
+  "use_when": "singing along badly, doing every part",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 41,
+  "file": "Amuzament/femeie_cu_proteza_dentara_uriasa_original.jpg",
+  "cutout": "Amuzament/femeie_cu_proteza_dentara_uriasa_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "woman with giant fake teeth",
+  "meaning": "huge grin / cursed smile",
+  "use_when": "a forced or giant smile",
+  "quality": "screenshot"
+ },
+ {
+  "n": 42,
+  "file": "Amuzament/femeie_rade_cu_limba_scoasa.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "woman laughing, tongue out (Cardi B)",
+  "meaning": "loud happy laugh",
+  "use_when": "joy, laughing loud",
+  "quality": "clean"
+ },
+ {
+  "n": 43,
+  "file": "Amuzament/femeie_razand_la_telefon_cu_nuca_de_cocos.png",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "woman laughing at phone with a coconut",
+  "meaning": "reading something funny, vacation vibe",
+  "use_when": "laughing at a text, chilling on holiday",
+  "quality": "clean"
+ },
+ {
+  "n": 44,
+  "file": "Amuzament/femeie_zidind_sotul_in_pat.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "woman bricking her husband into the bed",
+  "meaning": "going too far / extreme solution",
+  "use_when": "overreacting, locking someone in, 'no escape'",
+  "quality": "clean"
+ },
+ {
+  "n": 45,
+  "file": "Amuzament/fetita_cu_rochita_stramba.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "little girl with a crooked dress",
+  "meaning": "fail but proud",
+  "use_when": "a small fail, something put on wrong",
+  "quality": "clean"
+ },
+ {
+  "n": 46,
+  "file": "Amuzament/iphone_muscat_ca_un_mar.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "iPhone with a bite taken out",
+  "meaning": "Apple pun / hungry for tech",
+  "use_when": "phone, Apple, 'I could eat this'",
+  "quality": "not-a-meme"
+ },
+ {
+  "n": 47,
+  "file": "Amuzament/joker_ranjind_original.jpg",
+  "cutout": "Amuzament/joker_ranjind_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "Joker grinning",
+  "meaning": "evil plan / chaos",
+  "use_when": "a chaotic idea, villain energy",
+  "quality": "screenshot"
+ },
+ {
+  "n": 48,
+  "file": "Amuzament/mire_carat_orizontal_la_nunta.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "groom carried horizontally at a wedding",
+  "meaning": "celebrated like a hero",
+  "use_when": "someone lifted, carried, celebrated",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 49,
+  "file": "Amuzament/omulet_mergand_prin_apa_original.jpg",
+  "cutout": "Amuzament/omulet_mergand_prin_apa_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "little man walking through water — 'when I say I'm going swimming'",
+  "meaning": "bad swimmer / pretending",
+  "use_when": "swimming, water, pretending to be good",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 50,
+  "file": "Amuzament/pisica_bucatar_bucatarie_in_flacari.png",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "cat chef, kitchen on fire",
+  "meaning": "cooking disaster",
+  "use_when": "burnt food, kitchen chaos, cooking fail (FeedMe!)",
+  "quality": "clean"
+ },
+ {
+  "n": 51,
+  "file": "Amuzament/politist_razand_la_birou_original.jpg",
+  "cutout": "Amuzament/politist_razand_la_birou_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "police officer laughing at a desk",
+  "meaning": "authority laughing at you",
+  "use_when": "getting caught, rules, 'sir'",
+  "quality": "screenshot"
+ },
+ {
+  "n": 52,
+  "file": "Amuzament/scaun_de_plastic_reparat.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "repaired plastic chair — 'the real plastic surgery'",
+  "meaning": "pun / bad repair",
+  "use_when": "a bad fix, plastic",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 53,
+  "file": "Amuzament/selfie_masterpiece_snapchat_original.jpg",
+  "cutout": "Amuzament/selfie_masterpiece_snapchat_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "selfie of an unimpressed woman — snapchat 'abandon masterpiece?'",
+  "meaning": "ugly selfie / self-roast",
+  "use_when": "a bad selfie, unflattering angle",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 54,
+  "file": "Amuzament/semn_stop_satul_full_stop.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "stop sign 'full stop' with a full belly",
+  "meaning": "full after eating",
+  "use_when": "full, can't eat more (FeedMe!)",
+  "quality": "clean"
+ },
+ {
+  "n": 55,
+  "file": "Amuzament/sticker_dont_be_mean_be_median_original.jpg",
+  "cutout": "Amuzament/sticker_dont_be_mean_be_median_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "text 'Don't be mean. Be median, mode, or range.'",
+  "meaning": "nerd pun",
+  "use_when": "maths, school",
+  "quality": "not-a-meme"
+ },
+ {
+  "n": 56,
+  "file": "Amuzament/text_swahili_single_cu_parola_la_telefon_original.jpg",
+  "cutout": "Amuzament/text_swahili_single_cu_parola_la_telefon_fara_fundal.png",
+  "emotion": "Amuzament",
+  "shows": "Swahili text about being single",
+  "meaning": "inside joke (Swahili)",
+  "use_when": "—",
+  "quality": "not-a-meme"
+ },
+ {
+  "n": 57,
+  "file": "Amuzament/trompetist_cu_obrajii_umflati.jpg",
+  "cutout": null,
+  "emotion": "Amuzament",
+  "shows": "trumpeter with huge puffed cheeks",
+  "meaning": "holding it in / about to burst",
+  "use_when": "holding breath, holding laughter, about to explode",
+  "quality": "clean"
+ },
+ {
+  "n": 58,
+  "file": "Curiozitate/babuin_intrebator_despre_medicament.jpg",
+  "cutout": null,
+  "emotion": "Curiozitate",
+  "shows": "baboon asking how headache medicine reaches the head",
+  "meaning": "confused question",
+  "use_when": "'how does that even work?', a dumb question",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 59,
+  "file": "Curiozitate/baiat_scarpinandu_se_in_cap_original.jpg",
+  "cutout": "Curiozitate/baiat_scarpinandu_se_in_cap_fara_fundal.png",
+  "emotion": "Curiozitate",
+  "shows": "boy in red scratching his head",
+  "meaning": "confused, doesn't understand",
+  "use_when": "'what?', someone doesn't get it, a question nobody can answer",
+  "quality": "clean"
+ },
+ {
+  "n": 60,
+  "file": "Curiozitate/barbat_tragand_cu_ochiul_dupa_perete.jpg",
+  "cutout": null,
+  "emotion": "Curiozitate",
+  "shows": "man peeking around a wall",
+  "meaning": "spying / curious",
+  "use_when": "watching secretly, eavesdropping, 'I saw that'",
+  "quality": "clean"
+ },
+ {
+  "n": 61,
+  "file": "Curiozitate/bebelus_cu_mana_intinsa_nedumerit.jpg",
+  "cutout": null,
+  "emotion": "Curiozitate",
+  "shows": "toddler with hand out, puzzled",
+  "meaning": "'what is happening?' / 'excuse me?'",
+  "use_when": "confusion, 'where's mine?', asking for something",
+  "quality": "clean"
+ },
+ {
+  "n": 62,
+  "file": "Curiozitate/caine_ridicand_laba_cu_o_intrebare_original.jpg",
+  "cutout": "Curiozitate/caine_ridicand_laba_cu_o_intrebare_fara_fundal.png",
+  "emotion": "Curiozitate",
+  "shows": "dog raising a paw like a question",
+  "meaning": "'I have a question'",
+  "use_when": "someone raises a hand, asks a question",
+  "quality": "screenshot"
+ },
+ {
+  "n": 63,
+  "file": "Curiozitate/dora_cautand_cu_lupa.jpg",
+  "cutout": null,
+  "emotion": "Curiozitate",
+  "shows": "Dora with a magnifying glass — 'looking for the f*cks I give'",
+  "meaning": "not caring",
+  "use_when": "'I don't care', looking for something",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 64,
+  "file": "Curiozitate/femeie_cu_telefonul_la_ceafa.jpg",
+  "cutout": null,
+  "emotion": "Curiozitate",
+  "shows": "woman holding a phone to the back of her head",
+  "meaning": "doing it wrong / not listening",
+  "use_when": "a call nobody listens to, using something wrong",
+  "quality": "clean"
+ },
+ {
+  "n": 65,
+  "file": "Curiozitate/fetita_ascultand_barfa_original.jpg",
+  "cutout": "Curiozitate/fetita_ascultand_barfa_fara_fundal.png",
+  "emotion": "Curiozitate",
+  "shows": "girl leaning in — 'when my bestie says she has gossip'",
+  "meaning": "tea / gossip incoming",
+  "use_when": "gossip, 'tell me more', leaning in",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 66,
+  "file": "Curiozitate/pisica_ganditoare_la_fereastra.jpg",
+  "cutout": null,
+  "emotion": "Curiozitate",
+  "shows": "cat thinking at a window",
+  "meaning": "deep thought / pondering",
+  "use_when": "thinking hard, wondering, 'hmm'",
+  "quality": "clean"
+ },
+ {
+  "n": 67,
+  "file": "Dezgust/barbat_strambandu_se_original.jpg",
+  "cutout": "Dezgust/barbat_strambandu_se_fara_fundal.png",
+  "emotion": "Dezgust",
+  "shows": "man grimacing in disgust",
+  "meaning": "'ew' / cringe",
+  "use_when": "something gross or cringe",
+  "quality": "screenshot"
+ },
+ {
+  "n": 68,
+  "file": "Dezgust/batran_strambandu_se_cu_ochii_inchisi_original.jpg",
+  "cutout": "Dezgust/batran_strambandu_se_cu_ochii_inchisi_fara_fundal.png",
+  "emotion": "Dezgust",
+  "shows": "old man grimacing, eyes shut",
+  "meaning": "strong disgust",
+  "use_when": "a smell, bad taste, gross food",
+  "quality": "screenshot"
+ },
+ {
+  "n": 69,
+  "file": "Dezgust/fetita_strambandu_se_dezgustata.jpg",
+  "cutout": null,
+  "emotion": "Dezgust",
+  "shows": "little girl disgusted face (vintage)",
+  "meaning": "'yuck'",
+  "use_when": "tasting something bad, 'no thanks'",
+  "quality": "clean"
+ },
+ {
+  "n": 70,
+  "file": "Dezgust/grimasa_de_dezgust.jpg",
+  "cutout": null,
+  "emotion": "Dezgust",
+  "shows": "girl making a disgusted face",
+  "meaning": "disgust / judging",
+  "use_when": "judging someone, 'that's nasty'",
+  "quality": "clean"
+ },
+ {
+  "n": 71,
+  "file": "Dezgust/personaj_animat_ofensat_original.jpg",
+  "cutout": "Dezgust/personaj_animat_ofensat_fara_fundal.png",
+  "emotion": "Dezgust",
+  "shows": "animated character offended",
+  "meaning": "offended",
+  "use_when": "someone is insulted, 'excuse me??'",
+  "quality": "screenshot"
+ },
+ {
+  "n": 72,
+  "file": "Dezgust/personaj_anime_cu_mana_pe_fata_original.jpg",
+  "cutout": "Dezgust/personaj_anime_cu_mana_pe_fata_fara_fundal.png",
+  "emotion": "Dezgust",
+  "shows": "anime character facepalm",
+  "meaning": "facepalm",
+  "use_when": "a dumb mistake, 'why did you do that'",
+  "quality": "screenshot"
+ },
+ {
+  "n": 73,
+  "file": "Fericire/baiat_pe_scaune_stivuite.jpg",
+  "cutout": null,
+  "emotion": "Fericire",
+  "shows": "boy sitting on stacked chairs",
+  "meaning": "childhood chaos / proud of nothing",
+  "use_when": "climbing, sitting high, a dumb achievement",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 74,
+  "file": "Fericire/barbat_cu_lant_de_aur_strigand_in_selfie.jpg",
+  "cutout": null,
+  "emotion": "Fericire",
+  "shows": "man with gold chain shouting into a selfie",
+  "meaning": "hyped / flexing",
+  "use_when": "flexing, hype, showing off",
+  "quality": "clean"
+ },
+ {
+  "n": 75,
+  "file": "Fericire/barbat_extaziat_cu_mainile_dupa_cap.jpg",
+  "cutout": null,
+  "emotion": "Fericire",
+  "shows": "man ecstatic, hands behind head",
+  "meaning": "pure joy / 'let's go'",
+  "use_when": "a win, great news, excitement",
+  "quality": "clean"
+ },
+ {
+  "n": 76,
+  "file": "Fericire/cj_zambind_cu_pahare_mov.jpg",
+  "cutout": null,
+  "emotion": "Fericire",
+  "shows": "CJ smiling with purple cups",
+  "meaning": "good vibes / party",
+  "use_when": "party, drinks, good times",
+  "quality": "clean"
+ },
+ {
+  "n": 77,
+  "file": "Fericire/elle_woods_zambind_la_laptop.png",
+  "cutout": null,
+  "emotion": "Fericire",
+  "shows": "Elle Woods smiling at a laptop",
+  "meaning": "'what, like it's hard?' — confident and cute",
+  "use_when": "succeeding easily, typing, ordering online",
+  "quality": "clean"
+ },
+ {
+  "n": 78,
+  "file": "Fericire/fata_cu_ochelari_entuziasmata_de_tenders_de_pui.jpg",
+  "cutout": null,
+  "emotion": "Fericire",
+  "shows": "girl in glasses excited about chicken tenders",
+  "meaning": "food excitement",
+  "use_when": "food arriving, tenders, a favourite meal (FeedMe!)",
+  "quality": "clean"
+ },
+ {
+  "n": 79,
+  "file": "Fericire/fata_zambind_cu_laptop_roz.jpg",
+  "cutout": null,
+  "emotion": "Fericire",
+  "shows": "girl smiling with a pink laptop",
+  "meaning": "happy online / shopping",
+  "use_when": "shopping, ordering, browsing happily",
+  "quality": "clean"
+ },
+ {
+  "n": 80,
+  "file": "Fericire/femeie_cantand_la_toba_pe_plaja.jpg",
+  "cutout": null,
+  "emotion": "Fericire",
+  "shows": "woman drumming on a beach",
+  "meaning": "carefree vacation joy",
+  "use_when": "vacation, beach, music",
+  "quality": "clean"
+ },
+ {
+  "n": 81,
+  "file": "Fericire/femeie_zambind_cu_breton.jpg",
+  "cutout": null,
+  "emotion": "Fericire",
+  "shows": "woman smiling, fringe",
+  "meaning": "sweet smile",
+  "use_when": "a cute reaction",
+  "quality": "clean"
+ },
+ {
+  "n": 82,
+  "file": "Fericire/femeie_zambind_la_telefon.jpg",
+  "cutout": null,
+  "emotion": "Fericire",
+  "shows": "woman smiling at her phone",
+  "meaning": "good message received",
+  "use_when": "a good text, an order confirmation",
+  "quality": "clean"
+ },
+ {
+  "n": 83,
+  "file": "Fericire/femeie_zambind_tastand_la_birou.png",
+  "cutout": null,
+  "emotion": "Fericire",
+  "shows": "woman smiling while typing at work",
+  "meaning": "work happiness / pretending",
+  "use_when": "work, typing, 'per my last email'",
+  "quality": "clean"
+ },
+ {
+  "n": 84,
+  "file": "Fericire/fetita_fericita_cu_pizza_original.jpg",
+  "cutout": "Fericire/fetita_fericita_cu_pizza_fara_fundal.png",
+  "emotion": "Fericire",
+  "shows": "girl happy with pizza — 'my attitude once he buys me food'",
+  "meaning": "mood fixed by food",
+  "use_when": "food fixes the mood, someone pays (FeedMe!)",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 85,
+  "file": "Fericire/gaste_goose_bumps.jpg",
+  "cutout": null,
+  "emotion": "Fericire",
+  "shows": "two geese — 'goose bumps'",
+  "meaning": "pun",
+  "use_when": "goosebumps, chills",
+  "quality": "not-a-meme"
+ },
+ {
+  "n": 86,
+  "file": "Fericire/maimute_selfie_la_munte.jpg",
+  "cutout": null,
+  "emotion": "Fericire",
+  "shows": "two monkeys taking a selfie",
+  "meaning": "friends selfie",
+  "use_when": "a group selfie, friends, filming each other",
+  "quality": "clean"
+ },
+ {
+  "n": 87,
+  "file": "Fericire/public_entuziasmat_aplaudand.jpg",
+  "cutout": null,
+  "emotion": "Fericire",
+  "shows": "crowd cheering, applauding",
+  "meaning": "applause / crowd hype",
+  "use_when": "applause, a win, a reveal, 'let's gooo'",
+  "quality": "clean"
+ },
+ {
+  "n": 88,
+  "file": "Furie/arbitru_aratand_cartonas_rosu.jpg",
+  "cutout": null,
+  "emotion": "Furie",
+  "shows": "referee showing a red card",
+  "meaning": "foul / you're out",
+  "use_when": "a rule broken, a foul, someone eliminated",
+  "quality": "clean"
+ },
+ {
+  "n": 89,
+  "file": "Furie/barbat_cu_sapca_de_piele_aruncand_furios.jpg",
+  "cutout": null,
+  "emotion": "Furie",
+  "shows": "man in leather cap throwing furiously",
+  "meaning": "rage throw",
+  "use_when": "throwing something in anger, 'I'm done'",
+  "quality": "clean"
+ },
+ {
+  "n": 90,
+  "file": "Furie/barbat_cu_sapca_si_mana_ridicata_original.jpg",
+  "cutout": "Furie/barbat_cu_sapca_si_mana_ridicata_fara_fundal.png",
+  "emotion": "Furie",
+  "shows": "man in cap with raised hand",
+  "meaning": "'stop' / 'hold on'",
+  "use_when": "stopping someone, objection",
+  "quality": "screenshot"
+ },
+ {
+  "n": 91,
+  "file": "Furie/cj_degetul_mijlociu_din_frigider.jpg",
+  "cutout": null,
+  "emotion": "Furie",
+  "shows": "CJ giving the middle finger from a fridge",
+  "meaning": "rude 'no' (fridge)",
+  "use_when": "fridge, food stolen, rude reply",
+  "quality": "clean"
+ },
+ {
+  "n": 92,
+  "file": "Furie/femeie_aratand_cu_degetul.jpg",
+  "cutout": null,
+  "emotion": "Furie",
+  "shows": "woman pointing her finger",
+  "meaning": "'you!' accusing",
+  "use_when": "blaming someone, 'it was you'",
+  "quality": "screenshot"
+ },
+ {
+  "n": 93,
+  "file": "Furie/femeie_cu_mainile_incrucisate_strigand.jpg",
+  "cutout": null,
+  "emotion": "Furie",
+  "shows": "woman with crossed hands shouting",
+  "meaning": "'no!' strong refusal",
+  "use_when": "refusing, arguing, 'absolutely not'",
+  "quality": "clean"
+ },
+ {
+  "n": 94,
+  "file": "Furie/femeie_furioasa_cu_basma_original.jpg",
+  "cutout": "Furie/femeie_furioasa_cu_basma_fara_fundal.png",
+  "emotion": "Furie",
+  "shows": "angry woman in a headscarf",
+  "meaning": "pure anger",
+  "use_when": "someone is furious",
+  "quality": "screenshot"
+ },
+ {
+  "n": 95,
+  "file": "Furie/femeie_muscand_laptopul_de_nervi.jpg",
+  "cutout": null,
+  "emotion": "Furie",
+  "shows": "woman biting a laptop in rage",
+  "meaning": "tech rage",
+  "use_when": "laptop/app not working, frustration",
+  "quality": "clean"
+ },
+ {
+  "n": 96,
+  "file": "Furie/omulet_shatap_original.jpg",
+  "cutout": "Furie/omulet_shatap_fara_fundal.png",
+  "emotion": "Furie",
+  "shows": "doodle 'Shatap'",
+  "meaning": "'shut up'",
+  "use_when": "telling someone to be quiet",
+  "quality": "clean"
+ },
+ {
+  "n": 97,
+  "file": "Furie/omulet_sugrumand_pe_cine_ii_pronunta_gresit_numele_original.jpg",
+  "cutout": "Furie/omulet_sugrumand_pe_cine_ii_pronunta_gresit_numele_fara_fundal.png",
+  "emotion": "Furie",
+  "shows": "doodle strangling — 'when someone pronounces my name wrong'",
+  "meaning": "name mispronounced",
+  "use_when": "a name said wrong",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 98,
+  "file": "Furie/tantar_cantand_la_vioara_in_ureche.jpg",
+  "cutout": null,
+  "emotion": "Furie",
+  "shows": "mosquito playing violin in an ear",
+  "meaning": "annoying noise",
+  "use_when": "an annoying sound, someone won't stop talking",
+  "quality": "clean"
+ },
+ {
+  "n": 99,
+  "file": "Incredere/baiat_imbratisat_din_spate_in_autobuz.jpg",
+  "cutout": null,
+  "emotion": "Incredere",
+  "shows": "boy hugged from behind on a bus",
+  "meaning": "clingy / awkward closeness",
+  "use_when": "someone too close, clingy friend",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 100,
+  "file": "Incredere/barbat_cu_ochelari_de_soare_aurii_original.jpg",
+  "cutout": "Incredere/barbat_cu_ochelari_de_soare_aurii_fara_fundal.png",
+  "emotion": "Incredere",
+  "shows": "man in gold sunglasses",
+  "meaning": "'deal with it' cool",
+  "use_when": "acting cool, overconfident",
+  "quality": "screenshot"
+ },
+ {
+  "n": 101,
+  "file": "Incredere/barbat_cu_pumnul_ridicat_si_buze_tuguiate_original.jpg",
+  "cutout": "Incredere/barbat_cu_pumnul_ridicat_si_buze_tuguiate_fara_fundal.png",
+  "emotion": "Incredere",
+  "shows": "man with raised fist, pouting",
+  "meaning": "flex / tough",
+  "use_when": "flexing, 'I'm strong'",
+  "quality": "screenshot"
+ },
+ {
+  "n": 102,
+  "file": "Incredere/bucatar_cu_manusi_pregatit_de_gatit.jpg",
+  "cutout": null,
+  "emotion": "Incredere",
+  "shows": "chef with gloves raised, ready",
+  "meaning": "ready to cook / operate",
+  "use_when": "getting ready, 'let me cook' (FeedMe!)",
+  "quality": "clean"
+ },
+ {
+  "n": 103,
+  "file": "Incredere/bucatar_ramen_zambet_sigur_pe_el.jpg",
+  "cutout": null,
+  "emotion": "Incredere",
+  "shows": "ramen chef smiling — 'Ramen guy would solo Gordon Ramsay'",
+  "meaning": "confident chef",
+  "use_when": "a confident cook, ramen (FeedMe!)",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 104,
+  "file": "Incredere/chihuahua_cu_labele_incrucisate_original.jpg",
+  "cutout": "Incredere/chihuahua_cu_labele_incrucisate_fara_fundal.png",
+  "emotion": "Incredere",
+  "shows": "chihuahua with crossed paws",
+  "meaning": "smug confidence",
+  "use_when": "smug, arms crossed, 'I know'",
+  "quality": "screenshot"
+ },
+ {
+  "n": 105,
+  "file": "Incredere/cimpanzeu_servind_ceai_la_interviu.jpg",
+  "cutout": null,
+  "emotion": "Incredere",
+  "shows": "chimp serving tea at an interview — 'why do you want to hire me?'",
+  "meaning": "overconfident at an interview",
+  "use_when": "a job interview, showing off",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 106,
+  "file": "Incredere/cj_arata_discul_gta_san_andreas.jpg",
+  "cutout": null,
+  "emotion": "Incredere",
+  "shows": "CJ holding a GTA San Andreas disc",
+  "meaning": "nostalgia / 'this is the one'",
+  "use_when": "showing something proudly, a classic",
+  "quality": "clean"
+ },
+ {
+  "n": 107,
+  "file": "Incredere/cj_fuge_de_explozie_la_telefon.jpg",
+  "cutout": null,
+  "emotion": "Incredere",
+  "shows": "CJ running from an explosion on the phone",
+  "meaning": "walking away cool from chaos",
+  "use_when": "leaving chaos behind, 'not my problem'",
+  "quality": "clean"
+ },
+ {
+  "n": 108,
+  "file": "Incredere/cj_ridica_haltere_la_sala.jpg",
+  "cutout": null,
+  "emotion": "Incredere",
+  "shows": "CJ lifting weights (muscle upgraded)",
+  "meaning": "getting stronger / leveling up",
+  "use_when": "gym, getting better, an upgrade",
+  "quality": "clean"
+ },
+ {
+  "n": 109,
+  "file": "Incredere/fata_pocnind_din_degete_original.jpg",
+  "cutout": "Incredere/fata_pocnind_din_degete_fara_fundal.png",
+  "emotion": "Incredere",
+  "shows": "girl snapping fingers",
+  "meaning": "'yes!' / 'periodt' / that's it",
+  "use_when": "agreement, 'nice', a satisfying moment, 'exactly'",
+  "quality": "clean"
+ },
+ {
+  "n": 110,
+  "file": "Incredere/femeie_cu_cocktail_urias_si_buze_tuguiate.jpg",
+  "cutout": null,
+  "emotion": "Incredere",
+  "shows": "woman with a giant cocktail, pouting",
+  "meaning": "treating yourself",
+  "use_when": "drinks, celebrating, 'I deserve this'",
+  "quality": "clean"
+ },
+ {
+  "n": 111,
+  "file": "Incredere/femeie_cu_degetul_mare_not_today.jpg",
+  "cutout": null,
+  "emotion": "Incredere",
+  "shows": "woman thumbs up — 'not today fatty, not today'",
+  "meaning": "resisting temptation",
+  "use_when": "skipping food, diet jokes",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 112,
+  "file": "Incredere/omulet_in_bikini_rosu_original.jpg",
+  "cutout": "Incredere/omulet_in_bikini_rosu_fara_fundal.png",
+  "emotion": "Incredere",
+  "shows": "doodle in a red bikini",
+  "meaning": "summer body / ready for the beach",
+  "use_when": "beach, summer, swimwear",
+  "quality": "clean"
+ },
+ {
+  "n": 113,
+  "file": "Incredere/pisoi_bucatar_cu_lingura_de_lemn_original.jpg",
+  "cutout": "Incredere/pisoi_bucatar_cu_lingura_de_lemn_fara_fundal.png",
+  "emotion": "Incredere",
+  "shows": "kitten chef with a wooden spoon",
+  "meaning": "cute cook",
+  "use_when": "cooking, stirring, a cute chef (FeedMe!)",
+  "quality": "clean"
+ },
+ {
+  "n": 114,
+  "file": "Incredere/pumn_ridicat_buze_tuguiate.jpg",
+  "cutout": null,
+  "emotion": "Incredere",
+  "shows": "raised fist, pouting (close-up)",
+  "meaning": "tough / determined",
+  "use_when": "'let's do this', motivation",
+  "quality": "clean"
+ },
+ {
+  "n": 115,
+  "file": "Incredere/text_make_dope_stuff_every_day_original.jpg",
+  "cutout": "Incredere/text_make_dope_stuff_every_day_fara_fundal.png",
+  "emotion": "Incredere",
+  "shows": "text 'Make dope stuff every day'",
+  "meaning": "motivation",
+  "use_when": "creative motivation",
+  "quality": "not-a-meme"
+ },
+ {
+  "n": 116,
+  "file": "Incredere/zambet_cu_semnul_ok.png",
+  "cutout": null,
+  "emotion": "Incredere",
+  "shows": "John Cena smiling with OK sign",
+  "meaning": "'all good' / approval",
+  "use_when": "approval, 'perfect', all fine",
+  "quality": "clean"
+ },
+ {
+  "n": 117,
+  "file": "Indiferenta/baiat_cu_buzele_strambe_original.jpg",
+  "cutout": "Indiferenta/baiat_cu_buzele_strambe_fara_fundal.png",
+  "emotion": "Indiferenta",
+  "shows": "boy with a crooked mouth",
+  "meaning": "'meh' / unimpressed",
+  "use_when": "unimpressed, 'that's it?'",
+  "quality": "screenshot"
+ },
+ {
+  "n": 118,
+  "file": "Indiferenta/barbat_band_fanta_fara_griji_original.jpg",
+  "cutout": "Indiferenta/barbat_band_fanta_fara_griji_fara_fundal.png",
+  "emotion": "Indiferenta",
+  "shows": "man drinking Fanta, unbothered",
+  "meaning": "not my problem / carefree",
+  "use_when": "chilling while chaos happens",
+  "quality": "screenshot"
+ },
+ {
+  "n": 119,
+  "file": "Indiferenta/barbat_cu_degetele_in_urechi_original.jpg",
+  "cutout": "Indiferenta/barbat_cu_degetele_in_urechi_fara_fundal.png",
+  "emotion": "Indiferenta",
+  "shows": "man with fingers in ears",
+  "meaning": "not listening",
+  "use_when": "ignoring someone, 'la la la'",
+  "quality": "screenshot"
+ },
+ {
+  "n": 120,
+  "file": "Indiferenta/barbat_cu_privire_plictisita_emoji_original.jpg",
+  "cutout": "Indiferenta/barbat_cu_privire_plictisita_emoji_fara_fundal.png",
+  "emotion": "Indiferenta",
+  "shows": "man with a bored face",
+  "meaning": "bored",
+  "use_when": "boredom, waiting",
+  "quality": "screenshot"
+ },
+ {
+  "n": 121,
+  "file": "Indiferenta/doi_barbati_selfie_in_club.jpg",
+  "cutout": null,
+  "emotion": "Indiferenta",
+  "shows": "two men taking a selfie in a club",
+  "meaning": "night out",
+  "use_when": "party, going out",
+  "quality": "clean"
+ },
+ {
+  "n": 122,
+  "file": "Indiferenta/mama_neimpresionata_de_video_original.jpg",
+  "cutout": "Indiferenta/mama_neimpresionata_de_video_fara_fundal.png",
+  "emotion": "Indiferenta",
+  "shows": "tweet 'Mom look at this funny video' — mom unimpressed",
+  "meaning": "parents don't get it",
+  "use_when": "showing something and nobody laughs",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 123,
+  "file": "Indiferenta/personaj_desenat_plictisit_original.jpg",
+  "cutout": "Indiferenta/personaj_desenat_plictisit_fara_fundal.png",
+  "emotion": "Indiferenta",
+  "shows": "cartoon guy bored",
+  "meaning": "bored / done",
+  "use_when": "boredom, 'when is this over'",
+  "quality": "screenshot"
+ },
+ {
+  "n": 124,
+  "file": "Indiferenta/pisica_cu_fata_obosita_dimineata_original.jpg",
+  "cutout": "Indiferenta/pisica_cu_fata_obosita_dimineata_fara_fundal.png",
+  "emotion": "Indiferenta",
+  "shows": "cat with a tired morning face",
+  "meaning": "morning / exhausted",
+  "use_when": "mornings, tired, Monday",
+  "quality": "screenshot"
+ },
+ {
+  "n": 125,
+  "file": "Indiferenta/text_enough_todaying_for_today.jpg",
+  "cutout": null,
+  "emotion": "Indiferenta",
+  "shows": "text 'That's enough todaying for today. I'm done.'",
+  "meaning": "done for the day",
+  "use_when": "ending, 'I'm done', end of the day",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 126,
+  "file": "Indiferenta/text_ohhh_ma_prefac_ca_inteleg_original.jpg",
+  "cutout": "Indiferenta/text_ohhh_ma_prefac_ca_inteleg_fara_fundal.png",
+  "emotion": "Indiferenta",
+  "shows": "text 'Ohhhh — pretend I understand'",
+  "meaning": "pretending to understand",
+  "use_when": "nodding without understanding",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 127,
+  "file": "Indiferenta/vulpe_impaiata_pe_scaun_original.jpg",
+  "cutout": "Indiferenta/vulpe_impaiata_pe_scaun_fara_fundal.png",
+  "emotion": "Indiferenta",
+  "shows": "stuffed fox on a chair",
+  "meaning": "awkward / frozen",
+  "use_when": "freezing, awkward silence",
+  "quality": "screenshot"
+ },
+ {
+  "n": 128,
+  "file": "Iubire/barbat_cu_acadea_in_pat_original.jpg",
+  "cutout": "Iubire/barbat_cu_acadea_in_pat_fara_fundal.png",
+  "emotion": "Iubire",
+  "shows": "man with a lollipop in bed",
+  "meaning": "flirty / sweet",
+  "use_when": "flirting, lazy romantic",
+  "quality": "clean"
+ },
+ {
+  "n": 129,
+  "file": "Iubire/barbat_cu_trandafir_in_gura.jpg",
+  "cutout": null,
+  "emotion": "Iubire",
+  "shows": "man with a rose in his mouth",
+  "meaning": "romantic gesture",
+  "use_when": "love, romance, a gift",
+  "quality": "clean"
+ },
+ {
+  "n": 130,
+  "file": "Iubire/cuplu_ingropat_sa_crestem_impreuna_original.jpg",
+  "cutout": "Iubire/cuplu_ingropat_sa_crestem_impreuna_fara_fundal.png",
+  "emotion": "Iubire",
+  "shows": "couple buried in soil — 'I want us to grow together'",
+  "meaning": "literal joke",
+  "use_when": "growing together, relationships",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 131,
+  "file": "Iubire/fanta_si_bat_esti_fantastic.jpg",
+  "cutout": null,
+  "emotion": "Iubire",
+  "shows": "Fanta and stick — 'I think you are fan-tastic'",
+  "meaning": "pun compliment",
+  "use_when": "a compliment pun",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 132,
+  "file": "Iubire/inima_vazuta_din_spate.jpg",
+  "cutout": null,
+  "emotion": "Iubire",
+  "shows": "heart seen from behind — 'from the bottom of your heart'",
+  "meaning": "pun",
+  "use_when": "heartfelt thanks",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 133,
+  "file": "Iubire/maimuta_cu_inimioare_din_degete.jpg",
+  "cutout": null,
+  "emotion": "Iubire",
+  "shows": "monkey making finger hearts",
+  "meaning": "love / thank you",
+  "use_when": "love, thanks, cute",
+  "quality": "clean"
+ },
+ {
+  "n": 134,
+  "file": "Liniste/cal_relaxat_in_pat.jpg",
+  "cutout": null,
+  "emotion": "Liniste",
+  "shows": "horse relaxed in bed",
+  "meaning": "relaxed",
+  "use_when": "resting, weekend, chilling",
+  "quality": "clean"
+ },
+ {
+  "n": 135,
+  "file": "Liniste/femeie_bea_ceai_la_laptop_roz.jpg",
+  "cutout": null,
+  "emotion": "Liniste",
+  "shows": "woman sipping tea at a pink laptop",
+  "meaning": "calm, sipping tea / gossip",
+  "use_when": "calm work, 'sipping tea' gossip",
+  "quality": "clean"
+ },
+ {
+  "n": 136,
+  "file": "Liniste/paleta_culori_cyprus_sand_dune.png",
+  "cutout": null,
+  "emotion": "Liniste",
+  "shows": "colour palette 'Cyprus / Sand dune'",
+  "meaning": "not a meme",
+  "use_when": "—",
+  "quality": "not-a-meme"
+ },
+ {
+  "n": 137,
+  "file": "Liniste/plaja_tropicala_cu_palmieri.jpg",
+  "cutout": null,
+  "emotion": "Liniste",
+  "shows": "tropical beach with palm trees",
+  "meaning": "vacation",
+  "use_when": "holiday, beach, dreaming",
+  "quality": "not-a-meme"
+ },
+ {
+  "n": 138,
+  "file": "Liniste/tanar_dormind_pe_sac_de_faina.jpg",
+  "cutout": null,
+  "emotion": "Liniste",
+  "shows": "young man asleep on a flour sack",
+  "meaning": "exhausted / 'sweet dreams'",
+  "use_when": "tired worker, napping",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 139,
+  "file": "Surpriza/barbat_cu_mana_pe_obraz_surprins_original.jpg",
+  "cutout": "Surpriza/barbat_cu_mana_pe_obraz_surprins_fara_fundal.png",
+  "emotion": "Surpriza",
+  "shows": "man with hand on cheek, surprised",
+  "meaning": "'oh my!' surprise",
+  "use_when": "a surprising reveal",
+  "quality": "screenshot"
+ },
+ {
+  "n": 140,
+  "file": "Surpriza/bebelus_cu_ochii_mari_band_milkshake.jpg",
+  "cutout": null,
+  "emotion": "Surpriza",
+  "shows": "baby with big eyes drinking a milkshake",
+  "meaning": "wide-eyed shock while sipping",
+  "use_when": "watching drama while drinking, shocked",
+  "quality": "clean"
+ },
+ {
+  "n": 141,
+  "file": "Surpriza/bebelus_mirat_eiii.jpg",
+  "cutout": null,
+  "emotion": "Surpriza",
+  "shows": "surprised baby — 'Eiiii'",
+  "meaning": "'whaaat'",
+  "use_when": "a shocking statement",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 142,
+  "file": "Surpriza/chihuahua_socat_original.jpg",
+  "cutout": "Surpriza/chihuahua_socat_fara_fundal.png",
+  "emotion": "Surpriza",
+  "shows": "shocked chihuahua",
+  "meaning": "shock",
+  "use_when": "something shocking, a surprise",
+  "quality": "screenshot"
+ },
+ {
+  "n": 143,
+  "file": "Surpriza/femeie_muscandu_si_pumnul.jpg",
+  "cutout": null,
+  "emotion": "Surpriza",
+  "shows": "woman biting her fist in shock",
+  "meaning": "can't believe it / dramatic",
+  "use_when": "drama, a twist, 'no way'",
+  "quality": "clean"
+ },
+ {
+  "n": 144,
+  "file": "Surpriza/femeie_socata_cu_gura_deschisa.jpg",
+  "cutout": null,
+  "emotion": "Surpriza",
+  "shows": "woman shocked, mouth open",
+  "meaning": "jaw drop",
+  "use_when": "a big reveal, unexpected news",
+  "quality": "clean"
+ },
+ {
+  "n": 145,
+  "file": "Suspiciune/baiat_sprijinit_privind_sceptic.jpg",
+  "cutout": null,
+  "emotion": "Suspiciune",
+  "shows": "boy leaning back, skeptical",
+  "meaning": "'really?'",
+  "use_when": "doubting, 'I don't believe you'",
+  "quality": "clean"
+ },
+ {
+  "n": 146,
+  "file": "Suspiciune/barbat_chel_privind_suspicios_original.jpg",
+  "cutout": "Suspiciune/barbat_chel_privind_suspicios_fara_fundal.png",
+  "emotion": "Suspiciune",
+  "shows": "bald man looking suspicious",
+  "meaning": "suspicious",
+  "use_when": "something fishy, 'hmm'",
+  "quality": "screenshot"
+ },
+ {
+  "n": 147,
+  "file": "Suspiciune/barbat_cu_caciula_privind_sceptic.jpg",
+  "cutout": null,
+  "emotion": "Suspiciune",
+  "shows": "man in a beanie, skeptical",
+  "meaning": "doubt",
+  "use_when": "doubting a claim",
+  "quality": "clean"
+ },
+ {
+  "n": 148,
+  "file": "Suspiciune/barbat_facand_semnul_time_out.jpg",
+  "cutout": null,
+  "emotion": "Suspiciune",
+  "shows": "man making a time-out sign",
+  "meaning": "'time out' / stop",
+  "use_when": "stopping, 'hold on', pause",
+  "quality": "clean"
+ },
+ {
+  "n": 149,
+  "file": "Suspiciune/baschetbalist_selfie_sceptic.jpg",
+  "cutout": null,
+  "emotion": "Suspiciune",
+  "shows": "basketball player, skeptical selfie",
+  "meaning": "'are you sure?'",
+  "use_when": "doubting while filming",
+  "quality": "clean"
+ },
+ {
+  "n": 150,
+  "file": "Suspiciune/bebelus_are_u_for_real_original.jpg",
+  "cutout": "Suspiciune/bebelus_are_u_for_real_fara_fundal.png",
+  "emotion": "Suspiciune",
+  "shows": "baby — 'are you for real?'",
+  "meaning": "disbelief",
+  "use_when": "'are you serious?'",
+  "quality": "screenshot"
+ },
+ {
+  "n": 151,
+  "file": "Suspiciune/bebelus_privire_serioasa.jpg",
+  "cutout": null,
+  "emotion": "Suspiciune",
+  "shows": "baby with a serious stare",
+  "meaning": "judging",
+  "use_when": "judging, serious face",
+  "quality": "clean"
+ },
+ {
+  "n": 152,
+  "file": "Suspiciune/bunica_privind_suspicios.jpg",
+  "cutout": null,
+  "emotion": "Suspiciune",
+  "shows": "grandma looking suspicious",
+  "meaning": "suspicious elder",
+  "use_when": "a suspicious look, 'what did you do'",
+  "quality": "clean"
+ },
+ {
+  "n": 153,
+  "file": "Suspiciune/caine_privind_suspicios.jpg",
+  "cutout": null,
+  "emotion": "Suspiciune",
+  "shows": "dog looking suspicious",
+  "meaning": "side-eye",
+  "use_when": "side-eye, suspicious",
+  "quality": "clean"
+ },
+ {
+  "n": 154,
+  "file": "Suspiciune/caine_privire_din_coada_ochiului_original.jpg",
+  "cutout": "Suspiciune/caine_privire_din_coada_ochiului_fara_fundal.png",
+  "emotion": "Suspiciune",
+  "shows": "dog giving side-eye (cut-out)",
+  "meaning": "side-eye",
+  "use_when": "side-eye at someone",
+  "quality": "clean"
+ },
+ {
+  "n": 155,
+  "file": "Suspiciune/cj_selfie_ingrijorat_cu_laptop.png",
+  "cutout": null,
+  "emotion": "Suspiciune",
+  "shows": "CJ worried selfie with a laptop",
+  "meaning": "worried / oh no",
+  "use_when": "bad news, a mistake on the computer",
+  "quality": "clean"
+ },
+ {
+  "n": 156,
+  "file": "Suspiciune/cuplu_citind_telefonul_impreuna.jpg",
+  "cutout": null,
+  "emotion": "Suspiciune",
+  "shows": "couple reading a phone together",
+  "meaning": "reading something together, suspicious",
+  "use_when": "checking a phone, reading the comments",
+  "quality": "clean"
+ },
+ {
+  "n": 157,
+  "file": "Suspiciune/fata_privind_nedumerita_telefonul.jpg",
+  "cutout": null,
+  "emotion": "Suspiciune",
+  "shows": "girl puzzled at her flip phone",
+  "meaning": "confused by tech",
+  "use_when": "confusing message, old phone",
+  "quality": "clean"
+ },
+ {
+  "n": 158,
+  "file": "Suspiciune/femeie_cu_mainile_impreunate_suspicioasa.jpg",
+  "cutout": null,
+  "emotion": "Suspiciune",
+  "shows": "woman with clasped hands, suspicious",
+  "meaning": "'hmm, sure'",
+  "use_when": "sarcastic doubt",
+  "quality": "clean"
+ },
+ {
+  "n": 159,
+  "file": "Suspiciune/maimuta_citind_certificatul_de_nastere.jpg",
+  "cutout": null,
+  "emotion": "Suspiciune",
+  "shows": "monkey reading a birth certificate — 'people think I was born yesterday'",
+  "meaning": "'I'm not stupid'",
+  "use_when": "someone tries to fool you",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 160,
+  "file": "Suspiciune/rata_privind_suspicios.jpg",
+  "cutout": null,
+  "emotion": "Suspiciune",
+  "shows": "duck looking suspicious",
+  "meaning": "suspicious duck",
+  "use_when": "suspicious, weird look",
+  "quality": "clean"
+ },
+ {
+  "n": 161,
+  "file": "Tristete/barbat_plangand_noaptea_original.jpg",
+  "cutout": "Tristete/barbat_plangand_noaptea_fara_fundal.png",
+  "emotion": "Tristete",
+  "shows": "man crying at night",
+  "meaning": "sad",
+  "use_when": "sadness, a loss",
+  "quality": "screenshot"
+ },
+ {
+  "n": 162,
+  "file": "Tristete/barbat_trist_in_camasa_de_blugi.jpg",
+  "cutout": null,
+  "emotion": "Tristete",
+  "shows": "sad man in a denim shirt",
+  "meaning": "disappointed",
+  "use_when": "disappointment",
+  "quality": "clean"
+ },
+ {
+  "n": 163,
+  "file": "Tristete/bebelus_plangand_cu_mana_pe_cap_original.jpg",
+  "cutout": "Tristete/bebelus_plangand_cu_mana_pe_cap_fara_fundal.png",
+  "emotion": "Tristete",
+  "shows": "baby crying, hand on head",
+  "meaning": "stress / overwhelmed",
+  "use_when": "overwhelmed, too much",
+  "quality": "screenshot"
+ },
+ {
+  "n": 164,
+  "file": "Tristete/femeie_cu_fata_umflata.jpg",
+  "cutout": null,
+  "emotion": "Tristete",
+  "shows": "woman with a swollen face",
+  "meaning": "after crying / after a bad day",
+  "use_when": "the morning after, bad day",
+  "quality": "clean"
+ },
+ {
+  "n": 165,
+  "file": "Tristete/femeie_plangand_in_hohote_original.jpg",
+  "cutout": "Tristete/femeie_plangand_in_hohote_fara_fundal.png",
+  "emotion": "Tristete",
+  "shows": "woman crying hard (cut-out)",
+  "meaning": "dramatic crying",
+  "use_when": "drama, 'I'm crying'",
+  "quality": "clean"
+ },
+ {
+  "n": 166,
+  "file": "Tristete/orez_cu_pulpa_de_pui_desenata.jpg",
+  "cutout": null,
+  "emotion": "Tristete",
+  "shows": "rice with a drawn chicken leg",
+  "meaning": "poor man's meal",
+  "use_when": "budget food, no money for food (FeedMe!)",
+  "quality": "clean"
+ },
+ {
+  "n": 167,
+  "file": "Tristete/papusa_bratz_dramatica.jpg",
+  "cutout": null,
+  "emotion": "Tristete",
+  "shows": "dramatic Bratz doll",
+  "meaning": "drama queen",
+  "use_when": "being dramatic",
+  "quality": "clean"
+ },
+ {
+  "n": 168,
+  "file": "Tristete/snoop_in_masina_privind_inotatorii_original.jpg",
+  "cutout": "Tristete/snoop_in_masina_privind_inotatorii_fara_fundal.png",
+  "emotion": "Tristete",
+  "shows": "Snoop watching swimmers from a car — 'cuz they know how'",
+  "meaning": "jealous of others",
+  "use_when": "envy, can't do what others do",
+  "quality": "caption-baked"
+ },
+ {
+  "n": 169,
+  "file": "Tristete/snoop_in_pat_fara_somn_original.jpg",
+  "cutout": "Tristete/snoop_in_pat_fara_somn_fara_fundal.png",
+  "emotion": "Tristete",
+  "shows": "Snoop in bed — 'when the nap isn't trying to take me'",
+  "meaning": "can't sleep",
+  "use_when": "insomnia, tired",
+  "quality": "caption-baked"
+ }
+]

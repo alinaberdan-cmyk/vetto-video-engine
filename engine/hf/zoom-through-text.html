@@ -1,0 +1,57 @@
+<!doctype html><html><head><meta charset="utf-8"><!--BASE-->
+<style>
+/* PDF p.9 "Fly through a letter": black frame, a huge word full width in the centre. The letters are windows: through
+   them you see the video; around them black. Thin light outline on the letters. The camera accelerates into the thick
+   part of a letter; in 0.95 s the letter fills the screen and only the video remains; then the scale settles softly
+   from 1.06 to 1. Smooth letter edges. (Black layer with white letters, multiplied over the video = letter windows.) */
+#vidwrap { position: absolute; inset: 0; transform-origin: 50% 50%; }
+#mask, #edge { position: absolute; inset: 0; display: grid; place-items: center; }
+#mask { background: #000; }
+#fly { mix-blend-mode: multiply; }   /* the blend sits on the transformed group, else it only blends inside it */
+.word { font: 400 300px/1 'Anton'; letter-spacing: 4px; text-transform: uppercase; white-space: nowrap; }
+#mask .word { color: #fff; }
+#edge .word { color: transparent; -webkit-text-stroke: 3px rgba(255,255,255,.85); }
+.flyer { position: absolute; inset: 0; }
+</style></head><body>
+<div id="root" data-composition-id="root" data-start="0" data-duration="3" data-width="1080" data-height="1920">
+  <div id="vidwrap"><video class="clip full" data-start="0" data-duration="3" src="assets/piece.mp4" muted></video></div>
+  <div id="fly" class="flyer"><div id="mask"><div class="word"></div></div></div><div id="edgefly" class="flyer"><div id="edge"><div class="word"></div></div></div>
+</div>
+<script>
+/*VARS*/
+const WORD = (V.params.word || V.word || 'FOOD').toUpperCase().replace(/[^A-ZĂÂÎȘȚ0-9]/g, '');
+// wrap each letter so the thick one can be measured; full frame width
+const html = [...WORD].map((c, i) => `<span data-i="${i}">${c}</span>`).join('');
+document.querySelectorAll('.word').forEach(w => w.innerHTML = html);
+const m = document.querySelector('#mask .word');
+const k = 1000 / m.getBoundingClientRect().width;
+document.querySelectorAll('.word').forEach(w => w.style.fontSize = (300 * k) + 'px');
+// the letter to fly into: A if there is one, else a letter with a straight left stem, else the widest
+const order = ['A', 'H', 'M', 'N', 'D', 'B', 'E', 'F', 'K', 'L', 'P', 'R', 'U', 'W', 'O'];
+let pick = 0, best = 99;
+[...WORD].forEach((c, i) => { const r = order.indexOf(c); if (r >= 0 && r < best) { best = r; pick = i; } });
+const sp = m.querySelector(`[data-i="${pick}"]`).getBoundingClientRect(), root = document.getElementById('root').getBoundingClientRect();
+// find the thickest point of that letter's ink: draw it on a canvas with the same font and size, then pick the
+// ink pixel farthest from any edge (so the camera flies into solid letter, not into a hole)
+const fs = parseFloat(getComputedStyle(m).fontSize), cv = document.createElement('canvas');
+cv.width = Math.ceil(sp.width) + 20; cv.height = Math.ceil(fs * 1.6);
+const cx = cv.getContext('2d'); cx.font = `400 ${fs}px Anton`; cx.textBaseline = 'alphabetic';
+const mt = cx.measureText(WORD[pick]), fA = mt.fontBoundingBoxAscent, fD = mt.fontBoundingBoxDescent;
+cx.fillStyle = '#000'; cx.fillText(WORD[pick], 0, fA);
+const img = cx.getImageData(0, 0, cv.width, cv.height).data, ink = (x, y) => x >= 0 && y >= 0 && x < cv.width && y < cv.height && img[(y * cv.width + x) * 4 + 3] > 128;
+let bx = sp.width / 2, by = fA * .6, br = -1;
+for (let y = 0; y < cv.height; y += 4) for (let x = 0; x < cv.width; x += 4) {
+  if (!ink(x, y)) continue;
+  let r = 0; while (r < 400 && [[1,0],[-1,0],[0,1],[0,-1],[.7,.7],[-.7,.7],[.7,-.7],[-.7,-.7]].every(([dx, dy]) => ink(Math.round(x + dx * (r + 3)), Math.round(y + dy * (r + 3))))) r += 3;
+  if (r > br) { br = r; bx = x; by = y; }
+}
+// canvas → page: same advance start; baseline sits where the line box puts it (line-height 1)
+const px = sp.left - root.left + bx;
+const py = sp.top - root.top + (sp.height - (fA + fD)) / 2 + by;
+document.querySelectorAll('.flyer').forEach(e => e.style.transformOrigin = `${px}px ${py}px`);
+const tl = gsap.timeline({ paused: true });
+tl.fromTo('.flyer', { scale: 1 }, { scale: 60, duration: .95, ease: 'power4.in' }, 0);
+tl.set('.flyer', { opacity: 0 }, .95);
+tl.fromTo('#vidwrap', { scale: 1.06 }, { scale: 1, duration: .8, ease: 'power2.out' }, .95);
+window.__timelines = window.__timelines || {}; window.__timelines["root"] = tl;
+</script></body></html>
