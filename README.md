@@ -46,6 +46,8 @@ a `template/` with the approved build. Six styles:
 | **Butter Steps** | step headers, butter-yellow key words, white rounded UI cards that glass in on the spoken word, cut-out pop-ups |
 | **Star Glitch** | cream ultra-tight captions as the design, ★ glitch name moves, a fast montage on the beat |
 
+Approved example edits (the author's own videos): [Butter Steps](editing-beast/styles/butter-steps/examples/), [Neon Dimension](editing-beast/styles/neon-dimension/examples/), [Star Glitch](editing-beast/styles/star-glitch/examples/).
+
 **The rule for every style:** what stays exactly the same is the editing style, the fonts, the colours, the transitions
 and the text templates. Everything about the content adapts to each new video: which words get effects, which sounds,
 which music, which B-roll, which memes. Nothing from another style is ever mixed in.
@@ -106,10 +108,10 @@ are drafted from the same edit.
 
 ## What is in this repository, and what is not
 
-Included: all the code, the Editing Beast style guides, templates and tools, the effect library (templates and docs),
+Included: all the code, the Editing Beast style guides, templates and tools, three approved example edits, the effect library (templates and docs),
 the open-licence fonts (Google Fonts, SIL OFL), the Creative Commons music with credits, and the sounds made in code.
 
-Not included, on purpose (see [NOT-INCLUDED.md](NOT-INCLUDED.md)): any footage or finished edits of real people, API keys,
+Not included, on purpose (see [NOT-INCLUDED.md](NOT-INCLUDED.md)): footage or finished edits showing anyone other than the author, API keys,
 other creators' reference videos, meme sounds and pictures whose licence is unknown, third-party documents and repos.
 
 Older build notes, step by step: [docs/ENGINE-NOTES.md](docs/ENGINE-NOTES.md).

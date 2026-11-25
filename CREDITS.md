@@ -23,6 +23,7 @@
 
 ## Sound effects (`library/sfx/`)
 
+- The Drive sound pack (camera, chime, mouse click, pop, sparkle, typing, UI and whoosh sounds; also in `editing-beast/sfx-library/celf-sfx-pack/`): the author's own sounds.
 - `ND_*.wav` (Neon Dimension kit): made in code by `editing-beast/styles/neon-dimension/tools/synth_sfx.py`, no licence needed.
 
 ## Fonts (`library/fonts/`, `editing-beast/effects/_shared/`)

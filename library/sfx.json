@@ -10,7 +10,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1dliZdVsp3ccgWIsWSxsbG_AdSByMY68p"
+  "drive_id": "1dliZdVsp3ccgWIsWSxsbG_AdSByMY68p",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_camera_02",
@@ -23,7 +24,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1qxaLh97VCEtS2xyNPo2G8moUvaL2nai2"
+  "drive_id": "1qxaLh97VCEtS2xyNPo2G8moUvaL2nai2",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_camera_03",
@@ -36,7 +38,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1Tu8eXu85WLeH_R_96P9vC670xkAblMFv"
+  "drive_id": "1Tu8eXu85WLeH_R_96P9vC670xkAblMFv",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_chime_01",
@@ -49,7 +52,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1orHYZ3KYZX2R4jfR-o19e01hZara0ZZP"
+  "drive_id": "1orHYZ3KYZX2R4jfR-o19e01hZara0ZZP",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_chime_02",
@@ -62,7 +66,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1F4tQx4mDYIamTuuoIsy7lK7hc1wge47z"
+  "drive_id": "1F4tQx4mDYIamTuuoIsy7lK7hc1wge47z",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_chime_03",
@@ -75,7 +80,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1wu-Yz3spnhxOrbylV0_oQaqgdllMSlsL"
+  "drive_id": "1wu-Yz3spnhxOrbylV0_oQaqgdllMSlsL",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_click_01",
@@ -88,7 +94,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1fpCyNHeBJsIzScMOAyJuozKX_XK1sH5o"
+  "drive_id": "1fpCyNHeBJsIzScMOAyJuozKX_XK1sH5o",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_click_02",
@@ -101,7 +108,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "12My5to_FbqWUIjlDNg9vqDD4d-I3cWga"
+  "drive_id": "12My5to_FbqWUIjlDNg9vqDD4d-I3cWga",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_click_03",
@@ -114,7 +122,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1kRksuPh1uW1c3YcZ0D9VFfQEe4Jo2Mtd"
+  "drive_id": "1kRksuPh1uW1c3YcZ0D9VFfQEe4Jo2Mtd",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_click_04",
@@ -127,7 +136,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1I9wPNx9BV_ddAt0NU2CagVsXx5tHTRPP"
+  "drive_id": "1I9wPNx9BV_ddAt0NU2CagVsXx5tHTRPP",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_pop_01",
@@ -140,7 +150,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1-41-9nk_ppOEo9kFAneAQ7_RV_XjURb_"
+  "drive_id": "1-41-9nk_ppOEo9kFAneAQ7_RV_XjURb_",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_pop_02",
@@ -153,7 +164,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "147UT6Xu3L-5R3jgs6MAAJjhGIxSecxBK"
+  "drive_id": "147UT6Xu3L-5R3jgs6MAAJjhGIxSecxBK",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_sparkle_01",
@@ -166,7 +178,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1iWihJb3ThnMs7FFI7xD2W-TD0M-AHh2G"
+  "drive_id": "1iWihJb3ThnMs7FFI7xD2W-TD0M-AHh2G",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_sparkle_02",
@@ -179,7 +192,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "19eZ0kJhlX5WVIpsTvFdaJejsVrM3ttbK"
+  "drive_id": "19eZ0kJhlX5WVIpsTvFdaJejsVrM3ttbK",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_sparkle_03",
@@ -192,7 +206,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1U0tmy0D76ftRdKyawvjUM9aECGnctjYB"
+  "drive_id": "1U0tmy0D76ftRdKyawvjUM9aECGnctjYB",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_sparkle_04",
@@ -205,7 +220,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1sX96N8z_s2q0XOl022qJ48k3wraTA9bo"
+  "drive_id": "1sX96N8z_s2q0XOl022qJ48k3wraTA9bo",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_sparkle_05",
@@ -218,7 +234,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1h_vooIvxNclojTq7yNqhvTTbgDHyqBhi"
+  "drive_id": "1h_vooIvxNclojTq7yNqhvTTbgDHyqBhi",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_sparkle_06",
@@ -231,7 +248,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "194VBISCWIFKG6GlbNDpLCv3bgCyMXxAq"
+  "drive_id": "194VBISCWIFKG6GlbNDpLCv3bgCyMXxAq",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_typing_01",
@@ -244,7 +262,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1OdUWao0Jz7kMDNwhfWCQQO7JrMWR4-dS"
+  "drive_id": "1OdUWao0Jz7kMDNwhfWCQQO7JrMWR4-dS",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_typing_02",
@@ -257,7 +276,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "16p_RhEo6_suZK4-Ye80qkBZ0bhbf4AGR"
+  "drive_id": "16p_RhEo6_suZK4-Ye80qkBZ0bhbf4AGR",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_typing_03",
@@ -270,7 +290,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "17B4nR0XXbiJk6sjRQmFyYDSWM8FyNFkp"
+  "drive_id": "17B4nR0XXbiJk6sjRQmFyYDSWM8FyNFkp",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_typing_04",
@@ -283,7 +304,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "17p__7wRDWGAVH8tVgX2vZWcQ8qp_rFlz"
+  "drive_id": "17p__7wRDWGAVH8tVgX2vZWcQ8qp_rFlz",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_ui_01",
@@ -296,7 +318,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1wHqN_LV69ATLrod-qV1jwC9UhlxFkaU9"
+  "drive_id": "1wHqN_LV69ATLrod-qV1jwC9UhlxFkaU9",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_whoosh_01",
@@ -309,7 +332,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1EgTqfIAPRAIC7LOq1VovgpDW523W0U9v"
+  "drive_id": "1EgTqfIAPRAIC7LOq1VovgpDW523W0U9v",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_whoosh_02",
@@ -322,7 +346,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1xLT7NrudeMpSWT98lKmG3gOiAax5jjt4"
+  "drive_id": "1xLT7NrudeMpSWT98lKmG3gOiAax5jjt4",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_whoosh_03",
@@ -335,7 +360,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1Ist13OKONMF1cbALkUcmJUP4ZX4tXtoc"
+  "drive_id": "1Ist13OKONMF1cbALkUcmJUP4ZX4tXtoc",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_whoosh_04",
@@ -348,7 +374,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "10urQSJg2jyIUABSifzUaKeQu5vYNG46v"
+  "drive_id": "10urQSJg2jyIUABSifzUaKeQu5vYNG46v",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_whoosh_05",
@@ -361,7 +388,8 @@
   "codec": "pcm_s24le",
   "sample_rate": 48000,
   "channels": "stereo",
-  "drive_id": "1KrWiiHoLHKx5rDVdZgk5AaCOXIy0mbAI"
+  "drive_id": "1KrWiiHoLHKx5rDVdZgk5AaCOXIy0mbAI",
+  "licence": "the author's own sound pack (Drive), shared in this repo"
  },
  {
   "id": "sfx_meme40_01_god_damn",
